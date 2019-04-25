@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 295074183800111648}
   - component: {fileID: 7257937097886166439}
   - component: {fileID: 8147097389428313707}
-  - component: {fileID: 8921327330716844585}
-  - component: {fileID: 514638144386698357}
+  - component: {fileID: 3168176689488962490}
+  - component: {fileID: 1587444243455809123}
   m_Layer: 0
   m_Name: rock0402
   m_TagString: Untagged
@@ -111,7 +111,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: c37a7407415267445a01ec07bca3cb42, type: 3}
---- !u!114 &8921327330716844585
+--- !u!114 &3168176689488962490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,11 +120,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 295074183802117344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca2d6e97a4e4c14e945c252a490a075, type: 3}
+  m_Script: {fileID: 11500000, guid: 09723a9145618c340b03f3b7ec8e0bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
---- !u!114 &514638144386698357
+--- !u!114 &1587444243455809123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 295074183802117344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96003bb01012104419f99d9dfa2c6811, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a5158e313239a142b2e548b029ea7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet: {fileID: 0}
-  littlePlanetOriginal: {fileID: 0}
-  split: 0
+  littlePlanetOriginal: {fileID: 4092222512189884956, guid: 3ab72a97b643a4f40a73f728e2ff660a,
+    type: 3}
+  split: 5

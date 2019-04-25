@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlanetHit : MonoBehaviour
 {
-    public GameObject planet;
     public GameObject littlePlanetOriginal;
     private GameObject[] littlePlanet;
     public int split;
@@ -20,7 +19,7 @@ public class PlanetHit : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             BurstPlanet();
-            Destroy(planet);
+            Destroy(gameObject);
         }
     }
     void BurstPlanet()

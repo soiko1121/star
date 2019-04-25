@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1080981707982055870}
   - component: {fileID: 2522584882596836196}
   - component: {fileID: 8247176254007976577}
-  - component: {fileID: 8950349684539922518}
+  - component: {fileID: 2821342186114264838}
   m_Layer: 0
   m_Name: rock0402
   m_TagString: Untagged
@@ -110,7 +110,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: c37a7407415267445a01ec07bca3cb42, type: 3}
---- !u!114 &8950349684539922518
+--- !u!114 &2821342186114264838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1080981707979863934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca2d6e97a4e4c14e945c252a490a075, type: 3}
+  m_Script: {fileID: 11500000, guid: 09723a9145618c340b03f3b7ec8e0bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
