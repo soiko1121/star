@@ -138,4 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   littlePlanetOriginal: {fileID: 4092222512189884956, guid: 3ab72a97b643a4f40a73f728e2ff660a,
     type: 3}
-  split: 5
+  split: 10

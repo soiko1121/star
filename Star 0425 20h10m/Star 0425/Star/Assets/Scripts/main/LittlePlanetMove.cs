@@ -33,7 +33,7 @@ public class LittlePlanetMove : MonoBehaviour
         hit = false;
         Number = -1;
         count = 0;
-        moveCount = 0;
+        moveCount = 120;
         player = GameObject.FindWithTag("Player");
         littlePlanetRB = GetComponent<Rigidbody>();
         littlePlanetRB.AddForce((transform.position - target) * 300f);//目的地と反対に飛ばす
