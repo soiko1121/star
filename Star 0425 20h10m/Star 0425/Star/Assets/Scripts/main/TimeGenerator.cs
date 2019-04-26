@@ -67,7 +67,7 @@ public class TimeGenerator : MonoBehaviour
         }
         else
         {
-            CameraMove();
+            //CameraMove();
         }
     }
     private void CameraMove()

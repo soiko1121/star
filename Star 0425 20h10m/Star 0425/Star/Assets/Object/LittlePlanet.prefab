@@ -126,7 +126,6 @@ MonoBehaviour:
   up: 0
   left: 0
   corpsSpeed: 100
-  corpsSplitX: 3
-  corpsSplitY: 3
-  widthSplit: 1
-  heightSplit: 1
+  corpsSplit: 5
+  widthSplit: 0.5
+  heightSplit: 0.5

@@ -10,8 +10,9 @@ public class LittlePlanetMove : MonoBehaviour
     public bool left;
 
     public float corpsSpeed;
-    public int corpsSplitX;
-    public int corpsSplitY;
+    public int corpsSplit;
+    //public int corpsSplitX;
+    //public int corpsSplitY;
     public float widthSplit;
     public float heightSplit;
 
@@ -19,7 +20,8 @@ public class LittlePlanetMove : MonoBehaviour
     private GameObject player;
     private Rigidbody littlePlanetRB;
     private bool hit, blockDel = false;
-    private int count;
+    private int count, moveCount;
+    private float distance;
 
     private GameObject gameGenerator;
     public int Number
@@ -31,6 +33,7 @@ public class LittlePlanetMove : MonoBehaviour
         hit = false;
         Number = -1;
         count = 0;
+        moveCount = 0;
         player = GameObject.FindWithTag("Player");
         littlePlanetRB = GetComponent<Rigidbody>();
         littlePlanetRB.AddForce((transform.position - target) * 300f);//目的地と反対に飛ばす
@@ -75,14 +78,29 @@ public class LittlePlanetMove : MonoBehaviour
         Vector3 target;
         int index = player.GetComponent<PlayerMove>().PosList.Count - 1;
 
-        target.x = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].x -
-            (corpsSplitX - 1) * heightSplit / 2f + heightSplit * (Number % corpsSplitX);
+        //target.x = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].x -
+        //    (corpsSplitX - 1) * heightSplit / 2f + heightSplit * (Number % corpsSplitX);
 
-        target.y = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].y -
-            (corpsSplitY - 1) * heightSplit / 2f + heightSplit * (Number / corpsSplitY % corpsSplitY);
+        //target.y = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].y -
+        //    (corpsSplitY - 1) * heightSplit / 2f + heightSplit * (Number / corpsSplitY % corpsSplitY);
 
-        target.z = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].z -
-            1 - widthSplit * (Number / (corpsSplitX * corpsSplitY));
+        //target.z = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].z -
+        //    1 - widthSplit * (Number / (corpsSplitX * corpsSplitY));
+        if (moveCount != 120)
+        {
+            moveCount++;
+        }
+        else
+        {
+            distance = Random.Range(0.5f, heightSplit + index * 0.001f * (Number / corpsSplit));
+            moveCount = 0;
+        }
+
+        target.x = player.GetComponent<PlayerMove>().PosList[index - (Number / corpsSplit)].x + distance * Mathf.Cos(((360f / corpsSplit) * (Number % corpsSplit)) * Mathf.Deg2Rad);
+
+        target.y = player.GetComponent<PlayerMove>().PosList[index - (Number / corpsSplit)].y + distance * Mathf.Sin(((360f / corpsSplit) * (Number % corpsSplit)) * Mathf.Deg2Rad);
+
+        target.z = player.GetComponent<PlayerMove>().PosList[index - (Number / corpsSplit)].z - 1 - widthSplit * (Number / corpsSplit);
 
         Vector3 move = target - transform.position;
         littlePlanetRB.AddForce(move * corpsSpeed);
