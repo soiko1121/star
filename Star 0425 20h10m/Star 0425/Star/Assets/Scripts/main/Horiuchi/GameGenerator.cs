@@ -67,7 +67,7 @@ public class GameGenerator : MonoBehaviour
         }
         planetMove.GetComponent<PlanetMove>().speed = speed;
         bulackHole.GetComponent<PlanetMove>().speed = speed;
-        if (maxstar < star)
+        if (maxstar <= star)
         {
             maxstar = star;
             Star = maxstar;

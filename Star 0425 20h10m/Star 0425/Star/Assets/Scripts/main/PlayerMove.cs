@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
             {
                 //重力感知
                 gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f);
-                gyro.y = Mathf.Clamp(((Input.gyro.gravity.y + 0.25f) * 3.0f), -1.0f, 1.0f);
+                gyro.y = Mathf.Clamp(((Input.gyro.gravity.y + 0.4f) * 3.0f), -1.0f, 1.0f);
                 //gyro.x = Mathf.Clamp((Input.gyro.gravity.x + gyroDef.x) * 3.0f, -1.0f, 1.0f);
                 //gyro.y = Mathf.Clamp((Input.gyro.gravity.y + gyroDef.y) * 3.0f, -1.0f, 1.0f);
                 velocitySet = playerRB.velocity;
