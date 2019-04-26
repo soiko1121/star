@@ -41,21 +41,24 @@ public class LittlePlanetMove : MonoBehaviour
 
     void Update()
     {
-        ColorChange();
-        if (!hit)
+        if (!gameGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
         {
-            if (count < 120)
+            ColorChange();
+            if (!hit)
             {
-                count += 1;
+                if (count < 120)
+                {
+                    count += 1;
+                }
+                else
+                {
+                    PlayerFollow();
+                }
             }
             else
             {
-                PlayerFollow();
+                Corps();
             }
-        }
-        else
-        {
-            Corps();
         }
     }
     private void PlayerFollow()

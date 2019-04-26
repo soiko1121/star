@@ -1,25 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class mainCount : MonoBehaviour
+public class ShowResultDistance : MonoBehaviour
 {
-    public static int count;
-
     // Start is called before the first frame update
     void Start()
     {
-        count = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        count = GameObject.FindGameObjectsWithTag("sphere").Length;
-    }
+        Text resultScore = GetComponent<Text>();
 
-    public static int getCount()
-    {
-        return count;
+        int score = GameGenerator.Distance;
+        resultScore.text = score.ToString();
     }
 }

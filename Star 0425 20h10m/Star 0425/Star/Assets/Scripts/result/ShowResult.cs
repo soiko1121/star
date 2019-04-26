@@ -16,7 +16,7 @@ public class ShowResult : MonoBehaviour
     {
         Text resultScore = GetComponent<Text>();
 
-        int score = mainCount.getCount();
+        int score = GameGenerator.Star;
         resultScore.text = score.ToString();
     }
 }

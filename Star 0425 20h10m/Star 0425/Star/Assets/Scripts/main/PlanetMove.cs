@@ -6,6 +6,7 @@ public class PlanetMove : MonoBehaviour
 {
     Rigidbody planetRB;
     public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +16,12 @@ public class PlanetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         planetRB.AddForce(Vector3.back * speed);
-        if (transform.position.z < -5)
+        if (transform.position.z < -20)
         {
             Destroy(gameObject);
         }
+
     }
 }

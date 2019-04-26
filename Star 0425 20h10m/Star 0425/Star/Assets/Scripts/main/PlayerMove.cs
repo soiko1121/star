@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private Vector3 gyro = Vector3.zero, gyroSet = Vector3.zero, moveVec, velocitySet;
-    private Quaternion rotation, inclination, inclinationSet = Quaternion.identity;
+    private Vector3 gyro, gyroSet, moveVec, velocitySet;
     private Rigidbody playerRB;
     public float speed, slowdown;
     public DebugText debugText;
@@ -15,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     private Vector3 gyroDef;
 
     private Vector3 target;
+    public TimeGenerator timeGenerator;
     public List<Vector3> PosList
     {
         get; set;
@@ -31,56 +31,61 @@ public class PlayerMove : MonoBehaviour
         generator = GameObject.Find("");
         target = Vector3.zero;
         gyroDef = new Vector3(Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f), Mathf.Clamp((Input.gyro.gravity.y) * 3.0f, -1.0f, 1.0f), 0);
+        gyro = Vector3.zero;
+        gyroSet = Vector3.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f) != 0 || Mathf.Clamp((-Input.gyro.gravity.y * 3.0f), -1.0f, 1.0f) != 0)
+        if (!timeGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
         {
-            //重力感知
-            gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f);
-            gyro.y = Mathf.Clamp(((Input.gyro.gravity.y + 0.25f) * 3.0f), -1.0f, 1.0f);
-            //gyro.x = Mathf.Clamp((Input.gyro.gravity.x + gyroDef.x) * 3.0f, -1.0f, 1.0f);
-            //gyro.y = Mathf.Clamp((Input.gyro.gravity.y + gyroDef.y) * 3.0f, -1.0f, 1.0f);
-            velocitySet = playerRB.velocity;
-            if (moveVec.x < 0 && gyro.x > 0 || moveVec.x > 0 && gyro.x < 0)
+            if (Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f) != 0 || Mathf.Clamp((-Input.gyro.gravity.y * 3.0f), -1.0f, 1.0f) != 0)
             {
-                velocitySet.x /= slowdown;
+                //重力感知
+                gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f);
+                gyro.y = Mathf.Clamp(((Input.gyro.gravity.y + 0.25f) * 3.0f), -1.0f, 1.0f);
+                //gyro.x = Mathf.Clamp((Input.gyro.gravity.x + gyroDef.x) * 3.0f, -1.0f, 1.0f);
+                //gyro.y = Mathf.Clamp((Input.gyro.gravity.y + gyroDef.y) * 3.0f, -1.0f, 1.0f);
+                velocitySet = playerRB.velocity;
+                if (moveVec.x < 0 && gyro.x > 0 || moveVec.x > 0 && gyro.x < 0)
+                {
+                    velocitySet.x /= slowdown;
+                }
+                if (moveVec.y < 0 && gyro.y > 0 || moveVec.y > 0 && gyro.y < 0)
+                {
+                    velocitySet.y /= slowdown;
+                }
+                playerRB.velocity = velocitySet;
+                playerRB.AddForce(gyro * speed);
+                moveVec = gyro;
+                //debugText.GetComponent<DebugText>().debugVec3 = gyro;
             }
-            if (moveVec.y < 0 && gyro.y > 0 || moveVec.y > 0 && gyro.y < 0)
+            else
             {
-                velocitySet.y /= slowdown;
+                if (Input.GetMouseButton(0))
+                {
+                    target = GetMousePosition();
+                    playerRB.velocity = Vector3.zero;
+                    playerRB.angularVelocity = Vector3.zero;
+                }
+                Vector3 pos = target - transform.position;
+                pos = pos.normalized * speed;
+                playerRB.AddForce(pos);
             }
-            playerRB.velocity = velocitySet;
-            playerRB.AddForce(gyro * speed);
-            moveVec = gyro;
-            //debugText.GetComponent<DebugText>().debugVec3 = gyro;
-        }
-        else
-        {
-            if (Input.GetMouseButton(0))
+            if (count != 10)
             {
-                target = GetMousePosition();
-                playerRB.velocity = Vector3.zero;
-                playerRB.angularVelocity = Vector3.zero;
+                count++;
             }
-            Vector3 pos = target - transform.position;
-            pos = pos.normalized * speed;
-            playerRB.AddForce(pos);
-        }
-        if (count != 10)
-        {
-            count++;
-        }
-        else
-        {
-            PosList.Add(transform.position);
-            if (PosList.Count > 200)
+            else
             {
-                PosList.RemoveAt(0);
+                PosList.Add(transform.position);
+                if (PosList.Count > 200)
+                {
+                    PosList.RemoveAt(0);
+                }
+                count = 0;
             }
-            count = 0;
         }
     }
     Vector3 GetMousePosition()
