@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1859025555}
   target: {fileID: 2135976089}
-  changeTime: 10
+  changeTime: 30
   cameraMoveNow: 0
 --- !u!1 &649033785
 GameObject:
