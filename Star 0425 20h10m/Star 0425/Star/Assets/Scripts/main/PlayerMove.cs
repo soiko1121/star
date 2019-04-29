@@ -11,8 +11,6 @@ public class PlayerMove : MonoBehaviour
     private int count;
     private GameObject generator;
 
-    private Vector3 gyroDef;
-
     private Vector3 target;
     public TimeGenerator timeGenerator;
     public List<Vector3> PosList
@@ -30,7 +28,6 @@ public class PlayerMove : MonoBehaviour
         PosList = new List<Vector3>();
         generator = GameObject.Find("");
         target = Vector3.zero;
-        gyroDef = new Vector3(Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f), Mathf.Clamp((Input.gyro.gravity.y) * 3.0f, -1.0f, 1.0f), 0);
         gyro = Vector3.zero;
         gyroSet = Vector3.zero;
     }
@@ -38,26 +35,35 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!timeGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
+        if (!timeGenerator.GetComponent<TimeGenerator>().cameraMoveNow || true)
         {
             if (Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f) != 0 || Mathf.Clamp((-Input.gyro.gravity.y * 3.0f), -1.0f, 1.0f) != 0)
             {
                 //重力感知
                 gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f);
                 gyro.y = Mathf.Clamp(((Input.gyro.gravity.y + 0.4f) * 3.0f), -1.0f, 1.0f);
-                //gyro.x = Mathf.Clamp((Input.gyro.gravity.x + gyroDef.x) * 3.0f, -1.0f, 1.0f);
-                //gyro.y = Mathf.Clamp((Input.gyro.gravity.y + gyroDef.y) * 3.0f, -1.0f, 1.0f);
                 velocitySet = playerRB.velocity;
                 if (moveVec.x < 0 && gyro.x > 0 || moveVec.x > 0 && gyro.x < 0)
                 {
                     velocitySet.x /= slowdown;
+                    velocitySet.x = 0;
+                }
+                else
+                {
+                    //velocitySet.x = 5;
                 }
                 if (moveVec.y < 0 && gyro.y > 0 || moveVec.y > 0 && gyro.y < 0)
                 {
                     velocitySet.y /= slowdown;
+                    velocitySet.y = 0;
+                }
+                else
+                {
+                    //velocitySet.y = 5;
                 }
                 playerRB.velocity = velocitySet;
-                playerRB.AddForce(gyro * speed);
+                //playerRB.AddForce(gyro * speed);
+                transform.position += gyro * speed;
                 moveVec = gyro;
                 //debugText.GetComponent<DebugText>().debugVec3 = gyro;
             }

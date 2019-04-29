@@ -33,7 +33,7 @@ public class TimeGenerator : MonoBehaviour
             {
                 timer = 0;
             }
-            if (timer == 0)
+            if (timer == 0 && false)
             {
                 cameraMoveNow = true;
                 viewOld = viewSet;
@@ -44,13 +44,13 @@ public class TimeGenerator : MonoBehaviour
                 {
                     case View.back:
                         //if (setRan % 2 == 0)
-                            viewSet = View.forward;
+                        viewSet = View.forward;
                         //else
                         //    viewSet = View.side;
                         break;
                     case View.forward:
                         //if (setRan % 2 == 0)
-                            viewSet = View.back;
+                        viewSet = View.back;
                         //else
                         //    viewSet = View.side;
                         break;

@@ -30,10 +30,10 @@ public class VolumeControl1 : MonoBehaviour
             count--;
         }
 
+        //Debug.Log(count);
         switch (count)
         {
             case 0:
-                Debug.Log(count);
                 MusicStep_1.volume = 1;
                 MusicStep_2.volume = 0;
                 MusicStep_3.volume = 0;
@@ -43,7 +43,6 @@ public class VolumeControl1 : MonoBehaviour
                 break;
 
             case 1:
-                Debug.Log(count);
                 MusicStep_1.volume = 1;
                 MusicStep_2.volume = 1;
                 MusicStep_3.volume = 0;
@@ -53,7 +52,6 @@ public class VolumeControl1 : MonoBehaviour
                 break;
 
             case 2:
-                Debug.Log(count);
                 MusicStep_1.volume = 1;
                 MusicStep_2.volume = 1;
                 MusicStep_3.volume = 1;
@@ -63,7 +61,6 @@ public class VolumeControl1 : MonoBehaviour
                 break;
 
             case 3:
-                Debug.Log(count);
                 MusicStep_1.volume = 1;
                 MusicStep_2.volume = 1;
                 MusicStep_3.volume = 1;
@@ -73,7 +70,6 @@ public class VolumeControl1 : MonoBehaviour
                 break;
 
             case 4:
-                Debug.Log(count);
                 MusicStep_1.volume = 1;
                 MusicStep_2.volume = 1;
                 MusicStep_3.volume = 1;
@@ -83,7 +79,6 @@ public class VolumeControl1 : MonoBehaviour
                 break;
 
             case 5:
-                Debug.Log(count);
                 MusicStep_1.volume = 1;
                 MusicStep_2.volume = 1;
                 MusicStep_3.volume = 1;

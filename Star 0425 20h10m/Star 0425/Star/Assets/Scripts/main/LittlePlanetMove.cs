@@ -81,21 +81,13 @@ public class LittlePlanetMove : MonoBehaviour
         Vector3 target;
         int index = player.GetComponent<PlayerMove>().PosList.Count - 1;
 
-        //target.x = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].x -
-        //    (corpsSplitX - 1) * heightSplit / 2f + heightSplit * (Number % corpsSplitX);
-
-        //target.y = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].y -
-        //    (corpsSplitY - 1) * heightSplit / 2f + heightSplit * (Number / corpsSplitY % corpsSplitY);
-
-        //target.z = player.GetComponent<PlayerMove>().PosList[index - (Number / (corpsSplitX * corpsSplitY))].z -
-        //    1 - widthSplit * (Number / (corpsSplitX * corpsSplitY));
         if (moveCount != 120)
         {
             moveCount++;
         }
         else
         {
-            distance = Random.Range(0.5f, heightSplit + index * 0.001f * (Number / corpsSplit));
+            distance = Random.Range(0.5f, heightSplit + 1f + index * 0.0001f * (Number / corpsSplit));
             moveCount = 0;
         }
 
