@@ -10,4 +10,10 @@ public class returnTitle : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("TitleScene");
     }
+
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("LoadScene");
+    }
 }
