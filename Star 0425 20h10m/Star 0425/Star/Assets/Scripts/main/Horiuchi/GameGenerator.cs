@@ -8,6 +8,7 @@ public class GameGenerator : MonoBehaviour
     public GameObject bulackHole;
     public int star, maxstar;
     public float distance, speed;
+    public int musicCnt;
 
     public static int Star
     {
@@ -22,6 +23,7 @@ public class GameGenerator : MonoBehaviour
     {
         maxstar = 0;
         star = 0;
+        musicCnt = 0;
     }
 
     // Update is called once per frame
@@ -29,27 +31,33 @@ public class GameGenerator : MonoBehaviour
     {
         if (star >= 0 && star < 30)
         {
+            musicCnt = 0;
             speed = 3;
         }
         else if (star < 60)
         {
             speed = 4;
+            musicCnt = 1;
         }
         else if (star < 100)
         {
             speed = 5;
+            musicCnt = 2;
         }
         else if (star < 150)
         {
             speed = 7;
+            musicCnt = 3;
         }
         else if (star < 200)
         {
             speed = 8;
+            musicCnt = 4;
         }
         else if (star < 250)
         {
             speed = 9;
+            musicCnt = 5;
         }
         else
         {

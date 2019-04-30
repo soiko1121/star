@@ -9,7 +9,6 @@ public class PlayerMove : MonoBehaviour
     public float speed, slowdown;
     public DebugText debugText;
     private int count;
-    private GameObject generator;
 
     private Vector3 target;
     public TimeGenerator timeGenerator;
@@ -26,7 +25,6 @@ public class PlayerMove : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         moveVec = Vector3.zero;
         PosList = new List<Vector3>();
-        generator = GameObject.Find("");
         target = Vector3.zero;
         gyro = Vector3.zero;
         gyroSet = Vector3.zero;

@@ -10,28 +10,18 @@ public class VolumeControl1 : MonoBehaviour
     public AudioSource MusicStep_4;
     public AudioSource MusicStep_5;
     public AudioSource MusicStep_6;
-    int count, maxCount;
+    private GameObject gameGenerator;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxCount = 5;
+        gameGenerator = GameObject.Find("GameGenerator");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && count < maxCount)
-        {
-            count++;
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && count > 0)
-        {
-            count--;
-        }
-
-        //Debug.Log(count);
-        switch (count)
+        switch (gameGenerator.GetComponent<GameGenerator>().musicCnt)
         {
             case 0:
                 MusicStep_1.volume = 1;
