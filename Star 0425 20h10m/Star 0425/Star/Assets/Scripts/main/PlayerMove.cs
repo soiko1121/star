@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
             if (Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f) != 0 || Mathf.Clamp((-Input.gyro.gravity.y * 3.0f), -1.0f, 1.0f) != 0)
             {
                 //重力感知
-                gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 3.0f, -1.0f, 1.0f);
+                gyro.x = Mathf.Clamp(Input.gyro.gravity.z * 3.0f, -1.0f, 1.0f);
                 gyro.y = Mathf.Clamp(((Input.gyro.gravity.y + 0.4f) * 3.0f), -1.0f, 1.0f);
                 velocitySet = playerRB.velocity;
                 if (moveVec.x < 0 && gyro.x > 0 || moveVec.x > 0 && gyro.x < 0)
