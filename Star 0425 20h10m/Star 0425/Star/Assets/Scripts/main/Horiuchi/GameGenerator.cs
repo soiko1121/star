@@ -56,7 +56,7 @@ public class GameGenerator : MonoBehaviour
             speed = 10;
         }
         TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
-        if (!timeGenerator.cameraMoveNow)
+        if (!timeGenerator.cameraMoveNow && Time.timeScale == 1f)
         {
             distance += speed / 30.0f;
             Distance = (int)distance;

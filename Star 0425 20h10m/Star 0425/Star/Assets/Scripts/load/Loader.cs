@@ -22,6 +22,7 @@ public class Loader : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                UI.SetActive(true);
                 slider.enabled = true;
                 StartCoroutine("LoadData");
             }
@@ -34,6 +35,7 @@ public class Loader : MonoBehaviour
 
                 if (touch.phase == TouchPhase.Began)
                 {
+                    UI.SetActive(true);
                     slider.enabled = true;
                     StartCoroutine("LoadData");
                 }
