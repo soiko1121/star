@@ -17,7 +17,8 @@ public class CameraMove : MonoBehaviour
     void Update()
     {
         Vector3 v3 = player.transform.position - oldPos;
-        transform.position += new Vector3(v3.x / 2.0f, v3.y / 1.3f);
+        transform.position += new Vector3(v3.x / 4.0f, v3.y / 4.0f);
         oldPos = player.transform.position;
+        transform.LookAt(player.transform.position);
     }
 }
