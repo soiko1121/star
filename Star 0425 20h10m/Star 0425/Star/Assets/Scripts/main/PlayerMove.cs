@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (!timeGenerator.GetComponent<TimeGenerator>().cameraMoveNow || true)
         {
-            if (Mathf.Clamp(Input.gyro.gravity.z * 2.0f, -9.8f, 9.8f) != 0 || -Mathf.Clamp(((Input.gyro.gravity.y + 0.4f) * 2.0f), -9.8f, 9.8f) != 0)
+            if (Mathf.Clamp(Input.gyro.gravity.z * 2.0f, -9.8f, 9.8f) != 0 || -Mathf.Clamp(((Input.gyro.gravity.y + 0.4f) * 2.0f), -9.8f, 9.8f) != 0 || true)
             {
                 Vector3 v3 = Vector3.zero;
                 //重力感知
@@ -107,16 +107,15 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                Debug.Log("aaa");
-                if (Input.GetMouseButton(0))
-                {
-                    target = GetMousePosition();
-                    playerRB.velocity = Vector3.zero;
-                    playerRB.angularVelocity = Vector3.zero;
-                }
-                Vector3 pos = target - transform.position;
-                pos = pos.normalized * 10f;
-                playerRB.AddForce(pos);
+                //if (Input.GetMouseButton(0))
+                //{
+                //    target = GetMousePosition();
+                //    playerRB.velocity = Vector3.zero;
+                //    playerRB.angularVelocity = Vector3.zero;
+                //}
+                //Vector3 pos = target - transform.position;
+                //pos = pos.normalized * 10f;
+                //playerRB.AddForce(pos);
             }
             if (count != 10)
             {
