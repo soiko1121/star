@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5330565926556282094}
   - component: {fileID: 1096351255435475290}
   - component: {fileID: 2522854684780674995}
+  - component: {fileID: 738661314235393696}
   m_Layer: 0
   m_Name: rock0302
   m_TagString: DangerObject
@@ -123,3 +124,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &738661314235393696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635840048498800502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868364362cfd7814ea42b678373257ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isThermography: 0
+  thermographyHitNow: 0
+  littlePlanetOriginal: {fileID: 4092222512189884956, guid: 3ab72a97b643a4f40a73f728e2ff660a,
+    type: 3}
+  planetHit: {fileID: 417893683686508984, guid: 84d06ed33181eb04c8fc9f5f259316fd,
+    type: 3}
+  split: 20
