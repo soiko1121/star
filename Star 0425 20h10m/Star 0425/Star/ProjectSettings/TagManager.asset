@@ -9,6 +9,7 @@ TagManager:
   - Group
   - MiniStar
   - DangerObject
+  - Thermography
   layers:
   - Default
   - TransparentFX
