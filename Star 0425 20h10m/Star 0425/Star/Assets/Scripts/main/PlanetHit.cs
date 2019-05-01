@@ -22,7 +22,7 @@ public class PlanetHit : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void BurstPlanet()
+    public void BurstPlanet()
     {
         for (int i = 0; i < split; i++)
         {
