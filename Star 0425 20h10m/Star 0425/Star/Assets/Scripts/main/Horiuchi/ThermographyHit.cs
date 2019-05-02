@@ -11,6 +11,8 @@ public class ThermographyHit : MonoBehaviour
     private GameObject[] littlePlanet;
     public int split;
 
+    private ParticleSystem particle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class ThermographyHit : MonoBehaviour
         {
             isThermography = true;
             littlePlanet = new GameObject[split];
+            particle = GetComponent<ParticleSystem>();
         }
         else
         {
@@ -33,6 +36,7 @@ public class ThermographyHit : MonoBehaviour
             if (isThermography)
             {
                 thermographyHitNow = true;
+                particle.Play();
             }
         }
         if (other.gameObject.tag == "Player" && thermographyHitNow)
