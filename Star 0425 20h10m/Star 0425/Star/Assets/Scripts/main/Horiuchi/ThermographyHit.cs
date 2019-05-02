@@ -42,6 +42,7 @@ public class ThermographyHit : MonoBehaviour
         {
             hit = planetHit.GetComponent<PlanetHit>();
             hit.littlePlanetOriginal = littlePlanetOriginal;
+            hit.transform.position = gameObject.transform.position;
             hit.littlePlanet = new GameObject[split];
             hit.BurstPlanet();
             Destroy(gameObject);

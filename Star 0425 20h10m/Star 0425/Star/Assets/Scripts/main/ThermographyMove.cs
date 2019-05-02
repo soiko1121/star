@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThermographyMove : MonoBehaviour
 {
     private GameObject player;
+    Vector3 scale;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,12 +15,22 @@ public class ThermographyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position;
-        if (transform.localScale.x < 100)
+        //transform.position = player.transform.position;
+        //if (transform.localScale.x < 100)
+        //{
+        //    transform.localScale *= 1.2f;
+        //}
+        //else
+        //    Destroy(gameObject);
+
+        transform.position += Vector3.forward * (30/60.0f);
+        if (transform.localScale.x < 50)
         {
-            transform.localScale *= 1.2f;
+            transform.localScale = new Vector3(transform.localScale.x * 1.2f, transform.localScale.y * 1.2f, 1.0f);
         }
-        else
+        if (transform.position.z > 50)
+        {
             Destroy(gameObject);
+        }
     }
 }

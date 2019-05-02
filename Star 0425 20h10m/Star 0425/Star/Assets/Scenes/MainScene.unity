@@ -2850,7 +2850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae788693b25d18d499d152572c342ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thermographyOriginal: {fileID: 8119897945206631644, guid: 728bb46918d47a34e9cef4cfb9559452,
+  thermographyOriginal: {fileID: 4225887786712279162, guid: b58bdd057c0b04946af9529f17851b81,
     type: 3}
 --- !u!1 &2011052300
 GameObject:
