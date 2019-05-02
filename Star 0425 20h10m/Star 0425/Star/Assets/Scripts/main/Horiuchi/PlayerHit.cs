@@ -14,7 +14,7 @@ public class PlayerHit : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "DangerObject")
+        if (other.gameObject.tag == "DangerObject" && !other.gameObject.GetComponent<ThermographyHit>().thermographyHitNow)
         {
             if (gameGenerator.GetComponent<GameGenerator>().star <= 0)
             {

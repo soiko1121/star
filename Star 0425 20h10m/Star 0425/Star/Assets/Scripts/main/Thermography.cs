@@ -6,6 +6,8 @@ public class Thermography : MonoBehaviour
 {
     public GameObject thermographyOriginal;
     private GameObject thermography;
+    bool coolTimeNow = false;
+    int coolTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +20,27 @@ public class Thermography : MonoBehaviour
         if (!DebugPC.pc)
         {
             Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began && !coolTimeNow)
             {
                 thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
+                coolTimeNow = true;
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(1) && !coolTimeNow)
+            {
+                thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
+                coolTimeNow = true;
+            }
+        }
+        if (coolTimeNow)
+        {
+            coolTimer++;
+            if (coolTimer > 120)
+            {
+                coolTimer = 0;
+                coolTimeNow = false;
             }
         }
     }

@@ -8,7 +8,7 @@ public class ThermographyHit : MonoBehaviour
 
     public GameObject littlePlanetOriginal;
     public GameObject planetHit;
-    private GameObject[] littlePlanet;
+    private PlanetHit hit;
     public int split;
 
     private ParticleSystem particle;
@@ -19,7 +19,6 @@ public class ThermographyHit : MonoBehaviour
         if (Random.Range(0,2) == 0)
         {
             isThermography = true;
-            littlePlanet = new GameObject[split];
             particle = GetComponent<ParticleSystem>();
         }
         else
@@ -41,7 +40,10 @@ public class ThermographyHit : MonoBehaviour
         }
         if (other.gameObject.tag == "Player" && thermographyHitNow)
         {
-            planetHit.GetComponent<PlanetHit>().BurstPlanet();
+            hit = planetHit.GetComponent<PlanetHit>();
+            hit.littlePlanetOriginal = littlePlanetOriginal;
+            hit.littlePlanet = new GameObject[split];
+            hit.BurstPlanet();
             Destroy(gameObject);
         }
     }
