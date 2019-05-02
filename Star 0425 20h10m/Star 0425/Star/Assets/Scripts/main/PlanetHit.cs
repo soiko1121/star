@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetHit : MonoBehaviour
 {
     public GameObject littlePlanetOriginal;
-    private GameObject[] littlePlanet;
+    public GameObject[] littlePlanet;
     public int split;
 
     void Start()
