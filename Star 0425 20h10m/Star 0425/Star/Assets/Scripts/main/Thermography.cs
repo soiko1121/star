@@ -9,16 +9,19 @@ public class Thermography : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Touch touch = Input.GetTouch(0);
-        if (touch.phase == TouchPhase.Began)
+        if (!DebugPC.pc)
         {
-            thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
+            }
         }
     }
 }

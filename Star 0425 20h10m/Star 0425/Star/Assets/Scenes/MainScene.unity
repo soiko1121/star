@@ -1205,7 +1205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd933a941a6d294fb40400b45daf6db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameGenerator: {fileID: 0}
+  gameGenerator: {fileID: 2388096640501033390}
+  defPosZ: -15
+  maxCount: 30
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0

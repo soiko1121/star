@@ -5,9 +5,12 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public GameGenerator gameGenerator;
+    public float defPosZ;
+    public int maxCount;
     private Vector3 oldPos;
     private GameObject player;
     private float target;
+    private float move;
     private int saveCount;
     private int count;
 
@@ -15,6 +18,7 @@ public class CameraMove : MonoBehaviour
     {
         saveCount = 0;
         count = 0;
+        transform.position = new Vector3(transform.position.x, transform.position.y, defPosZ);
         oldPos = Vector3.zero;
         player = GameObject.FindWithTag("Player");
     }
@@ -25,15 +29,36 @@ public class CameraMove : MonoBehaviour
         oldPos = player.transform.position;
         transform.LookAt(player.transform.position);
         int star = gameGenerator.GetComponent<GameGenerator>().star;
-        if (star / 25 != saveCount && count == 60)
+        int[] changeCount = gameGenerator.musicChangeCount;
+        int nowCount = 0;
+        if (count == 60)
         {
-            target = (-5 - (star / 5 * 0.4f)) - transform.position.z;
-            saveCount = star / 25;
-            count = 0;
+            for (int i = 0; i < changeCount.Length; i++)
+            {
+                if (star >= changeCount[i])
+                {
+                    nowCount = i;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            if (nowCount != saveCount)
+            {
+                if (changeCount[nowCount] == 0)
+                    target = defPosZ;
+                else
+                    target = (defPosZ - (changeCount[nowCount] / 8f));
+                Debug.Log(transform.position.z);
+                move = target - transform.position.z;
+                saveCount = nowCount;
+                count = 0;
+            }
         }
-        if (count < 60)
+        else if (count < maxCount)
         {
-            //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + target / 60f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + move / maxCount);
             count++;
         }
     }
