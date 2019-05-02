@@ -28,10 +28,12 @@ public class CameraMove : MonoBehaviour
         transform.position += new Vector3(v3.x / 4.0f, v3.y / 4.0f);
         oldPos = player.transform.position;
         transform.LookAt(player.transform.position);
+
         int star = gameGenerator.GetComponent<GameGenerator>().star;
         int[] changeCount = gameGenerator.musicChangeCount;
         int nowCount = 0;
-        if (count == 60)
+
+        if (count == maxCount)
         {
             for (int i = 0; i < changeCount.Length; i++)
             {
@@ -49,8 +51,7 @@ public class CameraMove : MonoBehaviour
                 if (changeCount[nowCount] == 0)
                     target = defPosZ;
                 else
-                    target = (defPosZ - (changeCount[nowCount] / 8f));
-                Debug.Log(transform.position.z);
+                    target = (defPosZ - (changeCount[nowCount] / 5f));
                 move = target - transform.position.z;
                 saveCount = nowCount;
                 count = 0;

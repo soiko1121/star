@@ -15,7 +15,7 @@ public class ThermographyMove : MonoBehaviour
     void Update()
     {
         transform.position = player.transform.position;
-        if (transform.localScale.x < 5)
+        if (transform.localScale.x < 100)
         {
             transform.localScale *= 1.2f;
         }
