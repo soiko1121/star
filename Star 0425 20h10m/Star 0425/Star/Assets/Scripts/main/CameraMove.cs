@@ -13,6 +13,7 @@ public class CameraMove : MonoBehaviour
     private float move;
     private int saveCount;
     private int count;
+    private ParticleSystem particle;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class CameraMove : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, defPosZ);
         oldPos = Vector3.zero;
         player = GameObject.FindWithTag("Player");
+        particle = GetComponent<ParticleSystem>();
     }
     void Update()
     {
@@ -51,10 +53,15 @@ public class CameraMove : MonoBehaviour
                 if (changeCount[nowCount] == 0)
                     target = defPosZ;
                 else
-                    target = (defPosZ - (changeCount[nowCount] / 5f));
+                    target = (defPosZ - (changeCount[nowCount] / 10f));
                 move = target - transform.position.z;
                 saveCount = nowCount;
                 count = 0;
+                particle.Play();
+            }
+            else
+            {
+                particle.Stop();
             }
         }
         else if (count < maxCount)
