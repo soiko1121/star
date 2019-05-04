@@ -33,7 +33,7 @@ Transform:
   m_LocalPosition: {x: 7.73, y: -1.08, z: 33.23}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
-  - {fileID: 4263600145455816247}
+  - {fileID: 3738614684979828879}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -143,9 +143,9 @@ MonoBehaviour:
     type: 3}
   planetHit: {fileID: 417893683686508984, guid: 84d06ed33181eb04c8fc9f5f259316fd,
     type: 3}
-  effectObject: {fileID: 4263600145455816244}
+  effectObject: {fileID: 3738614684979828876}
   split: 20
---- !u!1001 &4678832472152586799
+--- !u!1001 &5199386912045743255
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -214,15 +214,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a811fd1a040afeb49b12234b01169945, type: 3}
---- !u!1 &4263600145455816244 stripped
+--- !u!1 &3738614684979828876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8918768722123236379, guid: a811fd1a040afeb49b12234b01169945,
     type: 3}
-  m_PrefabInstance: {fileID: 4678832472152586799}
+  m_PrefabInstance: {fileID: 5199386912045743255}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4263600145455816247 stripped
+--- !u!4 &3738614684979828879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8918768722123236376, guid: a811fd1a040afeb49b12234b01169945,
     type: 3}
-  m_PrefabInstance: {fileID: 4678832472152586799}
+  m_PrefabInstance: {fileID: 5199386912045743255}
   m_PrefabAsset: {fileID: 0}
