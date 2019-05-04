@@ -46,7 +46,6 @@ public class LittlePlanetMove : MonoBehaviour
     {
         if (!gameGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
         {
-            ColorChange();
             if (!hit)
             {
                 if (count < 120)

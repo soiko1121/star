@@ -20,8 +20,7 @@ public class Thermography : MonoBehaviour
     {
         if (!DebugPC.pc)
         {
-            touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began && !coolTimeNow)
+            if (Input.GetMouseButtonDown(0) && !coolTimeNow)
             {
                 thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
                 coolTimeNow = true;
