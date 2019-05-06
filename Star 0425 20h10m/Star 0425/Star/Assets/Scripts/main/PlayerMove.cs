@@ -21,6 +21,11 @@ public class PlayerMove : MonoBehaviour
     {
         get; set;
     }
+    public enum View
+    {
+        back, side
+    };
+    public View viewSet = View.back;
     // Start is called before the first frame update
     void Start()
     {
