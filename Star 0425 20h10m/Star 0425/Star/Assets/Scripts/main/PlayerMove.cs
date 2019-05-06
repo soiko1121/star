@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     private Vector3 gyro, gyroSet, moveVec, velocitySet;
     private Rigidbody playerRB;
-    public float speed, slowdown;
+    public float speed, slowdown, set2DSpeed;
     public DebugText debugText;
     private int count;
     public TimeGenerator timeGenerator;
@@ -21,6 +21,11 @@ public class PlayerMove : MonoBehaviour
     {
         get; set;
     }
+    public enum View
+    {
+        back, side
+    };
+    public View viewSet = View.back;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +47,30 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timeGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
+        {
+            if (viewSet == View.side)
+            {
+                transform.position = new Vector3(transform.position.x - set2DSpeed, transform.position.y, transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x + set2DSpeed, transform.position.y, transform.position.z);
+            }
+        }
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
             return;
         }
-        if (!timeGenerator.GetComponent<TimeGenerator>().cameraMoveNow || true)
+
+        if (!DebugPC.pc)
         {
-            if (!DebugPC.pc)
+            Vector3 v3 = Vector3.zero;
+            //重力感知
+            gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -9.8f, 9.8f);
+            gyro.y = -Mathf.Clamp(((Input.gyro.gravity.y + 0.4f) * 2.0f), -9.8f, 9.8f);
+            velocitySet = playerRB.velocity;
+            if (gyro.x > 0)
             {
                 Vector3 v3 = Vector3.zero;
                 //重力感知
@@ -111,15 +133,7 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                if (Input.GetMouseButton(0))
-                {
-                    target = GetMousePosition();
-                    playerRB.velocity = Vector3.zero;
-                    playerRB.angularVelocity = Vector3.zero;
-                }
-                Vector3 pos = target - transform.position;
-                pos = pos.normalized * 10f;
-                playerRB.AddForce(pos);
+                pm.x = -1;
             }
             PosList.Add(transform.position);
             if (PosList.Count > 200 * 10)
@@ -128,6 +142,32 @@ public class PlayerMove : MonoBehaviour
             }
             count = 0;
         }
+        else
+        {
+            if (Input.GetMouseButton(0))
+            {
+                target = GetMousePosition();
+                playerRB.velocity = Vector3.zero;
+                playerRB.angularVelocity = Vector3.zero;
+            }
+            Vector3 pos = target - transform.position;
+            pos = pos.normalized * 10f;
+            playerRB.AddForce(pos);
+        }
+        if (count != 10)
+        {
+            count++;
+        }
+        else
+        {
+            PosList.Add(transform.position);
+            if (PosList.Count > 200)
+            {
+                PosList.RemoveAt(0);
+            }
+            count = 0;
+        }
+
     }
     Vector3 GetMousePosition()
     {

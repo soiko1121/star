@@ -4,99 +4,74 @@ using UnityEngine;
 
 public class TimeGenerator : MonoBehaviour
 {
-    private GameObject mainCamera;
+    private Camera mainCamera;
     public GameObject player, target;
+    private PlayerMove playerMove;
     private float timer, setRan, minAngle, maxAngle, rotaTimer, distance;
-    private enum View
-    {
-        back, forward, side
-    };
-    private View viewSet = View.back, viewOld;
+
     public float changeTime;
-    public bool cameraMoveNow;
+    public bool cameraMoveNow, zoneHit;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0.0f;
         cameraMoveNow = false;
-        mainCamera = Camera.main.gameObject;
+        mainCamera = Camera.main;
         rotaTimer = 0.0f;
+        zoneHit = false;
+        playerMove = player.GetComponent<PlayerMove>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Approximately(Time.timeScale, 0f))
+        if (!zoneHit)
         {
             return;
         }
         if (!cameraMoveNow)
         {
-            timer += 1 / 60.0f;
-            if (timer > changeTime)
+            switch (playerMove.viewSet)
             {
-                timer = 0;
+                case PlayerMove.View.back:
+                    playerMove.viewSet = PlayerMove.View.side;
+                    break;
+                case PlayerMove.View.side:
+                    playerMove.viewSet = PlayerMove.View.back;
+                    break;
+                default:
+                    break;
             }
-            if (timer == 0 && false)
-            {
-                cameraMoveNow = true;
-                viewOld = viewSet;
-
-                //setRan = Random.Range(1, 3);
-                //viewSet = View.forward;
-                switch (viewSet)
-                {
-                    case View.back:
-                        //if (setRan % 2 == 0)
-                        viewSet = View.forward;
-                        //else
-                        //    viewSet = View.side;
-                        break;
-                    case View.forward:
-                        //if (setRan % 2 == 0)
-                        viewSet = View.back;
-                        //else
-                        //    viewSet = View.side;
-                        break;
-                    //case View.side:
-                    //    if (setRan % 2 == 0)
-                    //        viewSet = View.forward;
-                    //    else
-                    //        viewSet = View.back;
-                    //    break;
-                    default:
-                        break;
-                }
-            }
+            cameraMoveNow = true;
+            playerMove.set2DSpeed = player.transform.position.x / 60.0f;
+            Time.timeScale = 0f;
         }
         else
         {
             CameraMove();
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            zoneHit = true;
+        }
+    }
     private void CameraMove()
     {
-        //mainCamera.transform.LookAt(player.transform);
-        switch (viewSet)
+        mainCamera.transform.LookAt(player.transform);
+        switch (playerMove.viewSet)
         {
-            case View.back:
-                if (viewOld == View.forward)
-                {
-                    minAngle = 180.0f;
-                    maxAngle = 360.0f;
-                    distance = 0;
-                }
+            case PlayerMove.View.back:
+                minAngle = -90.0f;
+                maxAngle = 0.0f;
+                distance = 0;
                 break;
-            case View.forward:
-                if (viewOld == View.back)
-                {
-                    minAngle = 0.0f;
-                    maxAngle = 180.0f;
-                    distance = 6;
-                }
-                break;
-            case View.side:
-
+            case PlayerMove.View.side:
+                minAngle = 0.0f;
+                maxAngle = -90.0f;
+                distance = 0;
                 break;
             default:
                 break;
@@ -109,8 +84,11 @@ public class TimeGenerator : MonoBehaviour
 
         if (rotaTimer >= 1f)
         {
+            mainCamera.orthographic = !mainCamera.orthographic;
             rotaTimer = 0;
             cameraMoveNow = false;
+            Time.timeScale = 1f;
+            zoneHit = false;
         }
     }
 }

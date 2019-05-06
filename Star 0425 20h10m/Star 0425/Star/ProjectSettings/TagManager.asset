@@ -11,6 +11,7 @@ TagManager:
   - DangerObject
   - Thermography
   - LittlePlanetController
+  - PointObject
   layers:
   - Default
   - TransparentFX
