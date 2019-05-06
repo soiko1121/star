@@ -22,22 +22,22 @@ public class Thermography : MonoBehaviour
         {
             return;
         }
-        if (!DebugPC.pc)
-        {
-            if (Input.GetMouseButtonDown(0) && !coolTimeNow)
-            {
-                thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
-                coolTimeNow = true;
-            }
-        }
-        else
-        {
-            if (Input.GetMouseButtonDown(1) && !coolTimeNow)
-            {
-                thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
-                coolTimeNow = true;
-            }
-        }
+        //if (!DebugPC.pc)
+        //{
+        //    if (Input.GetMouseButtonDown(0) && !coolTimeNow)
+        //    {
+        //        thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
+        //        coolTimeNow = true;
+        //    }
+        //}
+        //else
+        //{
+        //    if (Input.GetMouseButtonDown(1) && !coolTimeNow)
+        //    {
+        //        thermography = Instantiate(thermographyOriginal, transform.position, Quaternion.identity) as GameObject;
+        //        coolTimeNow = true;
+        //    }
+        //}
         if (coolTimeNow)
         {
             coolTimer++;

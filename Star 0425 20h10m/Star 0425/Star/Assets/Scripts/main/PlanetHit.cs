@@ -23,12 +23,11 @@ public class PlanetHit : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "MiniStar" && !oneHit)
+        if (other.gameObject.tag == "Player" || (other.gameObject.tag == "MiniStar" && !oneHit))
         {
             particle.Play();
             BurstPlanet();
             myRenderer.enabled = false;
-            //Destroy(gameObject);
             oneHit = true;
         }
     }
