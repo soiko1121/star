@@ -43,6 +43,7 @@ public class TimeGenerator : MonoBehaviour
                     break;
             }
             cameraMoveNow = true;
+            playerMove.set2DSpeed = player.transform.position.x / 60.0f;
             Time.timeScale = 0f;
         }
         else
@@ -57,19 +58,19 @@ public class TimeGenerator : MonoBehaviour
             zoneHit = true;
         }
     }
-        private void CameraMove()
+    private void CameraMove()
     {
         mainCamera.transform.LookAt(player.transform);
         switch (playerMove.viewSet)
         {
             case PlayerMove.View.back:
-                minAngle = 90.0f;
+                minAngle = -90.0f;
                 maxAngle = 0.0f;
                 distance = 0;
                 break;
             case PlayerMove.View.side:
                 minAngle = 0.0f;
-                maxAngle = 90.0f;
+                maxAngle = -90.0f;
                 distance = 0;
                 break;
             default:
