@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8284611861000869978}
   m_Layer: 0
   m_Name: rock0202
-  m_TagString: Untagged
+  m_TagString: PointObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
