@@ -8,32 +8,30 @@ public class LittlePlanetMove : MonoBehaviour
     public float speed;
     public bool up;
     public bool left;
-
-    public float corpsSpeed;
-    public int corpsSplit;
-    //public int corpsSplitX;
-    //public int corpsSplitY;
-    public float widthSplit;
-    public float heightSplit;
-
+    private GameObject littlePlanetController;
+    private LittlePlanetController controller;
 
     private GameObject player;
     private Rigidbody littlePlanetRB;
-    private bool hit, blockDel = false;
     private int count, moveCount;
     private float distance;
-
+    private Vector3 oldPos;
     private GameObject gameGenerator;
+    public bool Hit
+    {
+        get; set;
+    }
     public int Number
     {
         get; set;
     }
     void Start()
     {
-        hit = false;
+        Hit = false;
         Number = -1;
         count = 0;
         moveCount = 120;
+        oldPos = Vector3.zero;
         player = GameObject.FindWithTag("Player");
         littlePlanetRB = GetComponent<Rigidbody>();
         littlePlanetRB.AddForce((transform.position - target) * 300f);//目的地と反対に飛ばす
@@ -50,7 +48,7 @@ public class LittlePlanetMove : MonoBehaviour
         }
         if (!gameGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
         {
-            if (!hit)
+            if (!Hit)
             {
                 if (count < 120)
                 {
@@ -79,10 +77,17 @@ public class LittlePlanetMove : MonoBehaviour
     }
     private void Corps()
     {
+        littlePlanetController = GameObject.FindWithTag("LittlePlanetController");
+        controller = littlePlanetController.GetComponent<LittlePlanetController>();
         littlePlanetRB.velocity = Vector3.zero;
         littlePlanetRB.angularVelocity = Vector3.zero;
         Vector3 target;
         int index = player.GetComponent<PlayerMove>().PosList.Count - 1;
+        int corpsIndex = Number / controller.GetComponent<LittlePlanetController>().corpsSplit;
+
+        if (index < corpsIndex * controller.Delay)
+            corpsIndex = index / controller.Delay;
+
 
         if (moveCount != 120)
         {
@@ -90,18 +95,42 @@ public class LittlePlanetMove : MonoBehaviour
         }
         else
         {
-            distance = Random.Range(0.5f, heightSplit + 1f + index * 0.0001f * (Number / corpsSplit));
+            distance = Random.Range(controller.GetComponent<LittlePlanetController>().heightSplit, 1f + 0.01f * (Number / controller.corpsSplit));
             moveCount = 0;
         }
+        if (Input.GetMouseButton(1))
+        {
+            target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 5)].x +
+                distance * Mathf.Cos(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-        target.x = player.GetComponent<PlayerMove>().PosList[index - (Number / corpsSplit)].x + distance * Mathf.Cos(((360f / corpsSplit) * (Number % corpsSplit)) * Mathf.Deg2Rad);
+            target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 5)].y +
+                distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-        target.y = player.GetComponent<PlayerMove>().PosList[index - (Number / corpsSplit)].y + distance * Mathf.Sin(((360f / corpsSplit) * (Number % corpsSplit)) * Mathf.Deg2Rad);
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 5)].z - 1 - controller.widthSplit / 5 * corpsIndex;
+            oldPos = target;
+        }
+        else if (corpsIndex < controller.DelayCount)
+        {
+            target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].x +
+                distance * Mathf.Cos(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-        target.z = player.GetComponent<PlayerMove>().PosList[index - (Number / corpsSplit)].z - 1 - widthSplit * (Number / corpsSplit);
+            target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].y +
+                distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
+
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - 1 - controller.widthSplit / 5 * corpsIndex;
+        }
+        else
+        {
+            target.x = oldPos.x + distance * Mathf.Cos(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
+
+            target.y = oldPos.y + distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
+
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - 1 - controller.widthSplit * corpsIndex;
+        }
+
 
         Vector3 move = target - transform.position;
-        littlePlanetRB.AddForce(move * corpsSpeed);
+        littlePlanetRB.AddForce(move * controller.corpsSpeed);
     }
     private void ColorChange()
     {
@@ -131,20 +160,15 @@ public class LittlePlanetMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Group")
         {
-            hit = true;
+            Hit = true;
             littlePlanetRB.velocity = Vector3.zero;
             littlePlanetRB.angularVelocity = Vector3.zero;
         }
 
-        if (other.gameObject.tag == "DangerObject" && !other.gameObject.GetComponent<ThermographyHit>().thermographyHitNow)
+        if (other.gameObject.tag == "DangerObject" && !other.gameObject.GetComponent<ThermographyHit>().thermographyHitNow && Hit)
         {
+            gameGenerator.GetComponent<GameGenerator>().star--;
             Destroy(gameObject);
-            if (!blockDel)
-            {
-                gameGenerator.GetComponent<GameGenerator>().star--;
-                blockDel = true;
-            }
-
         }
     }
 }

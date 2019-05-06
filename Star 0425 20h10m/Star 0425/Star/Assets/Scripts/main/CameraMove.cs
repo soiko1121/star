@@ -7,7 +7,7 @@ public class CameraMove : MonoBehaviour
     public GameGenerator gameGenerator;
     public GameObject[] particles;
     public float defPosZ;
-    public int maxCount;
+    public int maxCount = 0;
     public float maxDistanse;
     private Vector3 oldPos;
     private GameObject player;

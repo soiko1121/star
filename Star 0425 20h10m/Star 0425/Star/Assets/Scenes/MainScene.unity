@@ -1248,7 +1248,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 2000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -6538,7 +6538,7 @@ GameObject:
   - component: {fileID: 1200639707}
   m_Layer: 0
   m_Name: LittlePlanetController
-  m_TagString: Untagged
+  m_TagString: LittlePlanetController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6555,6 +6555,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82edaa64557f48c469b90c7422aa3595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corpsSpeed: 50
+  corpsSplit: 5
+  widthSplit: 0.5
+  heightSplit: 0.5
+  delayTime: 10
 --- !u!4 &1200639708
 Transform:
   m_ObjectHideFlags: 0
@@ -7877,6 +7882,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 5dd345fc2cf0c52438c8c17ea789cb6f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dd345fc2cf0c52438c8c17ea789cb6f, type: 3}
 --- !u!4 &2081076487 stripped
@@ -7941,7 +7950,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: 10
   m_CullingMask:

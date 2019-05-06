@@ -125,7 +125,4 @@ MonoBehaviour:
   speed: 100
   up: 0
   left: 0
-  corpsSpeed: 100
-  corpsSplit: 5
-  widthSplit: 0.5
-  heightSplit: 0.5
+  littlePlanetController: {fileID: 4092222512189884956}

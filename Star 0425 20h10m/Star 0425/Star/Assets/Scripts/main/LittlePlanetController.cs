@@ -5,6 +5,27 @@ using UnityEngine;
 public class LittlePlanetController : MonoBehaviour
 {
     private GameObject[] littlePlanets = new GameObject[100];
+
+    public float corpsSpeed;
+    public int corpsSplit;
+    public float widthSplit;
+    public float heightSplit;
+    public int delayTime;
+
+    private int count;
+    private GameObject player;
+    public int Delay
+    {
+        get; set;
+    }
+    public int DelayCount
+    {
+        get; set;
+    }
+    public float WidthDistance
+    {
+        get; set;
+    }
     public List<int> TagList
     {
         get; set;
@@ -13,9 +34,30 @@ public class LittlePlanetController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DelayCount = 1000;
+        count = 0;
         TagList = new List<int>();
+        player = GameObject.FindWithTag("Player");
     }
-
+    private void Update()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            DelayCount = 0;
+        }
+        else
+        {
+            if (count < 10)
+                count++;
+            else
+            {
+                if (DelayCount < 1000)
+                    DelayCount++;
+                count = 0;
+            }
+            Delay = delayTime;
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {

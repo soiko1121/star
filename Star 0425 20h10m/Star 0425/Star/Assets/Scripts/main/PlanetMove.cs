@@ -25,6 +25,5 @@ public class PlanetMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }
