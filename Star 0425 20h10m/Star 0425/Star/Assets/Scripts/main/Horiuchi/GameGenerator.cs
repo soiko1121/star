@@ -42,6 +42,10 @@ public class GameGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         if (star >= musicChangeCount[0] && star < musicChangeCount[1])
         {
             musicCnt = 0;

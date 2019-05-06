@@ -6,20 +6,30 @@ public class PlanetHit : MonoBehaviour
 {
     public GameObject littlePlanetOriginal;
     public GameObject[] littlePlanet;
+    public GameObject effectObject;
     public int split;
+
+    private ParticleSystem particle;
+    private Renderer myRenderer;
+    private bool oneHit = false;
 
     void Start()
     {
         //split = (int)planet.transform.localScale.x * 5;
         littlePlanet = new GameObject[split];
+        particle = effectObject.GetComponent<ParticleSystem>();
+        myRenderer = GetComponent<Renderer>();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "MiniStar" && !oneHit)
         {
+            particle.Play();
             BurstPlanet();
-            Destroy(gameObject);
+            myRenderer.enabled = false;
+            //Destroy(gameObject);
+            oneHit = true;
         }
     }
     public void BurstPlanet()

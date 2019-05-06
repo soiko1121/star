@@ -21,6 +21,10 @@ public class VolumeControl1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         switch (gameGenerator.GetComponent<GameGenerator>().musicCnt)
         {
             case 0:

@@ -18,8 +18,6 @@ public class DebugText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<Text>().text = "X:" + debugVec3.x.ToString() + "\nY:" + debugVec3.y.ToString() + "\nZ:" + debugVec3.z.ToString();
-        //GetComponent<Text>().text = "X:" + debugQuater.x.ToString() + "\nY:" + debugQuater.y.ToString() + "\nZ:" + debugQuater.z.ToString() + "\nW:" + debugQuater.w.ToString();
         GetComponent<Text>().text = text.ToString();
     }
 }

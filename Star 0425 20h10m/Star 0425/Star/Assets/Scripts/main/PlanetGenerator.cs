@@ -23,6 +23,10 @@ public class PlanetGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         if (count % second == 0)
         {
             Vector3 v3 = new Vector3(0, 0, 5);

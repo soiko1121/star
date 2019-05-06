@@ -15,6 +15,10 @@ public class ThermographyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         transform.position += Vector3.forward * (30/60.0f);
         if (transform.localScale.x < 50)
         {

@@ -44,6 +44,10 @@ public class LittlePlanetMove : MonoBehaviour
 
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         if (!gameGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
         {
             if (!hit)

@@ -16,7 +16,10 @@ public class PlanetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         planetRB.AddForce(Vector3.back * speed);
         if (transform.position.z < -20)
         {

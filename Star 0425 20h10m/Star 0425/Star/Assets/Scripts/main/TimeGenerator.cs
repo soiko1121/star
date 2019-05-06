@@ -26,6 +26,10 @@ public class TimeGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         if (!cameraMoveNow)
         {
             timer += 1 / 60.0f;
