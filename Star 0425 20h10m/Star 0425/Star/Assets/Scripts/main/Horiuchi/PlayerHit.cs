@@ -14,7 +14,7 @@ public class PlayerHit : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "DangerObject" && !other.gameObject.GetComponent<ThermographyHit>().thermographyHitNow)
+        if (other.gameObject.tag == "DangerObject")
         {
             if(SystemInfo.supportsVibration)
             {

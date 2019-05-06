@@ -47,36 +47,36 @@ public class GameGenerator : MonoBehaviour
         if (star >= musicChangeCount[0] && star < musicChangeCount[1])
         {
             musicCnt = 0;
-            speed = 3;
+            speed = 1;
         }
         else if (star < musicChangeCount[2])
         {
-            speed = 4;
+            speed = 2;
             musicCnt = 1;
         }
         else if (star < musicChangeCount[3])
         {
-            speed = 5;
+            speed = 3;
             musicCnt = 2;
         }
         else if (star < musicChangeCount[4])
         {
-            speed = 7;
+            speed = 4;
             musicCnt = 3;
         }
         else if (star < musicChangeCount[5])
         {
-            speed = 8;
+            speed = 5;
             musicCnt = 4;
         }
         else if (star < musicChangeCount[6])
         {
-            speed = 9;
+            speed = 6;
             musicCnt = 5;
         }
         else
         {
-            speed = 10;
+            speed = 7;
         }
         TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
         if (!timeGenerator.cameraMoveNow && Time.timeScale == 1f)

@@ -136,7 +136,7 @@ public class LittlePlanetMove : MonoBehaviour
             littlePlanetRB.angularVelocity = Vector3.zero;
         }
 
-        if (other.gameObject.tag == "DangerObject" && !other.gameObject.GetComponent<ThermographyHit>().thermographyHitNow)
+        if (other.gameObject.tag == "DangerObject")
         {
             Destroy(gameObject);
             if (!blockDel)
