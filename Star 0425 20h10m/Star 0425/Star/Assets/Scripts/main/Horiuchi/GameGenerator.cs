@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameGenerator : MonoBehaviour
 {
-    public GameObject planetMove;
-    public GameObject bulackHole;
     public int star, maxstar;
     public float distance, speed;
     public int musicCnt;
@@ -90,8 +88,6 @@ public class GameGenerator : MonoBehaviour
         {
             speed = 0;
         }
-        planetMove.GetComponent<PlanetMove>().speed = speed;
-        bulackHole.GetComponent<PlanetMove>().speed = speed;
         if (maxstar <= star)
         {
             maxstar = star;
