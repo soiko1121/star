@@ -65,7 +65,6 @@ public class PlayerMove : MonoBehaviour
 
         if (!DebugPC.pc)
         {
-            Vector3 v3 = Vector3.zero;
             //重力感知
             gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -9.8f, 9.8f);
             gyro.y = -Mathf.Clamp(((Input.gyro.gravity.y + 0.4f) * 2.0f), -9.8f, 9.8f);
@@ -135,12 +134,6 @@ public class PlayerMove : MonoBehaviour
             {
                 pm.x = -1;
             }
-            PosList.Add(transform.position);
-            if (PosList.Count > 200 * 10)
-            {
-                PosList.RemoveAt(0);
-            }
-            count = 0;
         }
         else
         {
@@ -154,20 +147,12 @@ public class PlayerMove : MonoBehaviour
             pos = pos.normalized * 10f;
             playerRB.AddForce(pos);
         }
-        if (count != 10)
+        PosList.Add(transform.position);
+        if (PosList.Count > 200 * 10)
         {
-            count++;
+            PosList.RemoveAt(0);
         }
-        else
-        {
-            PosList.Add(transform.position);
-            if (PosList.Count > 200)
-            {
-                PosList.RemoveAt(0);
-            }
-            count = 0;
-        }
-
+        count = 0;
     }
     Vector3 GetMousePosition()
     {

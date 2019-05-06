@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82edaa64557f48c469b90c7422aa3595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corpsSpeed: 50
+  corpsSpeed: 60
   corpsSplit: 5
   widthSplit: 0.5
   heightSplit: 0.5
