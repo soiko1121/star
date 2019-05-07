@@ -12,6 +12,7 @@ public class PlanetHit : MonoBehaviour
     private ParticleSystem particle;
     private Renderer myRenderer;
     private bool oneHit = false;
+    private GameObject player;
 
     void Start()
     {
@@ -19,8 +20,8 @@ public class PlanetHit : MonoBehaviour
         littlePlanet = new GameObject[split];
         particle = effectObject.GetComponent<ParticleSystem>();
         myRenderer = GetComponent<Renderer>();
+        player = GameObject.FindWithTag("Player");
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" || (other.gameObject.tag == "MiniStar" && !oneHit))
@@ -37,10 +38,21 @@ public class PlanetHit : MonoBehaviour
         {
             float distanse = Random.Range(0f, 20f) / 10;
             float angle = Random.Range(0, 36000f / split) / 100f + 360f / split * i;
-            Vector3 v3 = new Vector3(
-                distanse * Mathf.Cos(angle * Mathf.Deg2Rad) + transform.position.x,
-                distanse * Mathf.Sin(angle * Mathf.Deg2Rad) + transform.position.y,
-                transform.position.z);
+            Vector3 v3;
+            if (player.GetComponent<PlayerMove>().viewSet == PlayerMove.View.back)
+            {
+                v3 = new Vector3(
+                                distanse * Mathf.Cos(angle * Mathf.Deg2Rad) + transform.position.x,
+                                distanse * Mathf.Sin(angle * Mathf.Deg2Rad) + transform.position.y,
+                                transform.position.z);
+            }
+            else
+            {
+                v3 = new Vector3(
+                                transform.position.x,
+                                distanse * Mathf.Sin(angle * Mathf.Deg2Rad) + transform.position.y,
+                                -Mathf.Abs(distanse * Mathf.Cos(angle * Mathf.Deg2Rad)) + transform.position.z);
+            }
 
             littlePlanet[i] = Instantiate(littlePlanetOriginal, v3, Quaternion.identity) as GameObject;
             littlePlanet[i].GetComponent<LittlePlanetMove>().target = transform.position;

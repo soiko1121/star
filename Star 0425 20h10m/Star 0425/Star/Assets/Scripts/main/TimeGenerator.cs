@@ -35,15 +35,16 @@ public class TimeGenerator : MonoBehaviour
             {
                 case PlayerMove.View.back:
                     playerMove.viewSet = PlayerMove.View.side;
+                    playerMove.set2DSpeed = player.transform.position.x / 60.0f;
                     break;
                 case PlayerMove.View.side:
                     playerMove.viewSet = PlayerMove.View.back;
+                    playerMove.set2DSpeed = player.transform.position.z / 60.0f;
                     break;
                 default:
                     break;
             }
             cameraMoveNow = true;
-            playerMove.set2DSpeed = player.transform.position.x / 60.0f;
             Time.timeScale = 0f;
         }
         else
@@ -60,7 +61,7 @@ public class TimeGenerator : MonoBehaviour
     }
     private void CameraMove()
     {
-        mainCamera.transform.LookAt(player.transform);
+        //mainCamera.transform.LookAt(player.transform);
         switch (playerMove.viewSet)
         {
             case PlayerMove.View.back:
@@ -71,7 +72,7 @@ public class TimeGenerator : MonoBehaviour
             case PlayerMove.View.side:
                 minAngle = 0.0f;
                 maxAngle = -90.0f;
-                distance = 0;
+                distance = 17;
                 break;
             default:
                 break;
