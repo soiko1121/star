@@ -39,21 +39,22 @@ public class PlanetMove : MonoBehaviour
         {
             return;
         }
-        planetRB.AddForce(Vector3.back * gameGenerator.GetComponent<GameGenerator>().speed);
+        planetRB.velocity = Vector3.back * gameGenerator.GetComponent<GameGenerator>().speed;
         if (transform.position.z < -20)
         {
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "PointObject" || other.gameObject.tag == "DangerObject")
+        if (collision.gameObject.tag == "PointObject" || collision.gameObject.tag == "DangerObject")
         {
-            if (other.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
+            if (collision.gameObject.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
             {
                 GetComponent<Renderer>().enabled = false;
                 GetComponent<Collider>().enabled = false;
             }
         }
+
     }
 }

@@ -7,7 +7,8 @@ public class GameGenerator : MonoBehaviour
     public int star, maxstar;
     public float distance, speed;
     public int musicCnt;
-
+    [SerializeField]
+    private float[] objectSpeed;
     public int[] musicChangeCount
     {
         get; set;
@@ -47,36 +48,36 @@ public class GameGenerator : MonoBehaviour
         if (star >= musicChangeCount[0] && star < musicChangeCount[1])
         {
             musicCnt = 0;
-            speed = 1;
+            speed = objectSpeed[0];
         }
         else if (star < musicChangeCount[2])
         {
-            speed = 2;
+            speed = objectSpeed[1];
             musicCnt = 1;
         }
         else if (star < musicChangeCount[3])
         {
-            speed = 3;
+            speed = objectSpeed[2];
             musicCnt = 2;
         }
         else if (star < musicChangeCount[4])
         {
-            speed = 4;
+            speed = objectSpeed[3];
             musicCnt = 3;
         }
         else if (star < musicChangeCount[5])
         {
-            speed = 5;
+            speed = objectSpeed[4];
             musicCnt = 4;
         }
         else if (star < musicChangeCount[6])
         {
-            speed = 6;
+            speed = objectSpeed[5];
             musicCnt = 5;
         }
         else
         {
-            speed = 7;
+            speed = objectSpeed[6];
         }
         TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
         if (!timeGenerator.cameraMoveNow && Time.timeScale == 1f)
