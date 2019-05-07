@@ -161,7 +161,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   effectObject: {fileID: 8917304510688719670}
-  split: 10
+  split: 20
 --- !u!1001 &9024244065928588759
 PrefabInstance:
   m_ObjectHideFlags: 0
