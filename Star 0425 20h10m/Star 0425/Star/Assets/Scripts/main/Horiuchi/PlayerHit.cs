@@ -18,7 +18,7 @@ public class PlayerHit : MonoBehaviour
         if (count < 60)
         {
             count++;
-            gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", false);
+            //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", false);
         }
     }
     void OnTriggerEnter(Collider other)
@@ -28,7 +28,7 @@ public class PlayerHit : MonoBehaviour
             if (SystemInfo.supportsVibration)
             {
                 Handheld.Vibrate();
-                gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", true);
+                //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", true);
             }
             if (gameGenerator.GetComponent<GameGenerator>().star <= 0)
             {
