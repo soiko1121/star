@@ -69,7 +69,6 @@ public class PlayerMove : MonoBehaviour
             //重力感知
             gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -9.8f, 9.8f);
             gyro.y = Mathf.Clamp(((Input.gyro.gravity.z + 0.8f) * 2.0f), -9.8f, 9.8f);
-            velocitySet = playerRB.velocity;
             if (gyro.x > 0)
             {
                 pm.x = 1;
@@ -86,33 +85,23 @@ public class PlayerMove : MonoBehaviour
             {
                 pm.y = -1;
             }
-            if (moveVec.x < 0 && gyro.x > 0 || moveVec.x > 0 && gyro.x < 0)
-            {
-                velocitySet.x /= slowdown;
-                velocitySet.x = 0;
-            }
-            if (moveVec.y < 0 && gyro.y > 0 || moveVec.y > 0 && gyro.y < 0)
-            {
-                velocitySet.y /= slowdown;
-                velocitySet.y = 0;
-            }
             accelerationCount.x = (Mathf.Abs(gyro.x) / (9.8f / maxAcceleration.x));
             accelerationCount.y = (Mathf.Abs(gyro.y) / (9.8f / maxAcceleration.y));
-            playerRB.velocity = velocitySet;
-            //playerRB.AddForce(gyro * speed);
             if (viewSet == View.back)
             {
-                v3.x = accelerationCount.x * (9.8f / maxAcceleration.x) * speed;
-                v3.y = accelerationCount.y * (9.8f / maxAcceleration.y) * speed;
-                transform.position += v3 *= pm;
+                transform.position = new Vector3(
+                    transform.position.x + accelerationCount.x * (9.8f / maxAcceleration.x) * speed * pm.x,
+                    transform.position.y + accelerationCount.y * (9.8f / maxAcceleration.y) * speed * pm.y,
+                    0);
             }
             else
             {
-                v3.z = accelerationCount.x * (9.8f / maxAcceleration.x) * speed;
-                v3.y = accelerationCount.y * (9.8f / maxAcceleration.y) * speed;
-                transform.position += v3 *= pm;
+                transform.position = new Vector3(
+                    0,
+                    transform.position.y + accelerationCount.y * (9.8f / maxAcceleration.y) * speed * pm.y,
+                    transform.position.z + accelerationCount.x * (9.8f / maxAcceleration.x) * speed * pm.x);
             }
-
+            v3 = transform.position;
             if (transform.position.x < -16)
             {
                 v3.x = -16;
@@ -138,7 +127,6 @@ public class PlayerMove : MonoBehaviour
                 v3.z = 2;
             }
             transform.position = v3;
-            moveVec = gyro;
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;
         }
         else
