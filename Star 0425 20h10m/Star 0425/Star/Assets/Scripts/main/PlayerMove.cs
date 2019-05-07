@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public Animator anime;
     private Vector3 gyro, gyroSet, moveVec, velocitySet;
     private Rigidbody playerRB;
     public float speed, slowdown, set2DSpeed;
     public DebugText debugText;
-    private int count;
     public TimeGenerator timeGenerator;
 
     //public Vector2 accelerationSpeed;
@@ -39,6 +39,8 @@ public class PlayerMove : MonoBehaviour
         gyro = Vector3.zero;
         gyroSet = Vector3.zero;
 
+        anime = GetComponent<Animator>();
+
         accelerationCount = Vector2.zero;
         //acceleration = accelerationSpeed / maxAcceleration;
         pm = new Vector2(1, 1);
@@ -57,6 +59,10 @@ public class PlayerMove : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - set2DSpeed);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DebugPC.pc = true;
         }
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
@@ -127,6 +133,7 @@ public class PlayerMove : MonoBehaviour
                 v3.z = 2;
             }
             transform.position = v3;
+            Animation();
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;
         }
         else
@@ -146,7 +153,20 @@ public class PlayerMove : MonoBehaviour
         {
             PosList.RemoveAt(0);
         }
-        count = 0;
+    }
+    private void Animation()
+    {
+        if (gyro.x > 0)
+        {
+            anime.SetBool("IsRight", true);
+            anime.SetBool("IsLeft", false);
+        }
+        else
+        {
+            anime.SetBool("IsLeft", true);
+            anime.SetBool("IsRight", false);
+        }
+        anime.SetBool("IsFloat", false);
     }
     Vector3 GetMousePosition()
     {
