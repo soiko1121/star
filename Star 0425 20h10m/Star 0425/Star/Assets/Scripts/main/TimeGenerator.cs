@@ -60,7 +60,7 @@ public class TimeGenerator : MonoBehaviour
     }
     private void CameraMove()
     {
-        mainCamera.transform.LookAt(player.transform);
+        //mainCamera.transform.LookAt(player.transform);
         switch (playerMove.viewSet)
         {
             case PlayerMove.View.back:
@@ -71,7 +71,7 @@ public class TimeGenerator : MonoBehaviour
             case PlayerMove.View.side:
                 minAngle = 0.0f;
                 maxAngle = -90.0f;
-                distance = 0;
+                distance = 17;
                 break;
             default:
                 break;

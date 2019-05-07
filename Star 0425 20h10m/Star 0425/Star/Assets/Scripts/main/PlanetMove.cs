@@ -39,7 +39,7 @@ public class PlanetMove : MonoBehaviour
         {
             return;
         }
-        planetRB.AddForce(Vector3.back * gameGenerator.GetComponent<GameGenerator>().speed);
+        planetRB.velocity = Vector3.back * gameGenerator.GetComponent<GameGenerator>().speed;
         if (transform.position.z < -20)
         {
             Destroy(gameObject);

@@ -1247,7 +1247,7 @@ Camera:
   far clip plane: 2000
   field of view: 60
   orthographic: 0
-  orthographic size: 11.5
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3429,6 +3429,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
         type: 3}
+      propertyPath: objectSpeed.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
       propertyPath: starCount
       value: 
       objectReference: {fileID: 1840991595}
@@ -3444,6 +3449,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5369874894345377155, guid: faae28dd3a61b67449c6547ae529437f,
         type: 3}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
+      propertyPath: objectSpeed.Array.data[0]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
+      propertyPath: objectSpeed.Array.data[1]
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
+      propertyPath: objectSpeed.Array.data[2]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
+      propertyPath: objectSpeed.Array.data[3]
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
+      propertyPath: objectSpeed.Array.data[4]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
+      propertyPath: objectSpeed.Array.data[5]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388096640501033390, guid: d5f7bfe844335c24f9f1aa21681d9a64,
+        type: 3}
+      propertyPath: objectSpeed.Array.data[6]
+      value: 38
+      objectReference: {fileID: 0}
     - target: {fileID: 5478773341794001502, guid: d5f7bfe844335c24f9f1aa21681d9a64,
         type: 3}
       propertyPath: m_LocalPosition.x
