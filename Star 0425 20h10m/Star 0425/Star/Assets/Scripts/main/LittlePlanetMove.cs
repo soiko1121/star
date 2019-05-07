@@ -100,13 +100,13 @@ public class LittlePlanetMove : MonoBehaviour
         }
         if (Input.GetMouseButton(1))
         {
-            target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 5)].x +
+            target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x +
                 distance * Mathf.Cos(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-            target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 5)].y +
+            target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].y +
                 distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 5)].z - 1 - controller.widthSplit / 5 * corpsIndex;
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].z - 1 - controller.widthSplit / 5 * corpsIndex;
             oldPos = target;
         }
         else if (corpsIndex < controller.DelayCount)
