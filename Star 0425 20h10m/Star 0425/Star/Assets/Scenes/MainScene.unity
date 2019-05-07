@@ -3065,6 +3065,7 @@ MonoBehaviour:
   set2DSpeed: 0
   debugText: {fileID: 889048260}
   timeGenerator: {fileID: 556399690}
+  ySpeed2D: 1.5
   maxAcceleration: {x: 5, y: 5}
   viewSet: 0
 --- !u!54 &1859025557

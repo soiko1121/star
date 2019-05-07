@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     public float speed, slowdown, set2DSpeed;
     public DebugText debugText;
     public TimeGenerator timeGenerator;
+    public float ySpeed2D;
 
     //public Vector2 accelerationSpeed;
     public Vector2 maxAcceleration;
@@ -104,7 +105,7 @@ public class PlayerMove : MonoBehaviour
             {
                 transform.position = new Vector3(
                     0,
-                    transform.position.y + accelerationCount.y * (9.8f / maxAcceleration.y) * speed * pm.y,
+                    transform.position.y + accelerationCount.y * (9.8f / maxAcceleration.y) * speed * ySpeed2D * pm.y,
                     transform.position.z + accelerationCount.x * (9.8f / maxAcceleration.x) * speed * pm.x);
             }
             v3 = transform.position;
