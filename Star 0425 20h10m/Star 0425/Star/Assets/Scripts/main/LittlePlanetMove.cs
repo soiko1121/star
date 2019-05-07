@@ -117,7 +117,7 @@ public class LittlePlanetMove : MonoBehaviour
             target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].y +
                 distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - 1 - controller.widthSplit / 5 * corpsIndex;
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - 1 - controller.widthSplit * corpsIndex;
         }
         else
         {
