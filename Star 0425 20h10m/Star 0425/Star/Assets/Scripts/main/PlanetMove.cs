@@ -45,11 +45,11 @@ public class PlanetMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "PointObject" || collision.gameObject.tag == "DangerObject")
+        if (other.gameObject.tag == "PointObject" || other.gameObject.tag == "DangerObject")
         {
-            if (collision.gameObject.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
+            if (other.gameObject.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
             {
                 GetComponent<Renderer>().enabled = false;
                 GetComponent<Collider>().enabled = false;
