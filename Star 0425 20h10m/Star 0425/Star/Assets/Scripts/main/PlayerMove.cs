@@ -55,7 +55,7 @@ public class PlayerMove : MonoBehaviour
             }
             else
             {
-                transform.position = new Vector3(transform.position.x + set2DSpeed, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - set2DSpeed);
             }
         }
         if (Mathf.Approximately(Time.timeScale, 0f))

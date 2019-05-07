@@ -35,15 +35,16 @@ public class TimeGenerator : MonoBehaviour
             {
                 case PlayerMove.View.back:
                     playerMove.viewSet = PlayerMove.View.side;
+                    playerMove.set2DSpeed = player.transform.position.x / 60.0f;
                     break;
                 case PlayerMove.View.side:
                     playerMove.viewSet = PlayerMove.View.back;
+                    playerMove.set2DSpeed = player.transform.position.z / 60.0f;
                     break;
                 default:
                     break;
             }
             cameraMoveNow = true;
-            playerMove.set2DSpeed = player.transform.position.x / 60.0f;
             Time.timeScale = 0f;
         }
         else
