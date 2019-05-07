@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Loader : MonoBehaviour
 {
     bool touchFlag;
-    int count;
 
     AsyncOperation async;
 
@@ -18,7 +17,6 @@ public class Loader : MonoBehaviour
 
     public void Start()
     {
-        count = 0;
         touchFlag = false;
         slider.enabled = false;
         _UI.SetActive(false);
@@ -55,14 +53,9 @@ public class Loader : MonoBehaviour
         }
 
         if (slider.value == 1f)
-        {         
-            if (count >= 110)
-            {
-                _UI.SetActive(false);
-                _Button.SetActive(true);
-            }
-            else
-                count++;
+        {
+            _UI.SetActive(false);
+            _Button.SetActive(true);
         }
     }
 
