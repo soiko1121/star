@@ -133,6 +133,7 @@ public class PlayerMove : MonoBehaviour
                 v3.z = 2;
             }
             transform.position = v3;
+            Animation();
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;
         }
         else
@@ -152,15 +153,13 @@ public class PlayerMove : MonoBehaviour
         {
             PosList.RemoveAt(0);
         }
-        Animation();
     }
     private void Animation()
     {
         if (gyro.x > 0)
         {
             anime.SetBool("IsRight", true);
-            anime.SetBool("IsLeft", false)
-                 ;
+            anime.SetBool("IsLeft", false);
         }
         else
         {
