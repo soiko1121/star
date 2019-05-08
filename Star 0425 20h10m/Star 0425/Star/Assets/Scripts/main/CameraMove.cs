@@ -22,7 +22,7 @@ public class CameraMove : MonoBehaviour
     {
         saveCount = 0;
         count = 0;
-        transform.position = new Vector3(transform.position.x, transform.position.y, defPosZ);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, defPosZ);
         oldPos = Vector3.zero;
         player = GameObject.FindWithTag("Player");
         particle = particles[0].GetComponent<ParticleSystem>();
@@ -33,11 +33,12 @@ public class CameraMove : MonoBehaviour
         {
             return;
         }
-        Vector3 v3 = player.transform.position - oldPos;
-        targetV3 = new Vector3(player.transform.position.x / (saveCount + 1), player.transform.position.y / (saveCount + 1), transform.position.z);
-        transform.position += new Vector3((targetV3.x - transform.position.x) / (saveCount + 1), (targetV3.y - transform.position.y) / (saveCount + 1), 0);
-        oldPos = player.transform.position;
-        transform.LookAt(player.transform.position);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 4, transform.position.z);
+        //Vector3 v3 = player.transform.position - oldPos;
+        //targetV3 = new Vector3(player.transform.position.x / (saveCount + 1), player.transform.position.y / (saveCount + 1), transform.position.z);
+        //transform.position += new Vector3((targetV3.x - transform.position.x) / (saveCount + 1), (targetV3.y - transform.position.y) / (saveCount + 1), 0);
+        //oldPos = player.transform.position;
+        //transform.LookAt(player.transform.position);
 
         int star = gameGenerator.GetComponent<GameGenerator>().star;
         int[] changeCount = gameGenerator.musicChangeCount;
@@ -69,7 +70,7 @@ public class CameraMove : MonoBehaviour
                 if (changeCount[nowCount] == 0)
                     target = defPosZ;
                 else
-                    target = (maxDistanse / changeCount.Length * (nowCount + 1));
+                    target = defPosZ - maxDistanse / changeCount.Length * (nowCount + 1);
                 move = target - transform.position.z;
                 saveCount = nowCount;
                 count = 0;
