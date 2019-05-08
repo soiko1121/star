@@ -1212,6 +1212,7 @@ GameObject:
   - component: {fileID: 534669903}
   - component: {fileID: 534669908}
   - component: {fileID: 534669907}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1277,7 +1278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2131960005}
@@ -1286,6 +1287,25 @@ Transform:
   m_Father: {fileID: 2135976090}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd933a941a6d294fb40400b45daf6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameGenerator: {fileID: 2388096640501033390}
+  particles:
+  - {fileID: 114163564}
+  - {fileID: 1955726183}
+  defPosZ: -8
+  maxCount: 40
+  maxDistanse: 10
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3210,6 +3230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameGenerator: {fileID: 2388096640501033390}
+  constant: 10
+  percentage: 10
+  protectTime: 60
 --- !u!114 &1859025564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3482,7 +3505,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2135976090}
-  - component: {fileID: 2135976091}
   m_Layer: 0
   m_Name: Rotar
   m_TagString: Untagged
@@ -3497,34 +3519,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135976089}
-  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 534669905}
   - {fileID: 2011052304}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
---- !u!114 &2135976091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2135976089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd933a941a6d294fb40400b45daf6db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameGenerator: {fileID: 2388096640501033390}
-  particles:
-  - {fileID: 114163564}
-  - {fileID: 1955726183}
-  defPosZ: -8
-  maxCount: 40
-  maxDistanse: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &151545218865141805
 PrefabInstance:
   m_ObjectHideFlags: 0

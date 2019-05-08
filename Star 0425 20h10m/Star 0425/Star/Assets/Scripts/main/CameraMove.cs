@@ -33,7 +33,7 @@ public class CameraMove : MonoBehaviour
         {
             return;
         }
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 4, transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         //Vector3 v3 = player.transform.position - oldPos;
         //targetV3 = new Vector3(player.transform.position.x / (saveCount + 1), player.transform.position.y / (saveCount + 1), transform.position.z);
         //transform.position += new Vector3((targetV3.x - transform.position.x) / (saveCount + 1), (targetV3.y - transform.position.y) / (saveCount + 1), 0);

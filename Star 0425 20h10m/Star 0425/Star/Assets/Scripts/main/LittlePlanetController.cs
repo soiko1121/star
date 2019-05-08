@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LittlePlanetController : MonoBehaviour
 {
-    private GameObject[] littlePlanets = new GameObject[100];
+    private GameObject[] littlePlanets;
 
     public float corpsSpeed;
     public int corpsSplit;
