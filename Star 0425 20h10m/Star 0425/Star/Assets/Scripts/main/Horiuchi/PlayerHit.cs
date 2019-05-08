@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class PlayerHit : MonoBehaviour
 {
     public GameGenerator gameGenerator;
+    public int constant;
+    public int percentage;
+    public int protectTime;
+    private GameObject[] littlePlanets;
     int count;
 
     // Start is called before the first frame update
@@ -15,7 +19,7 @@ public class PlayerHit : MonoBehaviour
     }
     private void Update()
     {
-        if (count < 60)
+        if (count < protectTime)
         {
             count++;
             //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", false);
@@ -25,14 +29,30 @@ public class PlayerHit : MonoBehaviour
     {
         if (other.gameObject.tag == "DangerObject")
         {
-            if (SystemInfo.supportsVibration)
+            if (count == protectTime)
             {
-                Handheld.Vibrate();
+                if (SystemInfo.supportsVibration)
+                {
+                    Handheld.Vibrate();
+                }
+                if (gameGenerator.GetComponent<GameGenerator>().star <= 0)
+                {
+                    SceneManager.LoadScene("ResultScene");
+                }
+                littlePlanets = GameObject.FindGameObjectsWithTag("MiniStar");
+                int length = constant + littlePlanets.Length / percentage;
+                if (length > littlePlanets.Length)
+                {
+                    length = littlePlanets.Length;
+                }
+
+                for (int i = 0; i < length; i++)
+                {
+                    Destroy(littlePlanets[i]);
+                    gameGenerator.GetComponent<GameGenerator>().star--;
+                }
+                count = 0;
                 //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", true);
-            }
-            if (gameGenerator.GetComponent<GameGenerator>().star <= 0)
-            {
-                SceneManager.LoadScene("ResultScene");
             }
         }
     }
