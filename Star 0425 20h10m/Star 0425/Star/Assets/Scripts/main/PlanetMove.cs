@@ -49,11 +49,12 @@ public class PlanetMove : MonoBehaviour
     {
         if (other.gameObject.tag == "PointObject" || other.gameObject.tag == "DangerObject")
         {
-            if (other.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
+            if (other.gameObject.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
             {
                 GetComponent<Renderer>().enabled = false;
                 GetComponent<Collider>().enabled = false;
             }
         }
+
     }
 }

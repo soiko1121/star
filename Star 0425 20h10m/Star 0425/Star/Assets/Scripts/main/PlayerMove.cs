@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public Animator anime;
     private Vector3 gyro, gyroSet, moveVec, velocitySet;
     private Rigidbody playerRB;
     public float speed, slowdown, set2DSpeed;
     public DebugText debugText;
     public TimeGenerator timeGenerator;
+    public float ySpeed2D;
+    public float gyroLimit;
 
     //public Vector2 accelerationSpeed;
     public Vector2 maxAcceleration;
@@ -39,7 +40,6 @@ public class PlayerMove : MonoBehaviour
         gyro = Vector3.zero;
         gyroSet = Vector3.zero;
 
-        anime = GetComponent<Animator>();
 
         accelerationCount = Vector2.zero;
         //acceleration = accelerationSpeed / maxAcceleration;
@@ -73,8 +73,8 @@ public class PlayerMove : MonoBehaviour
         {
             Vector3 v3 = transform.position;
             //重力感知
-            gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -9.8f, 9.8f);
-            gyro.y = Mathf.Clamp(((Input.gyro.gravity.z + 0.8f) * 2.0f), -9.8f, 9.8f);
+            gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -gyroLimit, gyroLimit);
+            gyro.y = Mathf.Clamp(((Input.gyro.gravity.z + 0.8f) * 2.0f), -gyroLimit, gyroLimit);
             if (gyro.x > 0)
             {
                 pm.x = 1;
@@ -91,49 +91,48 @@ public class PlayerMove : MonoBehaviour
             {
                 pm.y = -1;
             }
-            accelerationCount.x = (Mathf.Abs(gyro.x) / (9.8f / maxAcceleration.x));
-            accelerationCount.y = (Mathf.Abs(gyro.y) / (9.8f / maxAcceleration.y));
+            accelerationCount.x = (Mathf.Abs(gyro.x) / (gyroLimit / maxAcceleration.x));
+            accelerationCount.y = (Mathf.Abs(gyro.y) / (gyroLimit / maxAcceleration.y));
             if (viewSet == View.back)
             {
-                transform.position = new Vector3(
-                    transform.position.x + accelerationCount.x * (9.8f / maxAcceleration.x) * speed * pm.x,
-                    transform.position.y + accelerationCount.y * (9.8f / maxAcceleration.y) * speed * pm.y,
+                v3 = new Vector3(
+                    transform.position.x + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speed * pm.x,
+                    transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speed * pm.y,
                     0);
             }
             else
             {
-                transform.position = new Vector3(
+                v3 = new Vector3(
                     0,
-                    transform.position.y + accelerationCount.y * (9.8f / maxAcceleration.y) * speed * pm.y,
-                    transform.position.z + accelerationCount.x * (9.8f / maxAcceleration.x) * speed * pm.x);
+                    transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speed * ySpeed2D * pm.y,
+                    transform.position.z + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speed * pm.x);
             }
-            v3 = transform.position;
-            if (transform.position.x < -16)
+            if (v3.x < -16)
             {
                 v3.x = -16;
             }
-            if (transform.position.x > 16)
+            if (v3.x > 16)
             {
                 v3.x = 16;
             }
-            if (transform.position.y < -9)
+            if (v3.y < -9)
             {
                 v3.y = -9;
             }
-            if (transform.position.y > 9)
+            if (v3.y > 9)
             {
                 v3.y = 9;
             }
-            if (transform.position.z < -2)
+            if (v3.z < -2)
             {
                 v3.z = -2;
             }
-            if (transform.position.z > 2)
+            if (v3.z > 2)
             {
                 v3.z = 2;
             }
             transform.position = v3;
-            Animation();
+            MyAnimator.X = gyro.x;
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;
         }
         else
@@ -147,26 +146,13 @@ public class PlayerMove : MonoBehaviour
             Vector3 pos = target - transform.position;
             pos = pos.normalized * 10f;
             playerRB.AddForce(pos);
+            MyAnimator.X = pos.x;
         }
         PosList.Add(transform.position);
         if (PosList.Count > 200 * 10)
         {
             PosList.RemoveAt(0);
         }
-    }
-    private void Animation()
-    {
-        if (gyro.x > 0)
-        {
-            anime.SetBool("IsRight", true);
-            anime.SetBool("IsLeft", false);
-        }
-        else
-        {
-            anime.SetBool("IsLeft", true);
-            anime.SetBool("IsRight", false);
-        }
-        anime.SetBool("IsFloat", false);
     }
     Vector3 GetMousePosition()
     {

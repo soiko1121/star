@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class TimeGenerator : MonoBehaviour
 {
-    private Camera mainCamera;
+    public Camera mainCamera;
     public GameObject player, target;
     private PlayerMove playerMove;
-    private float timer, setRan, minAngle, maxAngle, rotaTimer, distance;
+    private float minAngle, maxAngle, rotaTimer, distance, height, cameraMaxAngle, cameraMinAngle;
 
     public float changeTime;
     public bool cameraMoveNow, zoneHit;
     // Start is called before the first frame update
     void Start()
     {
-        timer = 0.0f;
         cameraMoveNow = false;
-        mainCamera = Camera.main;
         rotaTimer = 0.0f;
         zoneHit = false;
         playerMove = player.GetComponent<PlayerMove>();
@@ -40,6 +38,7 @@ public class TimeGenerator : MonoBehaviour
                 case PlayerMove.View.side:
                     playerMove.viewSet = PlayerMove.View.back;
                     playerMove.set2DSpeed = player.transform.position.z / 60.0f;
+                    mainCamera.orthographic = !mainCamera.orthographic;
                     break;
                 default:
                     break;
@@ -66,13 +65,19 @@ public class TimeGenerator : MonoBehaviour
         {
             case PlayerMove.View.back:
                 minAngle = -90.0f;
-                maxAngle = 0.0f;
-                distance = 0;
+                maxAngle = 0f;
+                cameraMinAngle = 0f;
+                cameraMaxAngle = 10f;
+                distance = 0f;
+                height = 4f;
                 break;
             case PlayerMove.View.side:
-                minAngle = 0.0f;
-                maxAngle = -90.0f;
-                distance = 17;
+                minAngle = 0f;
+                maxAngle = -90f;
+                cameraMinAngle = 10f;
+                cameraMaxAngle = 0f;
+                distance = 17f;
+                height = 0f;
                 break;
             default:
                 break;
@@ -80,16 +85,20 @@ public class TimeGenerator : MonoBehaviour
 
         rotaTimer += 1 / 60.0f;
         float angle = Mathf.LerpAngle(minAngle, maxAngle, rotaTimer);
-        target.transform.eulerAngles = new Vector3(0, angle, 0);
-        target.transform.position = new Vector3(0, 0, distance * rotaTimer);
+        float cameraAngle = Mathf.LerpAngle(cameraMinAngle, cameraMaxAngle, rotaTimer);
+        target.transform.eulerAngles = new Vector3(cameraAngle, angle, 0);
+        target.transform.position = new Vector3(0, height * rotaTimer, distance * rotaTimer);
 
         if (rotaTimer >= 1f)
         {
-            mainCamera.orthographic = !mainCamera.orthographic;
             rotaTimer = 0;
             cameraMoveNow = false;
             Time.timeScale = 1f;
             zoneHit = false;
+            if (playerMove.viewSet == PlayerMove.View.side)
+            {
+                mainCamera.orthographic = !mainCamera.orthographic;
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ public class Loader : MonoBehaviour
     [SerializeField] GameObject _UI;
     [SerializeField] GameObject _Button;
     [SerializeField] Button stButton;
+    [SerializeField] Image rotUI;
 
     public void Start()
     {
@@ -65,6 +66,8 @@ public class Loader : MonoBehaviour
 
         while (!async.isDone)
         {
+            rotUI.transform.rotation *= Quaternion.AngleAxis(2.2f, new Vector3(0f, 0f, 1f));
+
             var progressVal = Mathf.Clamp01(async.progress / 0.9f);
             slider.value = progressVal;
 
