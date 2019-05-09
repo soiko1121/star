@@ -11,8 +11,8 @@ public class PlanetHit : MonoBehaviour
 
     private ParticleSystem particle;
     private Renderer myRenderer;
-    private bool oneHit = false;
     private GameObject player;
+    private bool hit;
 
     void Start()
     {
@@ -21,15 +21,17 @@ public class PlanetHit : MonoBehaviour
         particle = effectObject.GetComponent<ParticleSystem>();
         myRenderer = GetComponent<Renderer>();
         player = GameObject.FindWithTag("Player");
+        hit = false;
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" || (other.gameObject.tag == "MiniStar" && !oneHit))
+        if ((other.gameObject.tag == "Player" || (other.gameObject.tag == "MiniStar" && other.gameObject.GetComponent<LittlePlanetMove>().Hit)) && !hit)
         {
             particle.Play();
             BurstPlanet();
             myRenderer.enabled = false;
-            oneHit = true;
+            hit = true;
+            Destroy(gameObject);
         }
     }
     public void BurstPlanet()
