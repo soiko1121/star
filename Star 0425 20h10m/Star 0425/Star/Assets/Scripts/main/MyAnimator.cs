@@ -16,9 +16,7 @@ public class MyAnimator : MonoBehaviour
     {
         anime = GetComponent<Animator>();
         lr = LR.left;
-        anime.SetBool("IsFloat", true);
         anime.SetBool("IsLeft", true);
-        anime.SetBool("IsFloat", false);
     }
     private void FixedUpdate()
     {
@@ -29,17 +27,13 @@ public class MyAnimator : MonoBehaviour
         if (x > 0 && lr == LR.left)
         {
             anime.SetBool("IsLeft", false);
-            anime.SetBool("IsFloat", true);
             anime.SetBool("IsRight", true);
-            anime.SetBool("IsFloat", false);
             lr = LR.right;
         }
         else if (x <= 0 && lr == LR.right)
         {
             anime.SetBool("IsRight", false);
-            anime.SetBool("IsFloat", true);
             anime.SetBool("IsLeft", true);
-            anime.SetBool("IsFloat", false);
             lr = LR.left;
         }
     }

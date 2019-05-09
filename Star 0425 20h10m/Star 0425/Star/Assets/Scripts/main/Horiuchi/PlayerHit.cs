@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHit : MonoBehaviour
 {
     public GameGenerator gameGenerator;
+    public GameObject model;
     public int constant;
     public int percentage;
     public int protectTime;
@@ -22,7 +23,7 @@ public class PlayerHit : MonoBehaviour
         if (count < protectTime)
         {
             count++;
-            //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", false);
+            model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", false);
         }
     }
     void OnTriggerEnter(Collider other)
@@ -52,7 +53,7 @@ public class PlayerHit : MonoBehaviour
                     gameGenerator.GetComponent<GameGenerator>().star--;
                 }
                 count = 0;
-                //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", true);
+                model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", true);
             }
         }
     }
