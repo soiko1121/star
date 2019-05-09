@@ -11,12 +11,14 @@ public class PlayerHit : MonoBehaviour
     public int percentage;
     public int protectTime;
     private GameObject[] littlePlanets;
+    private bool dangerHit;
     int count;
 
     // Start is called before the first frame update
     void Start()
     {
         count = 0;
+        dangerHit = false;
     }
     private void Update()
     {
@@ -36,7 +38,7 @@ public class PlayerHit : MonoBehaviour
                 {
                     Handheld.Vibrate();
                 }
-                if (gameGenerator.GetComponent<GameGenerator>().star <= 0)
+                if (gameGenerator.star <= 0)
                 {
                     SceneManager.LoadScene("ResultScene");
                 }
@@ -50,11 +52,27 @@ public class PlayerHit : MonoBehaviour
                 for (int i = 0; i < length; i++)
                 {
                     Destroy(littlePlanets[i]);
-                    gameGenerator.GetComponent<GameGenerator>().star--;
+                    gameGenerator.star--;
                 }
                 count = 0;
+                dangerHit = true;
+                //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", true);
                 model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", true);
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "GirigiriZone" && !dangerHit)
+        {
+            if (count == protectTime)
+            {
+                gameGenerator.addSpeedTimer = 5;
+            }
+        }
+        else
+        {
+            dangerHit = false;
         }
     }
 }
