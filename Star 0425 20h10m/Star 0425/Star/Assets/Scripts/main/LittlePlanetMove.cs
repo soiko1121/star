@@ -64,6 +64,7 @@ public class LittlePlanetMove : MonoBehaviour
                 Corps();
             }
         }
+        transform.Rotate(new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), Random.Range(-1, 2)));
     }
     private void PlayerFollow()
     {
