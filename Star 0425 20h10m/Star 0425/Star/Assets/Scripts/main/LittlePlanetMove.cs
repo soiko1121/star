@@ -129,7 +129,6 @@ public class LittlePlanetMove : MonoBehaviour
             target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - 1 - controller.widthSplit * corpsIndex;
         }
 
-
         Vector3 move = target - transform.position;
         littlePlanetRB.AddForce(move * controller.corpsSpeed);
     }

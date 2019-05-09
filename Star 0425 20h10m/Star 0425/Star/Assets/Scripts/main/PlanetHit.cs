@@ -5,20 +5,19 @@ using UnityEngine;
 public class PlanetHit : MonoBehaviour
 {
     public GameObject littlePlanetOriginal;
+    public GameObject partOriginal;
     public GameObject[] littlePlanet;
-    public GameObject effectObject;
     public int split;
 
-    private ParticleSystem particle;
     private Renderer myRenderer;
     private GameObject player;
     private bool hit;
+    private GameObject part;
 
     void Start()
     {
         //split = (int)planet.transform.localScale.x * 5;
         littlePlanet = new GameObject[split];
-        particle = effectObject.GetComponent<ParticleSystem>();
         myRenderer = GetComponent<Renderer>();
         player = GameObject.FindWithTag("Player");
         hit = false;
@@ -27,10 +26,10 @@ public class PlanetHit : MonoBehaviour
     {
         if ((other.gameObject.tag == "Player" || (other.gameObject.tag == "MiniStar" && other.gameObject.GetComponent<LittlePlanetMove>().Hit)) && !hit)
         {
-            particle.Play();
             BurstPlanet();
             myRenderer.enabled = false;
             hit = true;
+            part = Instantiate(partOriginal, transform.position, Quaternion.identity) as GameObject;
             Destroy(gameObject);
         }
     }
