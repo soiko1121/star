@@ -12,6 +12,7 @@ TagManager:
   - Thermography
   - LittlePlanetController
   - PointObject
+  - GirigiriZone
   layers:
   - Default
   - TransparentFX

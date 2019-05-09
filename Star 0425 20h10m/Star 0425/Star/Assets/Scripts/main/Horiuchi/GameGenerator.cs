@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameGenerator : MonoBehaviour
 {
     public int star, maxstar;
-    public float distance, speed;
+    public float distance, speed, addSpeedTimer;
     public int musicCnt;
     [SerializeField]
     private float[] objectSpeed;
@@ -13,7 +13,6 @@ public class GameGenerator : MonoBehaviour
     {
         get; set;
     }
-
     public static int Star
     {
         get; set;
@@ -36,6 +35,7 @@ public class GameGenerator : MonoBehaviour
         musicChangeCount[4] = 150;
         musicChangeCount[5] = 200;
         musicChangeCount[6] = 250;
+        addSpeedTimer = 0;
     }
 
     // Update is called once per frame
@@ -45,6 +45,38 @@ public class GameGenerator : MonoBehaviour
         {
             return;
         }
+
+        Controller();
+
+        if (addSpeedTimer > 0)
+        {
+            addSpeedTimer -= 1 / 60f;
+        }
+        else
+        {
+            addSpeedTimer = 0; 
+        }
+                    
+        speed += SpeedPoint(1 - addSpeedTimer / 5.0f);
+
+        TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
+        if (!timeGenerator.cameraMoveNow && Time.timeScale == 1f)
+        {
+            distance += speed / 30.0f;
+            Distance = (int)distance;
+        }
+        else
+        {
+            speed = 0;
+        }
+        if (maxstar <= star)
+        {
+            maxstar = star;
+            Star = maxstar;
+        }
+    }
+    private void Controller()
+    {
         if (star >= musicChangeCount[0] && star < musicChangeCount[1])
         {
             musicCnt = 0;
@@ -79,20 +111,13 @@ public class GameGenerator : MonoBehaviour
         {
             speed = objectSpeed[6];
         }
-        TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
-        if (!timeGenerator.cameraMoveNow && Time.timeScale == 1f)
-        {
-            distance += speed / 30.0f;
-            Distance = (int)distance;
-        }
-        else
-        {
-            speed = 0;
-        }
-        if (maxstar <= star)
-        {
-            maxstar = star;
-            Star = maxstar;
-        }
+    }
+    private float SpeedPoint (float addTimer)
+    {
+        var point1 = Vector3.Lerp(new Vector2(0, 1), new Vector2(0.3f, 2f), addTimer);
+        var point2 = Vector3.Lerp(new Vector2(0.3f, 2f), new Vector2(1, 1), addTimer);
+        var point3 = Vector3.Lerp(point1, point2, addTimer);
+ 
+        return point3.y;
     }
 }
