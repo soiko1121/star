@@ -17,7 +17,7 @@ public class GameGenerator : MonoBehaviour
     {
         get; set;
     }
-    public static int Distance
+    public static float StageTimer
     {
         get; set;
     }
@@ -62,8 +62,8 @@ public class GameGenerator : MonoBehaviour
         TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
         if (!timeGenerator.cameraMoveNow && Time.timeScale == 1f)
         {
-            distance += speed / 30.0f;
-            Distance = (int)distance;
+
+            StageTimer += Time.deltaTime;
         }
         else
         {
