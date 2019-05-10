@@ -16,8 +16,8 @@ public class MyAnimator : MonoBehaviour
     {
         anime = GetComponent<Animator>();
         lr = LR.left;
-        anime.SetBool("IsFloat", false);
-        anime.SetBool("IsLeft", true);
+        //anime.SetBool("IsFloat", true);
+        //anime.SetBool("IsLeft", true);
     }
     private void FixedUpdate()
     {
@@ -25,18 +25,21 @@ public class MyAnimator : MonoBehaviour
     }
     private void Animation(float x)
     {
-
-        if (x > 0 && lr == LR.left)
+        if (!PlayerHit.Hit)
         {
-            anime.SetBool("IsLeft", false);
-            anime.SetBool("IsRight", true);
-            lr = LR.right;
-        }
-        else if (x <= 0 && lr == LR.right)
-        {
-            anime.SetBool("IsRight", false);
-            anime.SetBool("IsLeft", true);
-            lr = LR.left;
+            //anime.SetBool("IsFloat", true);
+            //if (x > 0 && lr == LR.left)
+            //{
+            //    anime.SetBool("IsLeft", false);
+            //    anime.SetBool("IsRight", true);
+            //    lr = LR.right;
+            //}
+            //else if (x <= 0 && lr == LR.right)
+            //{
+            //    anime.SetBool("IsRight", false);
+            //    anime.SetBool("IsLeft", true);
+            //    lr = LR.left;
+            //}
         }
     }
 }
