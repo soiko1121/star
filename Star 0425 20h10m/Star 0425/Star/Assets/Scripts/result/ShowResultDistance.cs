@@ -15,8 +15,6 @@ public class ShowResultDistance : MonoBehaviour
     void Update()
     {
         Text resultScore = GetComponent<Text>();
-
-        int score = GameGenerator.Distance;
-        resultScore.text = score.ToString();
+        resultScore.text = GameGenerator.StageTimer.ToString();
     }
 }
