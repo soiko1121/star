@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     public TimeGenerator timeGenerator;
     public float ySpeed2D;
     public float gyroLimit;
+    public Vector2 limit;
 
     //public Vector2 accelerationSpeed;
     public Vector2 maxAcceleration;
@@ -107,30 +108,30 @@ public class PlayerMove : MonoBehaviour
                     transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speed * ySpeed2D * pm.y,
                     transform.position.z + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speed * pm.x);
             }
-            if (v3.x < -16)
+            if (v3.x < -limit.x)
             {
-                v3.x = -16;
+                v3.x = -limit.x;
             }
-            if (v3.x > 16)
+            if (v3.x > limit.x)
             {
-                v3.x = 16;
+                v3.x = limit.x;
             }
-            if (v3.y < -9)
+            if (v3.y < -limit.y)
             {
-                v3.y = -9;
+                v3.y = -limit.y;
             }
-            if (v3.y > 9)
+            if (v3.y > limit.y)
             {
-                v3.y = 9;
+                v3.y = limit.y;
             }
-            if (v3.z < -2)
-            {
-                v3.z = -2;
-            }
-            if (v3.z > 2)
-            {
-                v3.z = 2;
-            }
+            //if (v3.z < -2)
+            //{
+            //    v3.z = -2;
+            //}
+            //if (v3.z > 2)
+            //{
+            //    v3.z = 2;
+            //}
             transform.position = v3;
             MyAnimator.X = gyro.x;
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;

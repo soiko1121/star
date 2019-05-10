@@ -1336,7 +1336,9 @@ MonoBehaviour:
   - {fileID: 114163564}
   defPosZ: -8
   maxCount: 40
-  maxDistanse: 5
+  maxDistanse: 10
+  maxLimit: {x: 14, y: 7}
+  minLimit: {x: 10, y: 3}
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,6 +3142,7 @@ MonoBehaviour:
   timeGenerator: {fileID: 556399690}
   ySpeed2D: 1.5
   gyroLimit: 9.8
+  limit: {x: 16, y: 9}
   maxAcceleration: {x: 5, y: 5}
   viewSet: 0
 --- !u!54 &1859025557
@@ -3445,7 +3448,7 @@ Transform:
   m_GameObject: {fileID: 2011052300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 0.1}
+  m_LocalScale: {x: 1000, y: 1000, z: 0.1}
   m_Children: []
   m_Father: {fileID: 2135976090}
   m_RootOrder: 1
