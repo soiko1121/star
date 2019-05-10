@@ -9,6 +9,9 @@ public class CameraMove : MonoBehaviour
     public float defPosZ;
     public int maxCount = 0;
     public float maxDistanse;
+    public Vector2 maxLimit;
+    public Vector2 minLimit;
+
     private Vector3 oldPos;
     private GameObject player;
     private float target;
@@ -17,6 +20,9 @@ public class CameraMove : MonoBehaviour
     private int saveCount;
     private int count;
     private ParticleSystem particle;
+    private Vector2 pm;
+    private Vector2 limit;
+    private Vector2 limitTarget;
 
     void Start()
     {
@@ -26,6 +32,7 @@ public class CameraMove : MonoBehaviour
         oldPos = Vector3.zero;
         player = GameObject.FindWithTag("Player");
         particle = particles[0].GetComponent<ParticleSystem>();
+        limit = maxLimit;
     }
     void Update()
     {
@@ -33,12 +40,22 @@ public class CameraMove : MonoBehaviour
         {
             return;
         }
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         //Vector3 v3 = player.transform.position - oldPos;
-        //targetV3 = new Vector3(player.transform.position.x / (saveCount + 1), player.transform.position.y / (saveCount + 1), transform.position.z);
-        //transform.position += new Vector3((targetV3.x - transform.position.x) / (saveCount + 1), (targetV3.y - transform.position.y) / (saveCount + 1), 0);
+        Vector3 v3;
+        if (player.transform.position.x == 0)
+            v3.x = 0;
+        else
+            v3.x = limit.x / (player.GetComponent<PlayerMove>().limit.x / player.transform.position.x);
+        if (player.transform.position.y == 0)
+            v3.y = 0;
+        else
+            v3.y = limit.y / (player.GetComponent<PlayerMove>().limit.y / player.transform.position.y);
+        v3.z = transform.position.z;
+
+        transform.position = v3;
         //oldPos = player.transform.position;
-        //transform.LookAt(player.transform.position);
+        transform.LookAt(player.transform.position);
 
         int star = gameGenerator.GetComponent<GameGenerator>().star;
         int[] changeCount = gameGenerator.musicChangeCount;
@@ -72,6 +89,7 @@ public class CameraMove : MonoBehaviour
                 else
                     target = defPosZ - maxDistanse / changeCount.Length * (nowCount + 1);
                 move = target - transform.position.z;
+                limitTarget = minLimit + (maxLimit - minLimit) / changeCount.Length * (nowCount + 1) - limit;
                 saveCount = nowCount;
                 count = 0;
                 particle.Play();
@@ -83,6 +101,7 @@ public class CameraMove : MonoBehaviour
         }
         else if (count < maxCount)
         {
+            limit += limitTarget / maxCount;
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + move / maxCount);
             count++;
         }
