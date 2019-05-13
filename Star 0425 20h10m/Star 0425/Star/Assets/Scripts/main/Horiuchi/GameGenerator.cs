@@ -57,18 +57,11 @@ public class GameGenerator : MonoBehaviour
             addSpeedTimer = 0; 
         }
                     
-        speed += SpeedPoint(1 - addSpeedTimer / 5.0f);
+        speed *= SpeedPoint(1 - addSpeedTimer / 3.0f);
 
         TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
-        if (!timeGenerator.cameraMoveNow && Time.timeScale == 1f)
-        {
 
-            StageTimer += Time.deltaTime;
-        }
-        else
-        {
-            speed = 0;
-        }
+        StageTimer += Time.deltaTime;
         if (maxstar <= star)
         {
             maxstar = star;
