@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     public float ySpeed2D;
     public float gyroLimit;
     public Vector2 limit;
+    public Vector2 rotaLimit;
 
     //public Vector2 accelerationSpeed;
     public Vector2 maxAcceleration;
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     private Vector2 pm;
     private Vector3 target;
     private Vector2 speedV2;
+    private Vector3 oldpos;
     public List<Vector3> PosList
     {
         get; set;
@@ -42,6 +44,7 @@ public class PlayerMove : MonoBehaviour
         gyro = Vector3.zero;
         gyroSet = Vector3.zero;
         speedV2 = new Vector2(speed, speed);
+        oldpos = Vector3.zero;
 
         accelerationCount = Vector2.zero;
         //acceleration = accelerationSpeed / maxAcceleration;
@@ -106,6 +109,7 @@ public class PlayerMove : MonoBehaviour
                 else
                     v3.y = transform.position.y;
                 v3.z = 0;
+                transform.LookAt(new Vector3(v3.x * 1.2f, v3.y * 1.5f - 1, 2));
             }
             //else
             //{
@@ -123,6 +127,7 @@ public class PlayerMove : MonoBehaviour
             //    v3.z = 2;
             //}
             transform.position = v3;
+            oldpos = v3;
             MyAnimator.X = gyro.x;
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;
         }

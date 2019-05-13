@@ -8,6 +8,7 @@ public class LittlePlanetMove : MonoBehaviour
     public float speed;
     public bool up;
     public bool left;
+    public Vector2 fluctuationSpeed;
     private GameObject littlePlanetController;
     private LittlePlanetController controller;
 
@@ -17,6 +18,7 @@ public class LittlePlanetMove : MonoBehaviour
     private float distance;
     private Vector3 oldPos;
     private GameObject gameGenerator;
+    private Vector3 touchPos;
     public bool Hit
     {
         get; set;
@@ -99,12 +101,33 @@ public class LittlePlanetMove : MonoBehaviour
             distance = Random.Range(controller.GetComponent<LittlePlanetController>().heightSplit, 1f + 0.01f * (Number / controller.corpsSplit));
             moveCount = 0;
         }
-        if (Input.GetMouseButton(1))
+        if ((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc))
         {
-            target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x +
+            touchPos = GetTouch();
+        }
+        if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
+        {
+            Vector3 fluctuation = Vector3.zero;
+            if (GetTouch().x - touchPos.x > 20)
+            {
+                fluctuation.x = Number / controller.corpsSplit * fluctuationSpeed.x;
+            }
+            else if (GetTouch().x - touchPos.x < -20)
+            {
+                fluctuation.x = -Number / controller.corpsSplit * fluctuationSpeed.x;
+            }
+            if (GetTouch().y - touchPos.y > 10)
+            {
+                fluctuation.y = Number / controller.corpsSplit * fluctuationSpeed.y;
+            }
+            else if (GetTouch().y - touchPos.y > -10)
+            {
+                fluctuation.y = -Number / controller.corpsSplit * fluctuationSpeed.y;
+            }
+            target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
                 distance * Mathf.Cos(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-            target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].y +
+            target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].y + fluctuation.y +
                 distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
             target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].z - 1 - controller.widthSplit / 5 * corpsIndex;
@@ -130,7 +153,8 @@ public class LittlePlanetMove : MonoBehaviour
         }
 
         Vector3 move = target - transform.position;
-        littlePlanetRB.AddForce(move * controller.corpsSpeed);
+        //littlePlanetRB.AddForce(move * controller.corpsSpeed);
+        transform.position += move * controller.corpsSpeed;
     }
     private void ColorChange()
     {
@@ -155,6 +179,19 @@ public class LittlePlanetMove : MonoBehaviour
                     break;
             }
         }
+    }
+    private Vector3 GetTouch()
+    {
+        //Vector3 v3 = Input.mousePosition;
+        //Ray ray = Camera.main.ScreenPointToRay(v3);
+        //RaycastHit hit;
+        //int layerMask = (1 << LayerMask.NameToLayer("Water"));
+        //if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+        //{
+        //    return hit.point;
+        //}
+        //else return Vector3.zero;
+        return Input.mousePosition;
     }
     private void OnTriggerEnter(Collider other)
     {
