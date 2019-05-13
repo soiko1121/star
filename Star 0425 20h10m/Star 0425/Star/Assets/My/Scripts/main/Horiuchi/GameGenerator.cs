@@ -36,6 +36,7 @@ public class GameGenerator : MonoBehaviour
         musicChangeCount[5] = 200;
         musicChangeCount[6] = 250;
         addSpeedTimer = 0;
+        StageTimer = 0;
     }
 
     // Update is called once per frame

@@ -113,6 +113,7 @@ MonoBehaviour:
   speed: 200
   up: 0
   left: 0
+  fluctuationSpeed: {x: 0.3, y: 0.3}
 --- !u!64 &8717786927152298498
 MeshCollider:
   m_ObjectHideFlags: 0

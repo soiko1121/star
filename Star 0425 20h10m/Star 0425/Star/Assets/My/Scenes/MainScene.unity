@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1326,7 +1326,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 2000
-  field of view: 26.991467
+  field of view: 60
   orthographic: 0
   orthographic size: 12
   m_Depth: 1
@@ -2028,7 +2028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82edaa64557f48c469b90c7422aa3595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corpsSpeed: 100
+  corpsSpeed: 0.05
   corpsSplit: 5
   widthSplit: 0.5
   heightSplit: 0.5
@@ -3504,7 +3504,8 @@ MonoBehaviour:
   timeGenerator: {fileID: 556399690}
   ySpeed2D: 1.5
   gyroLimit: 9.8
-  limit: {x: 31, y: 17}
+  limit: {x: 16, y: 9}
+  rotaLimit: {x: 5, y: 5}
   maxAcceleration: {x: 5, y: 5}
   viewSet: 0
 --- !u!54 &1859025557
@@ -3589,7 +3590,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859025555}
-  m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
