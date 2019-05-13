@@ -900,6 +900,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -969,11 +974,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
@@ -1245,6 +1245,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 4937429067894039981, guid: 37cf8a9130e197d4bb6c716804c23dd9,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock2
+      objectReference: {fileID: 0}
     - target: {fileID: 4937429067894143373, guid: 37cf8a9130e197d4bb6c716804c23dd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1314,11 +1319,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937429067894039981, guid: 37cf8a9130e197d4bb6c716804c23dd9,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37cf8a9130e197d4bb6c716804c23dd9, type: 3}
@@ -2610,6 +2610,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853756616205}
     m_Modifications:
+    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
+        type: 3}
+      propertyPath: m_Name
+      value: ChangeWorldObject (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 6537223961284706349, guid: 9f8349157861e9f44a5cc8d5d84f9428,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2670,11 +2675,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.099999994
       objectReference: {fileID: 0}
-    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
-        type: 3}
-      propertyPath: m_Name
-      value: ChangeWorldObject (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8349157861e9f44a5cc8d5d84f9428, type: 3}
 --- !u!4 &1830357786438966163 stripped
@@ -2690,6 +2690,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853756616205}
     m_Modifications:
+    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
+        type: 3}
+      propertyPath: m_Name
+      value: ChangeWorldObject (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6537223961284706349, guid: 9f8349157861e9f44a5cc8d5d84f9428,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2750,11 +2755,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.099999994
       objectReference: {fileID: 0}
-    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
-        type: 3}
-      propertyPath: m_Name
-      value: ChangeWorldObject (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8349157861e9f44a5cc8d5d84f9428, type: 3}
 --- !u!4 &1830357787135428072 stripped
@@ -2770,6 +2770,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853756616205}
     m_Modifications:
+    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
+        type: 3}
+      propertyPath: m_Name
+      value: ChangeWorldObject (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 6537223961284706349, guid: 9f8349157861e9f44a5cc8d5d84f9428,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2829,11 +2834,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.099999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
-        type: 3}
-      propertyPath: m_Name
-      value: ChangeWorldObject (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8349157861e9f44a5cc8d5d84f9428, type: 3}
@@ -3840,6 +3840,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3909,11 +3914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
@@ -4560,6 +4560,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 4937429067894039981, guid: 37cf8a9130e197d4bb6c716804c23dd9,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock2 (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 4937429067894143373, guid: 37cf8a9130e197d4bb6c716804c23dd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4629,11 +4634,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4937429067894039981, guid: 37cf8a9130e197d4bb6c716804c23dd9,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock2 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37cf8a9130e197d4bb6c716804c23dd9, type: 3}
@@ -4920,6 +4920,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4989,11 +4994,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
@@ -5100,6 +5100,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853756616205}
     m_Modifications:
+    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
+        type: 3}
+      propertyPath: m_Name
+      value: ChangeWorldObject
+      objectReference: {fileID: 0}
     - target: {fileID: 6537223961284706349, guid: 9f8349157861e9f44a5cc8d5d84f9428,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5154,11 +5159,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3020981989341579864, guid: 9f8349157861e9f44a5cc8d5d84f9428,
-        type: 3}
-      propertyPath: m_Name
-      value: ChangeWorldObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8349157861e9f44a5cc8d5d84f9428, type: 3}
@@ -5445,6 +5445,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5514,11 +5519,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}

@@ -79,6 +79,8 @@ public class CameraMove : MonoBehaviour
                 if (nowCount < saveCount)
                 {
                     particle = particles[0].GetComponent<ParticleSystem>();
+                    //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
+                    //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
                 }
                 else
                 {
@@ -89,7 +91,7 @@ public class CameraMove : MonoBehaviour
                 else
                     target = defPosZ - maxDistanse / changeCount.Length * (nowCount + 1);
                 move = target - transform.position.z;
-                limitTarget = minLimit + (maxLimit - minLimit) / changeCount.Length * (nowCount + 1) - limit;
+                limitTarget = minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit;
                 saveCount = nowCount;
                 count = 0;
                 particle.Play();

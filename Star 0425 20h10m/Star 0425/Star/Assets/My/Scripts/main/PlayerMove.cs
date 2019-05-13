@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
     //private Vector2 acceleration;
     private Vector2 pm;
     private Vector3 target;
+    private Vector2 speedV2;
     public List<Vector3> PosList
     {
         get; set;
@@ -40,7 +41,7 @@ public class PlayerMove : MonoBehaviour
         target = Vector3.zero;
         gyro = Vector3.zero;
         gyroSet = Vector3.zero;
-
+        speedV2 = new Vector2(speed, speed);
 
         accelerationCount = Vector2.zero;
         //acceleration = accelerationSpeed / maxAcceleration;
@@ -96,34 +97,23 @@ public class PlayerMove : MonoBehaviour
             accelerationCount.y = (Mathf.Abs(gyro.y) / (gyroLimit / maxAcceleration.y));
             if (viewSet == View.back)
             {
-                v3 = new Vector3(
-                    transform.position.x + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speed * pm.x,
-                    transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speed * pm.y,
-                    0);
+                if (Mathf.Abs(transform.position.x + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speedV2.x * pm.x) < limit.x)
+                    v3.x = transform.position.x + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speedV2.x * pm.x;
+                else
+                    v3.x = transform.position.x;
+                if (Mathf.Abs(transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y) < limit.y)
+                    v3.y = transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y;
+                else
+                    v3.y = transform.position.y;
+                v3.z = 0;
             }
-            else
-            {
-                v3 = new Vector3(
-                    0,
-                    transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speed * ySpeed2D * pm.y,
-                    transform.position.z + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speed * pm.x);
-            }
-            if (v3.x < -limit.x)
-            {
-                v3.x = -limit.x;
-            }
-            if (v3.x > limit.x)
-            {
-                v3.x = limit.x;
-            }
-            if (v3.y < -limit.y)
-            {
-                v3.y = -limit.y;
-            }
-            if (v3.y > limit.y)
-            {
-                v3.y = limit.y;
-            }
+            //else
+            //{
+            //    v3 = new Vector3(
+            //        0,
+            //        transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speedV2.y * ySpeed2D * pm.y,
+            //        transform.position.z + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speedV2.x * pm.x);
+            //}
             //if (v3.z < -2)
             //{
             //    v3.z = -2;
