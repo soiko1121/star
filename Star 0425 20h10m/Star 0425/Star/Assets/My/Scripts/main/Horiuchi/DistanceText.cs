@@ -15,7 +15,6 @@ public class DistanceText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int setSpeed = (int)gameGenerator.GetComponent<GameGenerator>().distance;
-        GetComponent<Text>().text = setSpeed.ToString() + "km";
+        GetComponent<Text>().text = GameGenerator.StageTimer.ToString("f2");
     }
 }

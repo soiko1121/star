@@ -63,16 +63,19 @@ public class PlayerHit : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "GirigiriZone" && !dangerHit)
+        if (other.gameObject.tag == "GirigiriZone")
         {
-            if (count == protectTime)
+            if (!dangerHit)
             {
-                gameGenerator.addSpeedTimer = 5;
+                if (count == protectTime)
+                {
+                    gameGenerator.addSpeedTimer = 3;
+                }
             }
-        }
-        else
-        {
-            dangerHit = false;
+            else
+            {
+                dangerHit = false;
+            }
         }
     }
 }
