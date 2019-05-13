@@ -3504,7 +3504,7 @@ MonoBehaviour:
   timeGenerator: {fileID: 556399690}
   ySpeed2D: 1.5
   gyroLimit: 9.8
-  limit: {x: 16, y: 9}
+  limit: {x: 31, y: 17}
   rotaLimit: {x: 5, y: 5}
   maxAcceleration: {x: 5, y: 5}
   viewSet: 0
