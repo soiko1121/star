@@ -14,6 +14,12 @@ public class LittlePlanetController : MonoBehaviour
 
     private int count;
     private GameObject player;
+    private Vector3 touchPos;
+    public enum UDLR { up, down, left, right, no }
+    public UDLR[] Udlr
+    {
+        get; set;
+    }
     public int Delay
     {
         get; set;
@@ -38,6 +44,8 @@ public class LittlePlanetController : MonoBehaviour
         count = 0;
         TagList = new List<int>();
         player = GameObject.FindWithTag("Player");
+        Udlr = new UDLR[2] { UDLR.no, UDLR.no };
+        Delay = delayTime;
     }
     private void Update()
     {
@@ -55,8 +63,15 @@ public class LittlePlanetController : MonoBehaviour
                     DelayCount++;
                 count = 0;
             }
-            Delay = delayTime;
         }
+        if ((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc))
+        {
+            touchPos = Input.mousePosition;
+            Udlr[0] = UDLR.no;
+            Udlr[1] = UDLR.no;
+        }
+        if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
+            GetTouch();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -83,17 +98,21 @@ public class LittlePlanetController : MonoBehaviour
         {
             littlePlanets[i].GetComponent<LittlePlanetMove>().Number = i;
         }
-        //count = (count + 1) % 60;
-        //if (count == 0)
-        //{
-        //    for (int i = 0; i < littlePlanets.Length; i++)
-        //    {
-        //        int newNumber = Random.Range(0, littlePlanets.Length - 1);
-        //        int number = littlePlanets[i].GetComponent<LittlePlanetMove>().Number;
-        //        littlePlanets[i].GetComponent<LittlePlanetMove>().Number = littlePlanets[newNumber].GetComponent<LittlePlanetMove>().Number;
-        //        littlePlanets[newNumber].GetComponent<LittlePlanetMove>().Number = number;
-        //    }
-        //}
     }
-    //int count = 0;
+    private void GetTouch()
+    {
+        if (Input.mousePosition.x - touchPos.x > 200)
+            Udlr[0] = UDLR.right;
+        else if (Input.mousePosition.x - touchPos.x < -200)
+            Udlr[0] = UDLR.left;
+        else
+            Udlr[0] = UDLR.no;
+
+        if (Input.mousePosition.y - touchPos.y > 200)
+            Udlr[1] = UDLR.up;
+        else if (Input.mousePosition.y - touchPos.y < -200)
+            Udlr[1] = UDLR.down;
+        else
+            Udlr[1] = UDLR.no;
+    }
 }
