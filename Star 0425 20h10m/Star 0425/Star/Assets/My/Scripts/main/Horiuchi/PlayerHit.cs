@@ -13,6 +13,10 @@ public class PlayerHit : MonoBehaviour
     private GameObject[] littlePlanets;
     private bool dangerHit;
     private int count;
+
+    private ParticleSystem particle;
+    [SerializeField]
+    private GameObject effectObject;
     public static bool Hit
     {
         get; set;
@@ -24,6 +28,7 @@ public class PlayerHit : MonoBehaviour
         count = 0;
         dangerHit = false;
         Hit = false;
+        particle = effectObject.GetComponent<ParticleSystem>();
     }
     private void Update()
     {
@@ -85,6 +90,7 @@ public class PlayerHit : MonoBehaviour
                 if (count == protectTime)
                 {
                     gameGenerator.addSpeedTimer = 3;
+                    particle.Play();
                 }
             }
             else
