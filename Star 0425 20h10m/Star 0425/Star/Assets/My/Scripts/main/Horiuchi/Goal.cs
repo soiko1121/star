@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
+    public static bool ClearFlag
+    {
+        get; set;
+    }
+
+    private void Start()
+    {
+        ClearFlag = false;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -13,7 +23,9 @@ public class Goal : MonoBehaviour
             {
                 Handheld.Vibrate();
             }
-                SceneManager.LoadScene("ResultScene");
+
+            ClearFlag = true;
+            SceneManager.LoadScene("ResultScene");
         }
     }
 }
