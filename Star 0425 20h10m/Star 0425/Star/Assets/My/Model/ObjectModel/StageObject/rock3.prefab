@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1927847462141549574}
-  - component: {fileID: 9090741715332373172}
-  - component: {fileID: 5574619748202448737}
   - component: {fileID: 2416157628465653681}
+  - component: {fileID: 9187330788715064608}
+  - component: {fileID: 4163715794324218275}
   m_Layer: 0
   m_Name: rock3
   m_TagString: DangerObject
@@ -30,26 +30,27 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8071143947160934929}
   - {fileID: 8623857608351565024}
+  - {fileID: 3290850712511465263}
+  - {fileID: 3575947817716481105}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &9090741715332373172
-MeshCollider:
+--- !u!114 &2416157628465653681
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3046086528863348714}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 20e182527aca5e44fb1538da255ce42a, type: 3}
---- !u!54 &5574619748202448737
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09723a9145618c340b03f3b7ec8e0bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  set2DSpeed: 0
+--- !u!54 &9187330788715064608
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,7 +66,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2416157628465653681
+--- !u!114 &4163715794324218275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,12 +75,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3046086528863348714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09723a9145618c340b03f3b7ec8e0bf8, type: 3}
+  m_Script: {fileID: 11500000, guid: e1843f698a78fc44bb9358b457a62481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  set2DSpeed: 0
---- !u!1 &8819681967884737194
+  child:
+  - {fileID: 6392910126865521946}
+  - {fileID: 6883274146563442365}
+--- !u!1 &6392910126865521946
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,36 +89,81 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8071143947160934929}
-  - component: {fileID: 5985382264878831799}
+  - component: {fileID: 3290850712511465263}
+  - component: {fileID: 709519232823546391}
   m_Layer: 0
-  m_Name: Girigiri
-  m_TagString: Untagged
+  m_Name: Rock
+  m_TagString: DangerObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &8071143947160934929
+  m_IsActive: 1
+--- !u!4 &3290850712511465263
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819681967884737194}
+  m_GameObject: {fileID: 6392910126865521946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1927847462141549574}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5985382264878831799
+--- !u!64 &709519232823546391
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819681967884737194}
+  m_GameObject: {fileID: 6392910126865521946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 20e182527aca5e44fb1538da255ce42a, type: 3}
+--- !u!1 &6883274146563442365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3575947817716481105}
+  - component: {fileID: 9174879052950583322}
+  m_Layer: 0
+  m_Name: Girigiri
+  m_TagString: GirigiriZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3575947817716481105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883274146563442365}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_Children: []
+  m_Father: {fileID: 1927847462141549574}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &9174879052950583322
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883274146563442365}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -174,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 2917847576360792148, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
         type: 3}
