@@ -109,7 +109,7 @@ public class PlayerMove : MonoBehaviour
                 else
                     v3.y = transform.position.y;
                 v3.z = 0;
-                transform.LookAt(new Vector3(v3.x * 1.2f, v3.y * 1.5f - 1, 2));
+                transform.LookAt(new Vector3(v3.x * 1.1f, v3.y - 1, 2));
             }
             //else
             //{
