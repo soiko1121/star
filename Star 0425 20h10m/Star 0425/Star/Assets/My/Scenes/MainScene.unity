@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -521,7 +521,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1563,7 +1563,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 2000
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 12
@@ -6815,15 +6815,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LightProbeUsage
@@ -7470,6 +7470,7 @@ GameObject:
   - component: {fileID: 1451910482}
   - component: {fileID: 1451910481}
   - component: {fileID: 1451910480}
+  - component: {fileID: 1451910483}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Group
@@ -7484,12 +7485,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451910478}
-  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: -0.5, z: -2.5}
+  m_LocalRotation: {x: -0.00000008940696, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.38520402, z: -2.5202417}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
-  m_Father: {fileID: 1859025561}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
 --- !u!135 &1451910480
 SphereCollider:
@@ -7499,8 +7500,8 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451910478}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -7549,6 +7550,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451910478}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1451910483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451910478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98816d1401535e648a1fbe3c0c4f4217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1859025555}
 --- !u!1 &1506654709
 GameObject:
   m_ObjectHideFlags: 0
@@ -7747,17 +7761,17 @@ PrefabInstance:
     - target: {fileID: 460370060515633272, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 460370060515633272, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 460370060515633272, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 460370060515633273, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
@@ -7873,7 +7887,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 2000
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -8658,7 +8672,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428303135}
-  - {fileID: 1451910479}
   - {fileID: 226296034}
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -8918,7 +8931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: 5e939d31e479aea48a49667d43553c79, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: 5e939d31e479aea48a49667d43553c79, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

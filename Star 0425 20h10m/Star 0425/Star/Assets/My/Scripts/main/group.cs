@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class ShowResultDistance : MonoBehaviour
+public class group : MonoBehaviour
 {
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,6 @@ public class ShowResultDistance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Text resultScore = GetComponent<Text>();
-        resultScore.text = GameGenerator.StageTimer.ToString("f2") + " sec";
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.5f, -2.5f);
     }
 }
