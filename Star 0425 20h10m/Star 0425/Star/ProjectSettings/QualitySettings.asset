@@ -145,14 +145,15 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   - serializedVersion: 2
     name: Very High
     pixelLightCount: 3
     shadows: 2
     shadowResolution: 0
     shadowProjection: 1
-    shadowCascades: 2
+    shadowCascades: 1
     shadowDistance: 40
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
@@ -166,7 +167,7 @@ QualitySettings:
     softVegetation: 1
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
-    vSyncCount: 0
+    vSyncCount: 2
     lodBias: 1.5
     maximumLODLevel: 0
     streamingMipmapsActive: 0
@@ -180,7 +181,8 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   - serializedVersion: 2
     name: Ultra
     pixelLightCount: 4
@@ -215,7 +217,8 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   m_PerPlatformDefaultQuality:
     Android: 2
     Nintendo 3DS: 5
