@@ -19,7 +19,7 @@ public class PlayerHit : MonoBehaviour
     private GameObject effectObject;
     public static bool Hit
     {
-        get;set;
+        get; set;
     }
 
     // Start is called before the first frame update
@@ -77,7 +77,7 @@ public class PlayerHit : MonoBehaviour
                 model.GetComponent<MyAnimator>().anime.SetBool("IsRight", false);
                 model.GetComponent<MyAnimator>().anime.SetBool("IsFloat", false);
                 model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", true);
-                
+
             }
         }
     }
