@@ -96,6 +96,8 @@ public class PlayerMove : MonoBehaviour
             {
                 pm.y = -1;
             }
+            if (gyro.y < 0)
+                gyro.y *= 1.5f;
             accelerationCount.x = (Mathf.Abs(gyro.x) / (gyroLimit / maxAcceleration.x));
             accelerationCount.y = (Mathf.Abs(gyro.y) / (gyroLimit / maxAcceleration.y));
             if (viewSet == View.back)
@@ -126,7 +128,8 @@ public class PlayerMove : MonoBehaviour
             //{
             //    v3.z = 2;
             //}
-            transform.position = v3;
+            //transform.position = v3;
+            playerRB.AddForce(v3 - transform.position);
             oldpos = v3;
             MyAnimator.X = gyro.x;
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;

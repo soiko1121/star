@@ -17,4 +17,8 @@ public class DebugPC : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
             pc = true;
     }
+    void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
 }

@@ -101,16 +101,16 @@ public class LittlePlanetController : MonoBehaviour
     }
     private void GetTouch()
     {
-        if (Input.mousePosition.x - touchPos.x > 200)
+        if (Input.mousePosition.x - touchPos.x > 100)
             Udlr[0] = UDLR.right;
-        else if (Input.mousePosition.x - touchPos.x < -200)
+        else if (Input.mousePosition.x - touchPos.x < -100)
             Udlr[0] = UDLR.left;
         else
             Udlr[0] = UDLR.no;
 
-        if (Input.mousePosition.y - touchPos.y > 200)
+        if (Input.mousePosition.y - touchPos.y > 80)
             Udlr[1] = UDLR.up;
-        else if (Input.mousePosition.y - touchPos.y < -200)
+        else if (Input.mousePosition.y - touchPos.y < -80)
             Udlr[1] = UDLR.down;
         else
             Udlr[1] = UDLR.no;
