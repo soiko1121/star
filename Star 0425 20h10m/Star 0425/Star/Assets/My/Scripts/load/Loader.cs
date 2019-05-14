@@ -22,6 +22,11 @@ public class Loader : MonoBehaviour
         _UI.SetActive(false);
         _Button.SetActive(false);
         stButton.onClick.AddListener(tapStart);
+
+        touchFlag = true;
+        _UI.SetActive(true);
+        slider.enabled = true;
+        StartCoroutine("LoadData");
     }
 
     public void Update()
