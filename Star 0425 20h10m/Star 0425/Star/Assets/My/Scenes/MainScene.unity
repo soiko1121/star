@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -521,7 +521,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1325,7 +1325,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 2000
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 12
@@ -1788,15 +1788,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LightProbeUsage
@@ -2674,17 +2674,17 @@ PrefabInstance:
     - target: {fileID: 460370060515633272, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 460370060515633272, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 460370060515633272, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 460370060515633273, guid: a93d023a454bf0540a4e1a14494dc4fe,
         type: 3}
@@ -2800,7 +2800,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 2000
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
