@@ -128,8 +128,8 @@ public class PlayerMove : MonoBehaviour
             //{
             //    v3.z = 2;
             //}
-            //transform.position = v3;
-            playerRB.AddForce(v3 - transform.position);
+            transform.position = v3;
+            //playerRB.AddForce(v3 - transform.position);
             oldpos = v3;
             MyAnimator.X = gyro.x;
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;
@@ -145,7 +145,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 pos = target - transform.position;
             pos = pos.normalized * 10f;
             playerRB.AddForce(pos);
-            MyAnimator.X = pos.x;
+            MyAnimator.X = pos.x; 
         }
         PosList.Add(transform.position);
         if (PosList.Count > 200 * 10)
