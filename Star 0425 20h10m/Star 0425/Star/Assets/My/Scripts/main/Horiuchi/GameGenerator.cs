@@ -108,8 +108,8 @@ public class GameGenerator : MonoBehaviour
     }
     private float SpeedPoint (float addTimer)
     {
-        var point1 = Vector3.Lerp(new Vector2(0, 1), new Vector2(0.3f, 5f), addTimer);
-        var point2 = Vector3.Lerp(new Vector2(0.3f, 5f), new Vector2(1, 1), addTimer);
+        var point1 = Vector3.Lerp(new Vector2(0, 1), new Vector2(0.3f, 3f), addTimer);
+        var point2 = Vector3.Lerp(new Vector2(0.3f, 3f), new Vector2(1, 1), addTimer);
         var point3 = Vector3.Lerp(point1, point2, addTimer);
  
         return point3.y;
