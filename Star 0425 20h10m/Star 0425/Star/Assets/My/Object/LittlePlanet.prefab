@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
-  speed: 200
+  speed: 300
   up: 0
   left: 0
   fluctuationSpeed: {x: 0.3, y: 0.3}

@@ -108,19 +108,19 @@ public class LittlePlanetMove : MonoBehaviour
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
         {
             Vector3 fluctuation = Vector3.zero;
-            if (GetTouch().x - touchPos.x > 20)
+            if (GetTouch().x - touchPos.x > 200)
             {
                 fluctuation.x = Number / controller.corpsSplit * fluctuationSpeed.x;
             }
-            else if (GetTouch().x - touchPos.x < -20)
+            else if (GetTouch().x - touchPos.x < -200)
             {
                 fluctuation.x = -Number / controller.corpsSplit * fluctuationSpeed.x;
             }
-            if (GetTouch().y - touchPos.y > 10)
+            if (GetTouch().y - touchPos.y > 100)
             {
                 fluctuation.y = Number / controller.corpsSplit * fluctuationSpeed.y;
             }
-            else if (GetTouch().y - touchPos.y > -10)
+            else if (GetTouch().y - touchPos.y > -100)
             {
                 fluctuation.y = -Number / controller.corpsSplit * fluctuationSpeed.y;
             }
@@ -130,7 +130,7 @@ public class LittlePlanetMove : MonoBehaviour
             target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].y + fluctuation.y +
                 distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].z - 1 - controller.widthSplit / 5 * corpsIndex;
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].z - controller.widthSplit / 5 * corpsIndex;
             oldPos = target;
         }
         else if (corpsIndex < controller.DelayCount)
@@ -141,7 +141,7 @@ public class LittlePlanetMove : MonoBehaviour
             target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].y +
                 distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - 1 - controller.widthSplit * corpsIndex;
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - controller.widthSplit * corpsIndex;
         }
         else
         {
@@ -149,7 +149,7 @@ public class LittlePlanetMove : MonoBehaviour
 
             target.y = oldPos.y + distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
 
-            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - 1 - controller.widthSplit * corpsIndex;
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * controller.Delay].z - controller.widthSplit * corpsIndex;
         }
 
         Vector3 move = target - transform.position;
