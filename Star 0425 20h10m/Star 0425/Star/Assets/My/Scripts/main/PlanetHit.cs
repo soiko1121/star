@@ -9,16 +9,15 @@ public class PlanetHit : MonoBehaviour
     public GameObject[] littlePlanet;
     public int split;
 
-    private Renderer myRenderer;
     private GameObject player;
     private bool hit;
     private GameObject part;
-
+    [SerializeField]
+    private GameObject hitSe;
     void Start()
     {
         //split = (int)planet.transform.localScale.x * 5;
         littlePlanet = new GameObject[split];
-        myRenderer = GetComponent<Renderer>();
         player = GameObject.FindWithTag("Player");
         hit = false;
     }
@@ -27,9 +26,11 @@ public class PlanetHit : MonoBehaviour
         if ((other.gameObject.tag == "Player" || (other.gameObject.tag == "MiniStar" && other.gameObject.GetComponent<LittlePlanetMove>().Hit)) && !hit)
         {
             BurstPlanet();
-            myRenderer.enabled = false;
             hit = true;
             part = Instantiate(partOriginal, transform.position, Quaternion.identity) as GameObject;
+            Debug.Log(hitSe.transform.GetChild(0).name);
+            hitSe.transform.GetChild(0).GetComponent<SEControl_Crystal>().GetCrystalSe();
+            GetComponent<Renderer>().enabled = false;
             Destroy(gameObject);
         }
     }
