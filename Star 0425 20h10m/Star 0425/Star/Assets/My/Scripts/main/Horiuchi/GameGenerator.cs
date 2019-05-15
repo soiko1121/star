@@ -9,6 +9,10 @@ public class GameGenerator : MonoBehaviour
     public int musicCnt;
     [SerializeField]
     private float[] objectSpeed;
+    void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
     public int[] musicChangeCount
     {
         get; set;
