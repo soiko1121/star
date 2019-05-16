@@ -73,6 +73,11 @@ public class GameGenerator : MonoBehaviour
             Star = maxstar;
         }
     }
+    private void FixedUpdate()
+    {
+        if (star < 0)
+            star = 0;
+    }
     private void Controller()
     {
         if (star >= musicChangeCount[0] && star < musicChangeCount[1])

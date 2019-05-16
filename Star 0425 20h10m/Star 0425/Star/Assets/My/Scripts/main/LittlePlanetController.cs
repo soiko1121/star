@@ -21,6 +21,10 @@ public class LittlePlanetController : MonoBehaviour
     {
         get; set;
     }
+    public bool TouchMove
+    {
+        get; set;
+    }
     public float CircleRad
     {
         get; set;
@@ -51,6 +55,7 @@ public class LittlePlanetController : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         Delay = delayTime;
         CircleRad = 0;
+        TouchMove = false;
     }
     private void Update()
     {
@@ -104,19 +109,28 @@ public class LittlePlanetController : MonoBehaviour
     }
     private void GetTouch()
     {
-        float atan = Mathf.Atan2(Input.mousePosition.y - touchPos.y, Input.mousePosition.x - touchPos.x);
-        if (atan < 0)
+        Vector2 distance = new Vector2(Input.mousePosition.x - touchPos.x, Input.mousePosition.y - touchPos.y);
+        if (distance.x * distance.x + distance.y * distance.y > touchDistanse * touchDistanse)
         {
-            atan = 180 * Mathf.Deg2Rad + 180 * Mathf.Deg2Rad - Mathf.Abs(atan);
-        }
-        if (atan != 0)
-        {
-            int a = (int)(atan * Mathf.Rad2Deg) / (int)(360f / circleSprit);
-            CircleRad = (a * (360f / circleSprit)) * Mathf.Deg2Rad;
+            float atan = Mathf.Atan2(distance.y, distance.x);
+            if (atan < 0)
+            {
+                atan = 180 * Mathf.Deg2Rad + 180 * Mathf.Deg2Rad - Mathf.Abs(atan);
+            }
+            if (atan != 0)
+            {
+                int a = (int)(atan * Mathf.Rad2Deg) / (int)(360f / circleSprit);
+                CircleRad = (a * (360f / circleSprit)) * Mathf.Deg2Rad;
+            }
+            else
+            {
+                CircleRad = 0;
+            }
+            TouchMove = true;
         }
         else
         {
-            CircleRad = 0;
+            TouchMove = false;
         }
     }
 }
