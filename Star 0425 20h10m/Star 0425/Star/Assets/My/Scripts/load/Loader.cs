@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Loader : MonoBehaviour
 {
-    bool touchFlag;
+    bool onecFlag;
 
     AsyncOperation async;
 
@@ -17,40 +17,38 @@ public class Loader : MonoBehaviour
 
     public void Start()
     {
-        touchFlag = false;
+        onecFlag = false;
         slider.enabled = false;
-        //_UI.SetActive(false);
+        _UI.SetActive(true);
         _Button.SetActive(false);
         stButton.onClick.AddListener(tapStart);
     }
 
     public void Update()
     {
-        if (Application.isEditor)
+        if (onecFlag == false)
         {
-            if (touchFlag == false)
-            {
-                touchFlag = true;
-                _UI.SetActive(true);
-                slider.enabled = true;
-                StartCoroutine("LoadData");
-            }
+            onecFlag = true;
+            _UI.SetActive(true);
+            slider.enabled = true;
+            StartCoroutine("LoadData");
         }
-        else
-        {
-            if (Input.touchCount > 0 && touchFlag == false)
-            {
-                Touch touch = Input.GetTouch(0);
+        
+        //else
+        //{
+        //    if (Input.touchCount > 0 && touchFlag == false)
+        //    {
+        //        Touch touch = Input.GetTouch(0);
 
-                if (touch.phase == TouchPhase.Began)
-                {
-                    touchFlag = true;
-                    _UI.SetActive(true);
-                    slider.enabled = true;
-                    StartCoroutine("LoadData");
-                }
-            }
-        }
+        //        if (touch.phase == TouchPhase.Began)
+        //        {
+        //            touchFlag = true;
+        //            _UI.SetActive(true);
+        //            slider.enabled = true;
+        //            StartCoroutine("LoadData");
+        //        }
+        //    }
+        //}
 
         if (slider.value == 1f)
         {
