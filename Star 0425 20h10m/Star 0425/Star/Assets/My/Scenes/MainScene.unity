@@ -6719,11 +6719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 58af46f4bdfdc0349a683d4a675291d5, type: 3}
       propertyPath: m_LocalRotation.w
