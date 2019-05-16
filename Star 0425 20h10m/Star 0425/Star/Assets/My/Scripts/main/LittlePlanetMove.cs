@@ -174,7 +174,7 @@ public class LittlePlanetMove : MonoBehaviour
             littlePlanetRB.angularVelocity = Vector3.zero;
         }
 
-        if (other.gameObject.tag == "DangerObject")
+        if (other.gameObject.tag == "DangerObject" && !Hit)
         {
             gameGenerator.GetComponent<GameGenerator>().star--;
             Destroy(gameObject);
