@@ -19,21 +19,16 @@ public class Loader : MonoBehaviour
     {
         touchFlag = false;
         slider.enabled = false;
-        _UI.SetActive(false);
+        //_UI.SetActive(false);
         _Button.SetActive(false);
         stButton.onClick.AddListener(tapStart);
-
-        touchFlag = true;
-        _UI.SetActive(true);
-        slider.enabled = true;
-        StartCoroutine("LoadData");
     }
 
     public void Update()
     {
         if (Application.isEditor)
         {
-            if (Input.GetMouseButtonDown(0) && touchFlag == false)
+            if (touchFlag == false)
             {
                 touchFlag = true;
                 _UI.SetActive(true);
