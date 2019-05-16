@@ -1112,7 +1112,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &534669904
 Camera:
   m_ObjectHideFlags: 0
@@ -6579,7 +6579,7 @@ MonoBehaviour:
   heightSplit: 0.5
   delayTime: 5
   circleSprit: 120
-  touchDistanse: 0
+  touchDistanse: 100
 --- !u!4 &1200639708
 Transform:
   m_ObjectHideFlags: 0
@@ -6821,6 +6821,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1155054722149158592}
     - target: {fileID: 888058384539354294, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 6152539808892401077, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 391582279958972182, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
         type: 3}
       propertyPath: hitSe
       value: 
@@ -7662,7 +7672,7 @@ PrefabInstance:
     - target: {fileID: 4890449853630611197, guid: 9479ae58456e15c4ba21dcae36165bf8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4890449853630611196, guid: 9479ae58456e15c4ba21dcae36165bf8,
         type: 3}
@@ -9158,7 +9168,7 @@ PrefabInstance:
     - target: {fileID: 151545219132034041, guid: d58e7eb3718e981438379129704d2a24,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 151545219132034037, guid: d58e7eb3718e981438379129704d2a24,
         type: 3}
