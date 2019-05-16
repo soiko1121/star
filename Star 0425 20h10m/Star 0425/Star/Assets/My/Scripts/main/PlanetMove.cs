@@ -45,16 +45,16 @@ public class PlanetMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "PointObject" || other.gameObject.tag == "DangerObject")
-        {
-            if (other.gameObject.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
-            {
-                GetComponent<Renderer>().enabled = false;
-                GetComponent<Collider>().enabled = false;
-            }
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "PointObject" || other.gameObject.tag == "DangerObject")
+    //    {
+    //        if (other.gameObject.GetComponent<PlanetMove>().set2DSpeed > set2DSpeed)
+    //        {
+    //            GetComponent<Renderer>().enabled = false;
+    //            GetComponent<Collider>().enabled = false;
+    //        }
+    //    }
 
-    }
+    //}
 }
