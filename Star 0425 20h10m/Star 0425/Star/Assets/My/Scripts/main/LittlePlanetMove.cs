@@ -103,10 +103,10 @@ public class LittlePlanetMove : MonoBehaviour
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
         {
             Vector3 fluctuation = Vector3.zero;
-            if (controller.TouchMove)
+            if (controller.RadList[200 * 10 - 1 - corpsIndex * controller.Delay] != -1)
             {
-                fluctuation.x = (Number / controller.corpsSplit * fluctuationSpeed.x) * Mathf.Cos(controller.CircleRad);
-                fluctuation.y = (Number / controller.corpsSplit * fluctuationSpeed.y) * Mathf.Sin(controller.CircleRad);
+                fluctuation.x = (Number / controller.corpsSplit * fluctuationSpeed.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * controller.Delay]);
+                fluctuation.y = (Number / controller.corpsSplit * fluctuationSpeed.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * controller.Delay]);
             }
 
             target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
