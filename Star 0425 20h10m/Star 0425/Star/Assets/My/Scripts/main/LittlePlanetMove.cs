@@ -8,7 +8,6 @@ public class LittlePlanetMove : MonoBehaviour
     public float speed;
     public bool up;
     public bool left;
-    public Vector2 fluctuationSpeed;
     private GameObject littlePlanetController;
     private LittlePlanetController controller;
 
@@ -103,10 +102,10 @@ public class LittlePlanetMove : MonoBehaviour
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
         {
             Vector3 fluctuation = Vector3.zero;
-            if (controller.RadList[200 * 10 - 1 - corpsIndex * controller.Delay] != -1)
+            if (controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 2)] != -1)
             {
-                fluctuation.x = (Number / controller.corpsSplit * fluctuationSpeed.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * controller.Delay]);
-                fluctuation.y = (Number / controller.corpsSplit * fluctuationSpeed.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * controller.Delay]);
+                fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationSpeed.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 2)]);
+                fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationSpeed.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 2)]);
             }
 
             target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
