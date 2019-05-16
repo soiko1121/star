@@ -6393,6 +6393,26 @@ PrefabInstance:
       propertyPath: hitSe
       value: 
       objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 7128653157687696349, guid: a9f8143d7f332ef48881e85bc5549a75,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 219544921323731930, guid: a9f8143d7f332ef48881e85bc5549a75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586372359547840962, guid: a9f8143d7f332ef48881e85bc5549a75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293014159034895683, guid: a9f8143d7f332ef48881e85bc5549a75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f8143d7f332ef48881e85bc5549a75, type: 3}
 --- !u!4 &719248094 stripped
@@ -6836,6 +6856,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: soi_ver6
       objectReference: {fileID: 0}
+    - target: {fileID: 4890449853630611197, guid: 62bde9209ad05914689368f0ed031bfc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4890449853630611196, guid: 62bde9209ad05914689368f0ed031bfc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6874,7 +6899,7 @@ PrefabInstance:
     - target: {fileID: 4890449853630611196, guid: 62bde9209ad05914689368f0ed031bfc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4890449853630611196, guid: 62bde9209ad05914689368f0ed031bfc,
         type: 3}
