@@ -19,11 +19,9 @@ public class SEControl_Crystal : MonoBehaviour
 
     public void GetCrystalSe()
     {
-        Debug.Log(mycount);
         if (mycount == 0)
         {
             audioController.PlayOneShot(clip1);
-            Debug.Log("kiteru");
             mycount = 1;
         }
         else if (mycount == 1)
