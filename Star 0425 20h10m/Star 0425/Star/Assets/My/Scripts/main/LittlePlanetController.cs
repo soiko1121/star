@@ -11,12 +11,17 @@ public class LittlePlanetController : MonoBehaviour
     public float widthSplit;
     public float heightSplit;
     public int delayTime;
+    public int circleSprit;
+    public int touchDistanse;
 
     private int count;
     private GameObject player;
     private Vector3 touchPos;
-    public enum UDLR { up, down, left, right, no }
-    public UDLR[] Udlr
+    public int UdlrDelayCount
+    {
+        get; set;
+    }
+    public float CircleRad
     {
         get; set;
     }
@@ -44,12 +49,12 @@ public class LittlePlanetController : MonoBehaviour
         count = 0;
         TagList = new List<int>();
         player = GameObject.FindWithTag("Player");
-        Udlr = new UDLR[2] { UDLR.no, UDLR.no };
         Delay = delayTime;
+        CircleRad = 0;
     }
     private void Update()
     {
-        if (Input.GetMouseButton(1))
+        if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
         {
             DelayCount = 0;
         }
@@ -67,8 +72,6 @@ public class LittlePlanetController : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc))
         {
             touchPos = Input.mousePosition;
-            Udlr[0] = UDLR.no;
-            Udlr[1] = UDLR.no;
         }
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
             GetTouch();
@@ -101,18 +104,19 @@ public class LittlePlanetController : MonoBehaviour
     }
     private void GetTouch()
     {
-        if (Input.mousePosition.x - touchPos.x > 100)
-            Udlr[0] = UDLR.right;
-        else if (Input.mousePosition.x - touchPos.x < -100)
-            Udlr[0] = UDLR.left;
+        float atan = Mathf.Atan2(Input.mousePosition.y - touchPos.y, Input.mousePosition.x - touchPos.x);
+        if (atan < 0)
+        {
+            atan = 180 * Mathf.Deg2Rad + 180 * Mathf.Deg2Rad - Mathf.Abs(atan);
+        }
+        if (atan != 0)
+        {
+            int a = (int)(atan * Mathf.Rad2Deg) / (int)(360f / circleSprit);
+            CircleRad = (a * (360f / circleSprit)) * Mathf.Deg2Rad;
+        }
         else
-            Udlr[0] = UDLR.no;
-
-        if (Input.mousePosition.y - touchPos.y > 80)
-            Udlr[1] = UDLR.up;
-        else if (Input.mousePosition.y - touchPos.y < -80)
-            Udlr[1] = UDLR.down;
-        else
-            Udlr[1] = UDLR.no;
+        {
+            CircleRad = 0;
+        }
     }
 }

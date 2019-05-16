@@ -103,14 +103,8 @@ public class LittlePlanetMove : MonoBehaviour
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
         {
             Vector3 fluctuation = Vector3.zero;
-            if (controller.Udlr[0] == LittlePlanetController.UDLR.right)
-                fluctuation.x = Number / controller.corpsSplit * fluctuationSpeed.x;
-            else if (controller.Udlr[0] == LittlePlanetController.UDLR.left)
-                fluctuation.x = -(Number / controller.corpsSplit * fluctuationSpeed.x);
-            if (controller.Udlr[1] == LittlePlanetController.UDLR.up)
-                fluctuation.y = Number / controller.corpsSplit * fluctuationSpeed.y;
-            else if (controller.Udlr[1] == LittlePlanetController.UDLR.down)
-                fluctuation.y = -(Number / controller.corpsSplit * fluctuationSpeed.y);
+            fluctuation.x = (Number / controller.corpsSplit * fluctuationSpeed.x) * Mathf.Cos(controller.CircleRad);
+            fluctuation.y = (Number / controller.corpsSplit * fluctuationSpeed.y) * Mathf.Sin(controller.CircleRad);
 
             target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
                 distance * Mathf.Cos(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);

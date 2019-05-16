@@ -79,7 +79,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 v3 = transform.position;
             //重力感知
             gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -gyroLimit, gyroLimit);
-            gyro.y = Mathf.Clamp(((Input.gyro.gravity.z + 0.8f) * 2.0f), -gyroLimit, gyroLimit);
+            gyro.y = Mathf.Clamp(((Input.gyro.gravity.z + 0.7f) * 2.0f), -gyroLimit, gyroLimit);
             if (gyro.x > 0)
             {
                 pm.x = 1;
@@ -97,7 +97,7 @@ public class PlayerMove : MonoBehaviour
                 pm.y = -1;
             }
             if (gyro.y < 0)
-                gyro.y *= 1.5f;
+                gyro.y *= 1.6f;
             accelerationCount.x = (Mathf.Abs(gyro.x) / (gyroLimit / maxAcceleration.x));
             accelerationCount.y = (Mathf.Abs(gyro.y) / (gyroLimit / maxAcceleration.y));
             if (viewSet == View.back)
