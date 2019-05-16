@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class VolumeControl1 : MonoBehaviour
 {
-    public AudioSource MusicStep_1;
-    public AudioSource MusicStep_2;
-    public AudioSource MusicStep_3;
-    public AudioSource MusicStep_4;
-    public AudioSource MusicStep_5;
-    public AudioSource MusicStep_6;
+    public AudioSource[] musicStep;
     private GameObject gameGenerator;
+    private int musicCnt;
+    private float crescendoVolumeNumber;
 
     // Start is called before the first frame update
     void Start()
     {
         gameGenerator = GameObject.Find("GameGenerator");
+        crescendoVolumeNumber = 0.01f;
     }
 
     // Update is called once per frame
@@ -25,64 +23,22 @@ public class VolumeControl1 : MonoBehaviour
         {
             return;
         }
-        switch (gameGenerator.GetComponent<GameGenerator>().musicCnt)
+
+        musicCnt = gameGenerator.GetComponent<GameGenerator>().musicCnt;
+        if (musicCnt == 0)
         {
-            case 0:
-                MusicStep_1.volume = 1;
-                MusicStep_2.volume = 0;
-                MusicStep_3.volume = 0;
-                MusicStep_4.volume = 0;
-                MusicStep_5.volume = 0;
-                MusicStep_6.volume = 0;
-                break;
-
-            case 1:
-                MusicStep_1.volume = 1;
-                MusicStep_2.volume = 1;
-                MusicStep_3.volume = 0;
-                MusicStep_4.volume = 0;
-                MusicStep_5.volume = 0;
-                MusicStep_6.volume = 0;
-                break;
-
-            case 2:
-                MusicStep_1.volume = 1;
-                MusicStep_2.volume = 1;
-                MusicStep_3.volume = 1;
-                MusicStep_4.volume = 0;
-                MusicStep_5.volume = 0;
-                MusicStep_6.volume = 0;
-                break;
-
-            case 3:
-                MusicStep_1.volume = 1;
-                MusicStep_2.volume = 1;
-                MusicStep_3.volume = 1;
-                MusicStep_4.volume = 1;
-                MusicStep_5.volume = 0;
-                MusicStep_6.volume = 0;
-                break;
-
-            case 4:
-                MusicStep_1.volume = 1;
-                MusicStep_2.volume = 1;
-                MusicStep_3.volume = 1;
-                MusicStep_4.volume = 1;
-                MusicStep_5.volume = 1;
-                MusicStep_6.volume = 0;
-                break;
-
-            case 5:
-                MusicStep_1.volume = 1;
-                MusicStep_2.volume = 1;
-                MusicStep_3.volume = 1;
-                MusicStep_4.volume = 1;
-                MusicStep_5.volume = 1;
-                MusicStep_6.volume = 1;
-                break;
-
-            default:
-                break;
+            for (int i = 0; i < musicCnt + 1; i++)
+                musicStep[i].volume = 1;
+            for (int i = musicCnt + 1; i < musicStep.Length; i++)
+                musicStep[i].volume = 0;
         }
+        else
+        {
+            for (int i = 1; i < musicCnt + 1; i++)
+                musicStep[i].volume += crescendoVolumeNumber;
+            for (int i = musicCnt + 1; i < musicStep.Length; i++)
+                musicStep[i].volume = 0;
+        }
+      
     }
 }

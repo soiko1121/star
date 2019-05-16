@@ -19,7 +19,7 @@ public class Loader : MonoBehaviour
     {
         touchFlag = false;
         slider.enabled = false;
-        _UI.SetActive(false);
+        //_UI.SetActive(false);
         _Button.SetActive(false);
         stButton.onClick.AddListener(tapStart);
     }
