@@ -18,7 +18,7 @@ public class StageMeshCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > 10f + gameGenerator.GetComponent<GameGenerator>().speed && enableChild)
+        if (transform.position.z > gameGenerator.GetComponent<GameGenerator>().speed && enableChild)
         {
             enableChild = false;
             for (int i = 0; i < child.Length; i++)
@@ -26,7 +26,7 @@ public class StageMeshCollider : MonoBehaviour
                child[i].GetComponent<Collider>().enabled = enableChild;
             }
         }
-        if (transform.position.z < 10f + gameGenerator.GetComponent<GameGenerator>().speed && !enableChild)
+        if (transform.position.z < gameGenerator.GetComponent<GameGenerator>().speed && !enableChild)
         {
             enableChild = true;
             for (int i = 0; i < child.Length; i++)

@@ -11,6 +11,10 @@ public class MyAnimator : MonoBehaviour
     {
         get; set;
     }
+    public bool Hit
+    {
+        get; set;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +23,35 @@ public class MyAnimator : MonoBehaviour
         //anime.SetBool("IsFloat", true);
         //anime.SetBool("IsLeft", true);
     }
+    private void Update()
+    {
+        //if (count < protectTime)
+        //{
+        //    count++;
+        //}
+        //else if (count == protectTime)
+        //{
+        //    model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", false);
+        //    model.GetComponent<MyAnimator>().anime.SetBool("IsFloat", true);
+        //    Hit = false;
+        //}
+    }
     private void FixedUpdate()
     {
         Animation(X);
     }
     private void Animation(float x)
     {
-        if (!PlayerHit.Hit)
+        if (Hit)
+        {
+            anime.SetBool("IsDamage", true);
+            anime.SetBool("IsLeft", false);
+            anime.SetBool("IsRight", false);
+            anime.SetBool("IsMotionFloat", false);
+            anime.SetBool("IsDamage", true);
+            Hit = false;
+        }
+        else if (!PlayerHit.Hit)
         {
             //anime.SetBool("IsFloat", true);
             //if (x > 0 && lr == LR.left)

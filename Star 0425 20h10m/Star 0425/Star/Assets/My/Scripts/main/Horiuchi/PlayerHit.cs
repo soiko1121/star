@@ -38,8 +38,6 @@ public class PlayerHit : MonoBehaviour
         }
         else if (count == protectTime)
         {
-            model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", false);
-            model.GetComponent<MyAnimator>().anime.SetBool("IsFloat", true);
             Hit = false;
         }
     }
@@ -67,17 +65,11 @@ public class PlayerHit : MonoBehaviour
                 for (int i = 0; i < length; i++)
                 {
                     Destroy(littlePlanets[i]);
-                    gameGenerator.star--;
                 }
                 count = 0;
                 dangerHit = true;
                 Hit = true;
-                //gameObject.GetComponent<PlayerMove>().anime.SetBool("IsDamage", true);
-                model.GetComponent<MyAnimator>().anime.SetBool("IsLeft", false);
-                model.GetComponent<MyAnimator>().anime.SetBool("IsRight", false);
-                model.GetComponent<MyAnimator>().anime.SetBool("IsFloat", false);
-                model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", true);
-
+                model.GetComponent<MyAnimator>().Hit = true;
             }
         }
     }
