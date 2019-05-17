@@ -5,8 +5,8 @@ using UnityEngine;
 public class MyAnimator : MonoBehaviour
 {
     public Animator anim;
-    private enum LR { left, right, no }
-    private LR lr;
+    //private enum LR { left, right, no }
+    //private LR lr;
     public static float X
     {
         get; set;
@@ -27,18 +27,18 @@ public class MyAnimator : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        lr = LR.left;
-        //anim.SetBool("IsMotionFloat", true);
         Hit = false;
+        //lr = LR.left;
+        //anim.SetBool("IsMotionFloat", true);
         //anime.SetBool("IsFloat", true);
         //anime.SetBool("IsLeft", true);
     }
     private void Update()
     {
+        Animation(X);
     }
     private void FixedUpdate()
     {
-        Animation(X);
     }
     private void Animation(float x)
     {
@@ -62,10 +62,12 @@ public class MyAnimator : MonoBehaviour
             else anim.SetBool("IsMotionFloat", false);
             #endregion
 
+
             #region 左向き開始
             if (x < 0)
             {
                 if (animCount != AnimNumber.Left) anim.SetBool("IsLeftStart", true);
+                else anim.SetBool("IsLeftStart", false);
                 animCount = AnimNumber.Left;
             }
             else anim.SetBool("IsLeftStart", false);
@@ -75,20 +77,19 @@ public class MyAnimator : MonoBehaviour
             if (x < -1f) anim.SetBool("IsLeftFloat1", true);
             else anim.SetBool("IsLeftFloat1", false);
 
-            if (x < -0.5f) anim.SetBool("IsLeftFloat2", true);
+            if (x < -0.5f && x > -1f) anim.SetBool("IsLeftFloat2", true);
             else anim.SetBool("IsLeftFloat2", false);
 
-            if (x < 0) anim.SetBool("IsLeftFloat3", true);
+            if (x < 0 && x > -0.5f) anim.SetBool("IsLeftFloat3", true);
             else anim.SetBool("IsLeftFloat3", false);
             #endregion
-
-            Debug.Log(x);
 
 
             #region 右向き開始
             if (x > 0)
             {
                 if (animCount != AnimNumber.Right) anim.SetBool("IsRightStart", true);
+                else anim.SetBool("IsRightStart", false);
                 animCount = AnimNumber.Right;
             }
             else anim.SetBool("IsRightStart", false);
@@ -98,13 +99,16 @@ public class MyAnimator : MonoBehaviour
             if (x > 1f) anim.SetBool("IsRightFloat1", true);
             else anim.SetBool("IsRightFloat1", false);
 
-            if (x > 0.5f) anim.SetBool("IsRightFloat2", true);
+            if (x > 0.5f && x < 1f) anim.SetBool("IsRightFloat2", true);
             else anim.SetBool("IsRightFloat2", false);
 
-            if (x > 0) anim.SetBool("IsRightFloat3", true);
+            if (x > 0 && x < 0.5f) anim.SetBool("IsRightFloat3", true);
             else anim.SetBool("IsRightFloat3", false);
             #endregion
 
+
+
+            #region
             //anime.SetBool("IsDamage", false);
             //if (x < 0)
             //{
@@ -179,6 +183,7 @@ public class MyAnimator : MonoBehaviour
             //    anime.SetBool("IsMotionFloat", true);
             //    lr = LR.no;
             //}
+            #endregion
         }
     }
 }
