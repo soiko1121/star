@@ -9,7 +9,7 @@ public class GameGenerator : MonoBehaviour
     public int musicCnt;
     [SerializeField]
     private float[] objectSpeed;
-    private GameObject player;
+    private GameObject[] littlePlanets;
     void Awake()
     {
         Application.targetFrameRate = 60;
@@ -42,7 +42,6 @@ public class GameGenerator : MonoBehaviour
         musicChangeCount[6] = 250;
         addSpeedTimer = 0;
         StageTimer = 0;
-        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -52,7 +51,9 @@ public class GameGenerator : MonoBehaviour
         {
             return;
         }
-
+        littlePlanets = GameObject.FindGameObjectsWithTag("MiniStar");
+        star = littlePlanets.Length;
+        Controller();
         if (addSpeedTimer > 0)
         {
             addSpeedTimer -= 1 / 60f;
@@ -66,19 +67,10 @@ public class GameGenerator : MonoBehaviour
 
         TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
         StageTimer += Time.deltaTime;
-    }
-    private void FixedUpdate()
-    {
-        if (star != player.GetComponent<PlayerHit>().littlePlanets.Length)
+        if (maxstar <= star)
         {
-            star = player.GetComponent<PlayerHit>().littlePlanets.Length;
-            Controller();
-
-            if (maxstar <= star)
-            {
-                maxstar = star;
-                Star = maxstar;
-            }
+            maxstar = star;
+            Star = maxstar;
         }
     }
     private void Controller()

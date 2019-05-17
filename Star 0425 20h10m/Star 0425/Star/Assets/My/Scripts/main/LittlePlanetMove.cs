@@ -37,7 +37,6 @@ public class LittlePlanetMove : MonoBehaviour
         littlePlanetRB.AddForce((transform.position - target) * 300f);//目的地と反対に飛ばす
 
         gameGenerator = GameObject.Find("GameGenerator");
-        gameGenerator.GetComponent<GameGenerator>().star++;
     }
 
     void Update()
