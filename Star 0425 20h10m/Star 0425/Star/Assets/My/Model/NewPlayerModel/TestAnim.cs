@@ -10,8 +10,6 @@ public class TestAnim : MonoBehaviour
     {
         MotionFloat, Damage,
         Left,Right,
-        Left1, Left2, Left3,
-        Right1, Right2, Right3
     }
     AnimNumber animCount;
 
@@ -41,6 +39,7 @@ public class TestAnim : MonoBehaviour
         }
         else anim.SetBool("IsDamage", false);
         #endregion
+
 
         #region 左向き開始
         if (Input.GetKeyDown(KeyCode.Alpha1) ||
