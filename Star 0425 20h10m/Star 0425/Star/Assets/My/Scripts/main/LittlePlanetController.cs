@@ -13,6 +13,7 @@ public class LittlePlanetController : MonoBehaviour
     public int delayTime;
     public int circleSprit;
     public int touchDistanse;
+    public Vector2 fluctuationSpeed;
 
     private int count;
     private GameObject player;
