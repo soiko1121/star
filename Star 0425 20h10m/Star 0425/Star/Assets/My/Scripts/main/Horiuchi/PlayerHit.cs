@@ -10,7 +10,7 @@ public class PlayerHit : MonoBehaviour
     public int constant;
     public int percentage;
     public int protectTime;
-    private GameObject[] littlePlanets;
+    public GameObject[] littlePlanets;
     private bool dangerHit;
     private int count;
 
@@ -67,7 +67,6 @@ public class PlayerHit : MonoBehaviour
                 for (int i = 0; i < length; i++)
                 {
                     Destroy(littlePlanets[i]);
-                    gameGenerator.star--;
                 }
                 count = 0;
                 dangerHit = true;
@@ -77,7 +76,6 @@ public class PlayerHit : MonoBehaviour
                 model.GetComponent<MyAnimator>().anime.SetBool("IsRight", false);
                 model.GetComponent<MyAnimator>().anime.SetBool("IsFloat", false);
                 model.GetComponent<MyAnimator>().anime.SetBool("IsDamage", true);
-
             }
         }
     }

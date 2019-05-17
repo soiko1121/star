@@ -175,7 +175,6 @@ public class LittlePlanetMove : MonoBehaviour
 
         if (other.gameObject.tag == "DangerObject" && Hit)
         {
-            gameGenerator.GetComponent<GameGenerator>().star--;
             Destroy(gameObject);
         }
     }
