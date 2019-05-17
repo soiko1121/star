@@ -80,6 +80,7 @@ public class PlayerMove : MonoBehaviour
             //重力感知
             gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -gyroLimit, gyroLimit);
             gyro.y = Mathf.Clamp(((Input.gyro.gravity.z + 0.7f) * 2.0f), -gyroLimit, gyroLimit);
+            //debugText.GetComponent<DebugText>().text = gyro.x.ToString() + ":::::::" + gyro.y.ToString();
             if (gyro.x > 0)
             {
                 pm.x = 1;
@@ -98,20 +99,20 @@ public class PlayerMove : MonoBehaviour
             }
             if (gyro.y < 0)
                 gyro.y *= 1.6f;
-            accelerationCount.x = (Mathf.Abs(gyro.x) / (gyroLimit / maxAcceleration.x));
-            accelerationCount.y = (Mathf.Abs(gyro.y) / (gyroLimit / maxAcceleration.y));
+            accelerationCount.x = (Mathf.Abs(gyro.x) / (int)(gyroLimit / maxAcceleration.x));
+            accelerationCount.y = (Mathf.Abs(gyro.y) / (int)(gyroLimit / maxAcceleration.y));
             if (viewSet == View.back)
             {
-                if (Mathf.Abs(transform.position.x + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speedV2.x * pm.x) < limit.x)
-                    v3.x = transform.position.x + accelerationCount.x * (gyroLimit / maxAcceleration.x) * speedV2.x * pm.x;
+                if (Mathf.Abs(transform.position.x + accelerationCount.x * 0.5f * (gyroLimit / maxAcceleration.x) * speedV2.x * pm.x) < limit.x)
+                    v3.x = transform.position.x + accelerationCount.x * 0.5f * (gyroLimit / maxAcceleration.x) * speedV2.x * pm.x;
                 else
                     v3.x = transform.position.x;
-                if (Mathf.Abs(transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y) < limit.y)
-                    v3.y = transform.position.y + accelerationCount.y * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y;
+                if (Mathf.Abs(transform.position.y + accelerationCount.y * 0.5f * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y) < limit.y)
+                    v3.y = transform.position.y + accelerationCount.y * 0.5f * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y;
                 else
                     v3.y = transform.position.y;
                 v3.z = 0;
-                transform.LookAt(new Vector3(v3.x * 1.1f, v3.y - 1, 2));
+                //transform.LookAt(new Vector3(v3.x * 1.1f, v3.y - 1, 2));
             }
             //else
             //{
@@ -145,7 +146,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 pos = target - transform.position;
             pos = pos.normalized * 10f;
             playerRB.AddForce(pos);
-            MyAnimator.X = pos.x; 
+            MyAnimator.X = pos.x;
         }
         PosList.Add(transform.position);
         if (PosList.Count > 200 * 10)
