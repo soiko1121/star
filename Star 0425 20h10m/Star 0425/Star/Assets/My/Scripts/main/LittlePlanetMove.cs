@@ -46,23 +46,20 @@ public class LittlePlanetMove : MonoBehaviour
         {
             return;
         }
-        if (!gameGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
+        if (!Hit)
         {
-            if (!Hit)
+            if (count < 120)
             {
-                if (count < 120)
-                {
-                    count += 1;
-                }
-                else
-                {
-                    PlayerFollow();
-                }
+                count += 1;
             }
             else
             {
-                Corps();
+                PlayerFollow();
             }
+        }
+        else
+        {
+            Corps();
         }
         transform.Rotate(new Vector3(Random.Range(-1, 2), Random.Range(-1, 2), Random.Range(-1, 2)));
     }
@@ -102,10 +99,10 @@ public class LittlePlanetMove : MonoBehaviour
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
         {
             Vector3 fluctuation = Vector3.zero;
-            if (controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 2)] != -1)
+            if (controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 3)] != -1)
             {
-                fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationSpeed.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 2)]);
-                fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationSpeed.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 2)]);
+                fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationSpeed.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 3)]);
+                fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationSpeed.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 3)]);
             }
 
             target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
