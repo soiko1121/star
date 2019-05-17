@@ -28,7 +28,6 @@ public class PlanetHit : MonoBehaviour
             BurstPlanet();
             hit = true;
             part = Instantiate(partOriginal, transform.position, Quaternion.identity) as GameObject;
-            Debug.Log(hitSe.transform.GetChild(0).name);
             hitSe.transform.GetChild(0).GetComponent<SEControl_Crystal>().GetCrystalSe();
             GetComponent<Renderer>().enabled = false;
             Destroy(gameObject);
