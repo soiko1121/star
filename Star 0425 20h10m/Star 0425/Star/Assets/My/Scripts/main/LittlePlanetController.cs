@@ -13,6 +13,7 @@ public class LittlePlanetController : MonoBehaviour
     public int delayTime;
     public int circleSprit;
     public int touchDistanse;
+    public Vector2 fluctuationSpeed;
 
     private int count;
     private GameObject player;
@@ -21,7 +22,11 @@ public class LittlePlanetController : MonoBehaviour
     {
         get; set;
     }
-    public float CircleRad
+    public bool TouchMove
+    {
+        get; set;
+    }
+    public List<float> RadList
     {
         get; set;
     }
@@ -50,7 +55,10 @@ public class LittlePlanetController : MonoBehaviour
         TagList = new List<int>();
         player = GameObject.FindWithTag("Player");
         Delay = delayTime;
-        CircleRad = 0;
+        TouchMove = false;
+        RadList = new List<float>();
+        for (int i = 0; i < 200 * 10; i++)
+            RadList.Add(-1);
     }
     private void Update()
     {
@@ -75,6 +83,12 @@ public class LittlePlanetController : MonoBehaviour
         }
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
             GetTouch();
+        else if (RadList[RadList.Count - 1] != -1)
+        {
+            RadList = new List<float>();
+            for (int i = 0; i < 200 * 10; i++)
+                RadList.Add(-1);
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -104,19 +118,32 @@ public class LittlePlanetController : MonoBehaviour
     }
     private void GetTouch()
     {
-        float atan = Mathf.Atan2(Input.mousePosition.y - touchPos.y, Input.mousePosition.x - touchPos.x);
-        if (atan < 0)
+        Vector2 distance = new Vector2(Input.mousePosition.x - touchPos.x, Input.mousePosition.y - touchPos.y);
+        if (distance.x * distance.x + distance.y * distance.y > touchDistanse * touchDistanse)
         {
-            atan = 180 * Mathf.Deg2Rad + 180 * Mathf.Deg2Rad - Mathf.Abs(atan);
-        }
-        if (atan != 0)
-        {
-            int a = (int)(atan * Mathf.Rad2Deg) / (int)(360f / circleSprit);
-            CircleRad = (a * (360f / circleSprit)) * Mathf.Deg2Rad;
+            float atan = Mathf.Atan2(distance.y, distance.x);
+            if (atan < 0)
+            {
+                atan = 180 * Mathf.Deg2Rad + 180 * Mathf.Deg2Rad - Mathf.Abs(atan);
+            }
+            if (atan != 0)
+            {
+                int a = (int)(atan * Mathf.Rad2Deg) / (int)(360f / circleSprit);
+                float CircleRad = (a * (360f / circleSprit)) * Mathf.Deg2Rad;
+                RadList.Add(CircleRad);
+            }
+            else
+            {
+                RadList.Add(0);
+            }
         }
         else
         {
-            CircleRad = 0;
+            RadList.Add(-1);
+        }
+        if (RadList.Count > 200 * 10)
+        {
+            RadList.RemoveAt(0);
         }
     }
 }
