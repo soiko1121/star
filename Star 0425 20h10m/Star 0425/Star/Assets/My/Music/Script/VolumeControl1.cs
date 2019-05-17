@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class VolumeControl1 : MonoBehaviour
 {
+    public float firstVolume = 0.2f;// ポーズから復帰したときのBGMの初期音量
     public AudioSource[] musicStep;
+    public AudioSource[] pauseMusicStep;
     private GameObject gameGenerator;
-    private int musicCnt;
+    private int musicCount;
+    public bool pauseSwich = false;
     private float crescendoVolumeNumber;
 
     // Start is called before the first frame update
@@ -19,26 +22,22 @@ public class VolumeControl1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Approximately(Time.timeScale, 0f))
-        {
-            return;
-        }
+        musicCount = gameGenerator.GetComponent<GameGenerator>().musicCnt;
 
-        musicCnt = gameGenerator.GetComponent<GameGenerator>().musicCnt;
-        if (musicCnt == 0)
+        if (pauseSwich)
         {
-            for (int i = 0; i < musicCnt + 1; i++)
-                musicStep[i].volume = 1;
-            for (int i = musicCnt + 1; i < musicStep.Length; i++)
-                musicStep[i].volume = 0;
+           // Debug.Log("来てます");
+            for (int i = 0; i < musicCount + 1; i++)
+                pauseMusicStep[i].volume = 1;
+            for (int i = musicCount + 1; i < musicStep.Length; i++)
+                pauseMusicStep[i].volume = 0;
         }
         else
         {
-            for (int i = 1; i < musicCnt + 1; i++)
+            for (int i = 0; i < musicCount + 1; i++)
                 musicStep[i].volume += crescendoVolumeNumber;
-            for (int i = musicCnt + 1; i < musicStep.Length; i++)
+            for (int i = musicCount + 1; i < musicStep.Length; i++)
                 musicStep[i].volume = 0;
         }
-      
     }
 }
