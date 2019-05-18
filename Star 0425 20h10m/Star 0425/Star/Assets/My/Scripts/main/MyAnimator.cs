@@ -14,6 +14,7 @@ public class MyAnimator : MonoBehaviour
     public float RightNormal = 0.5f;    //右の2段階目の傾き実行値
     public float RightMin = 0f;         //右のモーションを実行する値
 
+
     public static float X
     {
         get; set;
@@ -27,6 +28,7 @@ public class MyAnimator : MonoBehaviour
     {
         MotionFloat, Damage,
         Left, Right,
+        Default
     }
     AnimNumber animCount;
 
@@ -39,24 +41,40 @@ public class MyAnimator : MonoBehaviour
 
     private void Update()
     {
-        Animation(X);
+        Debug.Log(X);
+
+        if (X < LeftMin || X > RightMin) Animation(X);
+        else
+        {
+            animCount = AnimNumber.Default;
+            anim.SetBool("IsMotionFloat", true);
+        }
     }
 
     private void Animation(float x)
     {
-        if (Hit)
+        anim.SetBool("IsMotionFloat", true);
+        if (PlayerHit.Hit)
         {
-            anim.SetBool("IsDamage", true);
-            Hit = false;
+            #region ダメージ時
+            if (animCount != AnimNumber.Damage) anim.SetBool("IsDamage", true);
+            else
+            {
+                animCount = AnimNumber.Damage;
+                anim.SetBool("IsDamage", false);
+            }
+            #endregion
         }
-        else if (!PlayerHit.Hit)
+        else
         {
             anim.SetBool("IsDamage", false);
+
             #region 何もしていない時
             if (x == 0)
             {
+                if (animCount != AnimNumber.MotionFloat) anim.SetBool("IsMotionFloat", true);
+                else anim.SetBool("IsMotionFloat", false);
                 animCount = AnimNumber.MotionFloat;
-                anim.SetBool("IsMotionFloat", true);
             }
             else anim.SetBool("IsMotionFloat", false);
             #endregion
@@ -65,45 +83,73 @@ public class MyAnimator : MonoBehaviour
             #region 左向き開始
             if (x < LeftMin)
             {
-                if (animCount != AnimNumber.Left) anim.SetBool("IsLeftStart", true);
-                else anim.SetBool("IsLeftStart", false);
-                animCount = AnimNumber.Left;
+                anim.SetBool("IsRightFloat1", false);
+                anim.SetBool("IsRightFloat2", false);
+                anim.SetBool("IsRightFloat3", false);
+                anim.SetBool("IsRightStart", false);
+                anim.SetBool("IsRight", false);
+
+                anim.SetBool("IsLeft", true);
+
+                if (animCount != AnimNumber.Left)
+                {
+                    anim.SetBool("IsLeftStart", true);
+                    animCount = AnimNumber.Left;
+                }
+                else
+                {
+                    anim.SetBool("IsLeftStart", false);
+
+                    //斜め処理
+                    if (x < LeftMin && x >= LeftNormal) anim.SetBool("IsLeftFloat1", true);
+                    else anim.SetBool("IsLeftFloat1", false);
+
+                    if (x < LeftNormal && x >= LeftMax) anim.SetBool("IsLeftFloat2", true);
+                    else anim.SetBool("IsLeftFloat2", false);
+
+                    if (x < LeftMax) anim.SetBool("IsLeftFloat3", true);
+                    else anim.SetBool("IsLeftFloat3", false);
+                }
             }
-            else anim.SetBool("IsLeftStart", false);
-            #endregion
-
-            #region 左向き角度段階
-            if (x < LeftMin && x >= LeftNormal) anim.SetBool("IsLeftFloat1", true);
-            else anim.SetBool("IsLeftFloat1", false);
-
-            if (x < LeftNormal && x >= LeftMax) anim.SetBool("IsLeftFloat2", true);
-            else anim.SetBool("IsLeftFloat2", false);
-
-            if (x < LeftMax) anim.SetBool("IsLeftFloat3", true);
-            else anim.SetBool("IsLeftFloat3", false);
             #endregion
 
 
             #region 右向き開始
             if (x > RightMin)
             {
-                if (animCount != AnimNumber.Right) anim.SetBool("IsRightStart", true);
-                else anim.SetBool("IsRightStart", false);
-                animCount = AnimNumber.Right;
+                anim.SetBool("IsLeftFloat1", false);
+                anim.SetBool("IsLeftFloat2", false);
+                anim.SetBool("IsLeftFloat3", false);
+                anim.SetBool("IsLeftStart", false);
+                anim.SetBool("IsLeft", false);
+
+                anim.SetBool("IsRight", true);
+
+                if (animCount != AnimNumber.Right)
+                {
+                    anim.SetBool("IsRightStart", true);
+                    animCount = AnimNumber.Right;
+                }
+                else
+                {
+                    anim.SetBool("IsRightStart", false);
+
+                    //斜め処理
+                    if (x > RightMin && x <= RightNormal) anim.SetBool("IsRightFloat1", true);
+                    else anim.SetBool("IsRightFloat1", false);
+
+                    if (x > RightNormal && x <= RightMax) anim.SetBool("IsRightFloat2", true);
+                    else anim.SetBool("IsRightFloat2", false);
+
+                    if (x > RightMax) anim.SetBool("IsRightFloat3", true);
+                    else anim.SetBool("IsRightFloat3", false);
+
+                }
             }
-            else anim.SetBool("IsRightStart", false);
             #endregion
 
-            #region 右向き角度段階
-            if (x > RightMin && x <= RightNormal) anim.SetBool("IsRightFloat1", true);
-            else anim.SetBool("IsRightFloat1", false);
+            Debug.Log(animCount);
 
-            if (x > RightNormal && x <= RightMax) anim.SetBool("IsRightFloat2", true);
-            else anim.SetBool("IsRightFloat2", false);
-
-            if (x > RightMax) anim.SetBool("IsRightFloat3", true);
-            else anim.SetBool("IsRightFloat3", false);
-            #endregion
         }
     }
 }
