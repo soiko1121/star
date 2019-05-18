@@ -14,7 +14,7 @@ public class MyAnimator : MonoBehaviour
     public float RightNormal = 0.5f;    //右の2段階目の傾き実行値
     public float RightMin = 0f;         //右のモーションを実行する値
 
-    public static float X
+    public float X
     {
         get; set;
     }

@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     public float gyroLimit;
     public Vector2 limit;
     public Vector2 rotaLimit;
+    public MyAnimator myAnimator;
 
     //public Vector2 accelerationSpeed;
     public Vector2 maxAcceleration;
@@ -112,7 +113,10 @@ public class PlayerMove : MonoBehaviour
                 else
                     v3.y = transform.position.y;
                 v3.z = 0;
-                //transform.LookAt(new Vector3(v3.x * 1.1f, v3.y - 1, 2));
+                //if(accelerationCount.y * 0.5f * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y + 0.4f > 0.7f)
+                //    transform.rotation = new Quaternion(-0.7f, 0, 0, transform.rotation.w);
+                //else
+                //transform.rotation = new Quaternion(-(accelerationCount.y * 0.5f * (gyroLimit / maxAcceleration.y) * speedV2.y * pm.y) + 0.4f, 0, 0, transform.rotation.w);
             }
             //else
             //{
@@ -129,10 +133,10 @@ public class PlayerMove : MonoBehaviour
             //{
             //    v3.z = 2;
             //}
+            myAnimator.X = v3.x - transform.position.x;
             transform.position = v3;
             //playerRB.AddForce(v3 - transform.position);
             oldpos = v3;
-            MyAnimator.X = gyro.x;
             //debugText.GetComponent<DebugText>().debugVec3 = gyro;
         }
         else
@@ -146,7 +150,7 @@ public class PlayerMove : MonoBehaviour
             Vector3 pos = target - transform.position;
             pos = pos.normalized * 10f;
             playerRB.AddForce(pos);
-            MyAnimator.X = pos.x;
+            myAnimator.X = pos.x;
         }
         PosList.Add(transform.position);
         if (PosList.Count > 200 * 10)
