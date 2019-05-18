@@ -135,7 +135,6 @@ namespace UnityEngine.PostProcessing
 
             // Postfilter pass
             Graphics.Blit(rt2, rt1, material, 7);
-            Debug.Log(rt2 + ":" + rt1 + ":" + material);
 
             // Give the results to the uber shader.
             uberMaterial.SetVector(Uniforms._DepthOfFieldParams, new Vector3(s1, coeff, maxCoC));
