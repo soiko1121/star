@@ -27,10 +27,14 @@ public class PlayerMove : MonoBehaviour
     {
         get; set;
     }
+    public static Vector2 PM
+    {
+        get; set;
+    }
     public enum View
     {
         back, side
-    };
+    }
     public View viewSet = View.back;
     // Start is called before the first frame update
     void Start()
@@ -50,6 +54,10 @@ public class PlayerMove : MonoBehaviour
         accelerationCount = Vector2.zero;
         //acceleration = accelerationSpeed / maxAcceleration;
         pm = new Vector2(1, 1);
+        if (PM.x == 0)
+        {
+            PM = new Vector2(1, 1);
+        }
     }
 
     // Update is called once per frame
@@ -98,6 +106,7 @@ public class PlayerMove : MonoBehaviour
             {
                 pm.y = -1;
             }
+            pm *= PM;
             if (gyro.y < 0)
                 gyro.y *= 1.6f;
             accelerationCount.x = (Mathf.Abs(gyro.x) / (int)(gyroLimit / maxAcceleration.x));
