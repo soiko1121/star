@@ -40,8 +40,6 @@ public class MyAnimator : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(X);
-
         if (X < LeftMin || X > RightMin) Animation(X);
         else
         {
