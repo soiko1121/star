@@ -9,6 +9,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (Application.isEditor)
         {
+            Resources.UnloadUnusedAssets();//一回全部消し飛ばすやつ　by亀
             SceneManager.LoadScene("LoadScene");
         }
     }

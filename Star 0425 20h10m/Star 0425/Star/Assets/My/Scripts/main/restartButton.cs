@@ -14,6 +14,7 @@ public class restartButton : MonoBehaviour
     public void loadS()
     {
         Time.timeScale = 1.0f;
+        Resources.UnloadUnusedAssets();//一回全部消し飛ばすやつ　by亀
         SceneManager.LoadScene("LoadScene");
     } 
 }
