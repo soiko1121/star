@@ -22,10 +22,6 @@ public class TotalScore : MonoBehaviour
     public int ScoreSet()
     {
         int scoreSet;
-        if (GameGenerator.Star <= 0)
-        {
-            GameGenerator.Star = 1;
-        }
         scoreSet = GameGenerator.Star * 1000000 / (int)GameGenerator.StageTimer;
         return scoreSet;
     }

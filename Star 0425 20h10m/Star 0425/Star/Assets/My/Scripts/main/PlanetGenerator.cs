@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlanetGenerator : MonoBehaviour
 {
     public GameObject[] stage;
+    public int stageNumber;
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(stage[SelectStage.StageSelect-1], Vector3.zero,Quaternion.identity);
+        Instantiate(stage[stageNumber], Vector3.zero, Quaternion.identity);
+        //Instantiate(stage[SelectStage.StageSelect - 1], Vector3.zero, Quaternion.identity);
     }
 }
