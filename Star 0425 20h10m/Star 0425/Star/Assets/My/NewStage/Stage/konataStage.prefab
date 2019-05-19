@@ -100,7 +100,6 @@ Transform:
   - {fileID: 5719769112387446367}
   - {fileID: 6103437405837370645}
   - {fileID: 2121390988136822336}
-  - {fileID: 3210138253860961741}
   - {fileID: 1549493893287617585}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -195,11 +194,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -270,6 +264,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (6)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &1784970139037172323 stripped
@@ -285,11 +284,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (43)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -360,6 +354,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (43)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -380,11 +379,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (87)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -455,6 +449,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (87)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -475,11 +474,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
-        type: 3}
-      propertyPath: m_Name
-      value: rock6 (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 0a021a1e4e9363d44967962dfbce6747,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -535,6 +529,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
+        type: 3}
+      propertyPath: m_Name
+      value: rock6 (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a021a1e4e9363d44967962dfbce6747, type: 3}
 --- !u!4 &2121390988136822336 stripped
@@ -550,11 +549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (76)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -625,6 +619,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (76)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -645,11 +644,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (86)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -720,6 +714,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (86)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -740,11 +739,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -815,6 +809,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (8)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &1712484867716308405 stripped
@@ -830,11 +829,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (29)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -905,6 +899,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (29)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &1669865778303173702 stripped
@@ -920,11 +919,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (35)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -995,6 +989,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (35)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -1015,11 +1014,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1090,6 +1084,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (9)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &1559652070681003294 stripped
@@ -1105,11 +1104,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (77)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1180,6 +1174,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (77)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -1200,11 +1199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1275,6 +1269,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (8)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &782534245463931611 stripped
@@ -1290,11 +1289,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (72)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1365,6 +1359,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (72)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -1385,11 +1384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (65)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1460,6 +1454,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (65)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -1480,11 +1479,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1555,6 +1549,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &4209573453761962330 stripped
@@ -1570,11 +1569,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (78)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1645,6 +1639,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (78)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -1665,11 +1664,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (69)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1740,6 +1734,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (69)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -1760,11 +1759,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (18)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1835,6 +1829,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (18)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &1035392465231089173 stripped
@@ -1850,11 +1849,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1925,6 +1919,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &878241436647645529 stripped
@@ -1940,11 +1939,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2015,6 +2009,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &3742339493614418489 stripped
@@ -2030,11 +2029,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (78)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2105,6 +2099,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (78)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -2125,11 +2124,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (53)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2200,6 +2194,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (53)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -2220,11 +2219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (77)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2295,6 +2289,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (77)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -2315,11 +2314,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (51)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2390,6 +2384,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (51)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -2410,11 +2409,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (88)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2485,6 +2479,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (88)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -2498,81 +2497,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2359296703493506558}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2459741448992536475
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4890449853630611196}
-    m_Modifications:
-    - target: {fileID: 1057908766764649050, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_Name
-      value: Goal
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2a3d6d33c66d28e4296079ae8641f0ff, type: 3}
---- !u!4 &3210138253860961741 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1057908766764649046, guid: 2a3d6d33c66d28e4296079ae8641f0ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 2459741448992536475}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2511642971407328454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2580,11 +2504,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (63)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2655,6 +2574,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (63)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -2675,11 +2599,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
-        type: 3}
-      propertyPath: m_Name
-      value: rock6 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 0a021a1e4e9363d44967962dfbce6747,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2750,6 +2669,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
+        type: 3}
+      propertyPath: m_Name
+      value: rock6 (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a021a1e4e9363d44967962dfbce6747, type: 3}
 --- !u!4 &4178746659501101790 stripped
@@ -2765,11 +2689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (8)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2840,6 +2759,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (8)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &1034747588082733117 stripped
@@ -2855,11 +2779,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2930,6 +2849,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &165267641341284131 stripped
@@ -2945,11 +2869,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (44)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3020,6 +2939,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (44)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -3040,11 +2964,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (78)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3115,6 +3034,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (78)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -3135,11 +3059,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (75)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3210,6 +3129,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (75)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -3230,11 +3154,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3305,6 +3224,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &540548422467316634 stripped
@@ -3320,11 +3244,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3395,6 +3314,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &3068962622627011001 stripped
@@ -3410,11 +3334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (47)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3485,6 +3404,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (47)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -3505,11 +3429,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (26)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3579,6 +3498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (26)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
@@ -3715,11 +3639,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (24)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3790,6 +3709,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (24)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &3381391727224783770 stripped
@@ -3805,11 +3729,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (46)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3880,6 +3799,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (46)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -3900,11 +3824,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (83)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3975,6 +3894,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (83)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -3995,11 +3919,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (82)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4070,6 +3989,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (82)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -4133,7 +4057,7 @@ PrefabInstance:
     - target: {fileID: 2507160785108964682, guid: e40c97575f71a0b429055664797949f2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 2507160785108964682, guid: e40c97575f71a0b429055664797949f2,
         type: 3}
@@ -4171,11 +4095,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (73)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4246,6 +4165,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (73)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -4266,11 +4190,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (79)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4341,6 +4260,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (79)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -4361,11 +4285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (20)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4436,6 +4355,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (20)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &2502130018735181480 stripped
@@ -4451,11 +4375,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
-        type: 3}
-      propertyPath: m_Name
-      value: rock6 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 0a021a1e4e9363d44967962dfbce6747,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4526,6 +4445,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
+        type: 3}
+      propertyPath: m_Name
+      value: rock6 (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a021a1e4e9363d44967962dfbce6747, type: 3}
 --- !u!4 &2560390175230851352 stripped
@@ -4541,11 +4465,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4616,6 +4535,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &2534624068804371519 stripped
@@ -4631,11 +4555,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4706,6 +4625,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (7)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &1324941558149999997 stripped
@@ -4721,11 +4645,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4796,6 +4715,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (7)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &2853509228288711451 stripped
@@ -4811,11 +4735,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (76)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4886,6 +4805,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (76)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -4906,11 +4830,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (56)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4981,6 +4900,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (56)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -5001,11 +4925,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (37)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5076,6 +4995,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (37)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -5096,11 +5020,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5171,6 +5090,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &2697669474574722602 stripped
@@ -5186,11 +5110,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (6)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5261,6 +5180,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (6)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &1715200581992084405 stripped
@@ -5276,11 +5200,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (115)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5351,6 +5270,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (115)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -5371,11 +5295,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (76)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5446,6 +5365,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (76)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -5466,11 +5390,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (85)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5541,6 +5460,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (85)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -5561,11 +5485,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (28)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5636,6 +5555,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (28)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &6463943450975526335 stripped
@@ -5651,11 +5575,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (80)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5726,6 +5645,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (80)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -5746,11 +5670,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5821,6 +5740,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5 (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &7798829326553911178 stripped
@@ -5836,11 +5760,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (70)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5911,6 +5830,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (70)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -5931,11 +5855,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (84)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6006,6 +5925,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (84)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -6026,11 +5950,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (41)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6101,6 +6020,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (41)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -6121,11 +6045,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (57)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6196,6 +6115,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (57)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -6216,11 +6140,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (39)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6291,6 +6210,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (39)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -6311,11 +6235,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6386,6 +6305,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &5849550644960743118 stripped
@@ -6401,11 +6325,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (67)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6476,6 +6395,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (67)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -6496,11 +6420,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (13)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6571,6 +6490,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (13)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &6103437405837370645 stripped
@@ -6586,11 +6510,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (81)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6661,6 +6580,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (81)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -6681,11 +6605,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (71)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6756,6 +6675,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (71)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -6776,11 +6700,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (12)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6851,6 +6770,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (12)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &5719769112387446367 stripped
@@ -6866,11 +6790,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6941,6 +6860,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (5)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &4757219940845052700 stripped
@@ -6956,11 +6880,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
-        type: 3}
-      propertyPath: m_Name
-      value: rock6 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 0a021a1e4e9363d44967962dfbce6747,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7031,6 +6950,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
+        type: 3}
+      propertyPath: m_Name
+      value: rock6 (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a021a1e4e9363d44967962dfbce6747, type: 3}
 --- !u!4 &4712450358134235950 stripped
@@ -7046,11 +6970,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (55)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7121,6 +7040,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (55)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -7141,11 +7065,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (77)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7216,6 +7135,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (77)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -7236,11 +7160,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (58)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7311,6 +7230,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (58)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -7331,11 +7255,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (34)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7406,6 +7325,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -7426,11 +7350,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (74)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7501,6 +7420,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (74)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -7521,11 +7445,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (89)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7596,6 +7515,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (89)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -7616,11 +7540,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (49)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7691,6 +7610,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (49)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -7711,11 +7635,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (22)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7786,6 +7705,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (22)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &9009615781341458264 stripped
@@ -7801,11 +7725,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
-        type: 3}
-      propertyPath: m_Name
-      value: rock6
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 0a021a1e4e9363d44967962dfbce6747,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7876,6 +7795,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 0a021a1e4e9363d44967962dfbce6747,
+        type: 3}
+      propertyPath: m_Name
+      value: rock6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a021a1e4e9363d44967962dfbce6747, type: 3}
 --- !u!4 &8254919465345330496 stripped
@@ -7891,11 +7815,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (10)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7966,6 +7885,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (10)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &8311294524591242285 stripped
@@ -7981,11 +7905,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
-        type: 3}
-      propertyPath: m_Name
-      value: rock5 (11)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 09f5f93b4d772194b9e5931aca3db46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8056,6 +7975,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 09f5f93b4d772194b9e5931aca3db46a,
+        type: 3}
+      propertyPath: m_Name
+      value: rock5 (11)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f5f93b4d772194b9e5931aca3db46a, type: 3}
 --- !u!4 &8081002588087256237 stripped
@@ -8071,11 +7995,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock4 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8146,6 +8065,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock4 (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4c35acd90f89b45889801e0fe5e1dd, type: 3}
 --- !u!4 &4837632434240578617 stripped
@@ -8161,11 +8085,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (59)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8236,6 +8155,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (59)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -8256,11 +8180,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (25)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8331,6 +8250,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (25)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &8361835558155561886 stripped
@@ -8346,11 +8270,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (66)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8421,6 +8340,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (66)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -8441,11 +8365,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (40)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8516,6 +8435,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (40)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -8536,11 +8460,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (61)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8611,6 +8530,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (61)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -8631,11 +8555,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (52)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8706,6 +8625,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (52)
+      objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: hitSe
@@ -8726,11 +8650,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
-    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
-        type: 3}
-      propertyPath: m_Name
-      value: rock (15)
-      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8801,6 +8720,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3046086528863348714, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154,
+        type: 3}
+      propertyPath: m_Name
+      value: rock (15)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9351efa6a9e4ccb4f8e9fd02ac9da154, type: 3}
 --- !u!4 &8070368124485540212 stripped
@@ -8816,11 +8740,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock5
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: c13ab0ced63e0f94291db2078d67c4ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8891,6 +8810,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: c13ab0ced63e0f94291db2078d67c4ca,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13ab0ced63e0f94291db2078d67c4ca, type: 3}
 --- !u!4 &6811977555503977753 stripped
@@ -8906,11 +8830,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853630611196}
     m_Modifications:
-    - target: {fileID: 2917847576361282676, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock4
-      objectReference: {fileID: 0}
     - target: {fileID: 2917847576360792148, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8981,6 +8900,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: 6f4c35acd90f89b45889801e0fe5e1dd,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4c35acd90f89b45889801e0fe5e1dd, type: 3}
 --- !u!4 &5835902437278522526 stripped
@@ -8996,11 +8920,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449854628713112}
     m_Modifications:
-    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
-        type: 3}
-      propertyPath: m_Name
-      value: testciystal2 (68)
-      objectReference: {fileID: 0}
     - target: {fileID: 2873991627064169860, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9070,6 +8989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873991627064265124, guid: e427e696c07cd53419e46871a0b1b62f,
+        type: 3}
+      propertyPath: m_Name
+      value: testciystal2 (68)
       objectReference: {fileID: 0}
     - target: {fileID: 6875117984235356255, guid: e427e696c07cd53419e46871a0b1b62f,
         type: 3}
