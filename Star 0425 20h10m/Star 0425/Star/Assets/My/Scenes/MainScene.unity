@@ -424,6 +424,36 @@ PrefabInstance:
       propertyPath: hitSe
       value: 
       objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 2390788132911673682, guid: 0c411eb345be78d409ff49c09abe549d,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 1765145455320927388, guid: 0c411eb345be78d409ff49c09abe549d,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 8188408415791277239, guid: 0c411eb345be78d409ff49c09abe549d,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 2782376971181970826, guid: 0c411eb345be78d409ff49c09abe549d,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 4229409452170383393, guid: 0c411eb345be78d409ff49c09abe549d,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
+    - target: {fileID: 505637960379477796, guid: 0c411eb345be78d409ff49c09abe549d,
+        type: 3}
+      propertyPath: hitSe
+      value: 
+      objectReference: {fileID: 1155054722149158592}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c411eb345be78d409ff49c09abe549d, type: 3}
 --- !u!1 &71580842
