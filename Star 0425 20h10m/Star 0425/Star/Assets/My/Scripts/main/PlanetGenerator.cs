@@ -8,6 +8,6 @@ public class PlanetGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(stage[SelectStage.StageSelect], Vector3.zero,Quaternion.identity);
+        Instantiate(stage[SelectStage.StageSelect-1], Vector3.zero,Quaternion.identity);
     }
 }
