@@ -15,9 +15,16 @@ public class TotalScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = ScoreSet();
         Text totalScore = GetComponent<Text>();
-        totalScore.text = score.ToString();
+        if (Goal.ClearFlag == true)
+        {
+            score = ScoreSet();
+            totalScore.text = score.ToString();
+        }
+        else
+        {
+            totalScore.text = "NO SCORE";
+        }
     }
     public int ScoreSet()
     {

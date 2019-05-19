@@ -9,19 +9,19 @@ public class SelectStage : MonoBehaviour
         minStageNumber = 1,
         maxStageNumber = 3;
 
-    public static int StageSelect
+    public static int StageSelectNumber
     {
         get; set;
     }
     // Start is called before the first frame update
     void Start()
     {
-        StageSelect = minStageNumber;
+        StageSelectNumber = minStageNumber;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = StageSelect.ToString();
+        GetComponent<Text>().text = StageSelectNumber.ToString();
     }
 }
