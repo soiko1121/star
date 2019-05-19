@@ -23,10 +23,10 @@ public class Ranking : MonoBehaviour
             stock = score.ScoreSet();
             for (int i = 1; i <= maxRank; i++)
             {
-                if (PlayerPrefs.GetFloat("STAGE" + 1 + "RANK" + i, 0) < stock)
+                if (PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + i, 0) < stock)
                 {
-                    setStock = PlayerPrefs.GetFloat("STAGE" + 1 + "RANK" + i, 0);
-                    PlayerPrefs.SetFloat("STAGE" + 1 + "RANK" + i, stock);
+                    setStock = PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + i, 0);
+                    PlayerPrefs.SetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + i, stock);
                     stock = setStock;
                 }
             }
@@ -34,9 +34,9 @@ public class Ranking : MonoBehaviour
 
             Text rankingScore = GetComponent<Text>();
             rankingScore.text =
-                "1: " + PlayerPrefs.GetFloat("STAGE" + 1 + "RANK" + 1, 0).ToString() + "\n" +
-                "2: " + PlayerPrefs.GetFloat("STAGE" + 1 + "RANK" + 2, 0).ToString() + "\n" +
-                "3: " + PlayerPrefs.GetFloat("STAGE" + 1 + "RANK" + 3, 0).ToString() + "\n";
+                "1: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 1, 0).ToString() + "\n" +
+                "2: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 2, 0).ToString() + "\n" +
+                "3: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 3, 0).ToString() + "\n";
 
             onece = true;
         }
