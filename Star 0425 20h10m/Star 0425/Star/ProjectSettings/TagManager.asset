@@ -13,6 +13,7 @@ TagManager:
   - LittlePlanetController
   - PointObject
   - GirigiriZone
+  - Goal
   layers:
   - Default
   - TransparentFX

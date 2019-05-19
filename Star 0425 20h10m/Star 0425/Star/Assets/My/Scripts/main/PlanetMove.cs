@@ -27,7 +27,7 @@ public class PlanetMove : MonoBehaviour
             return;
         }
         planetRB.velocity = Vector3.back * gameGenerator.GetComponent<GameGenerator>().speed;
-        if (transform.position.z < -10)
+        if (transform.position.z < -10 && tag != ("Goal"))
         {
             Destroy(gameObject);
         }

@@ -40,72 +40,79 @@ public class CameraMove : MonoBehaviour
         {
             return;
         }
-        //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-        //Vector3 v3 = player.transform.position - oldPos;
-        Vector3 v3;
-        if (player.transform.position.x == 0)
-            v3.x = 0;
-        else
-            v3.x = limit.x / (player.GetComponent<PlayerMove>().limit.x / player.transform.position.x);
-        if (player.transform.position.y == 0)
-            v3.y = 0;
-        else
-            v3.y = limit.y / (player.GetComponent<PlayerMove>().limit.y / player.transform.position.y);
-        v3.z = transform.position.z;
-
-        transform.position = v3;
-        //oldPos = player.transform.position;
-        transform.LookAt(player.transform.position);
-
-        int star = gameGenerator.GetComponent<GameGenerator>().star;
-        int[] changeCount = gameGenerator.musicChangeCount;
-        int nowCount = 0;
-
-        if (count == maxCount)
+        if (!Goal.ClearFlag)
         {
-            for (int i = 0; i < changeCount.Length; i++)
-            {
-                if (star >= changeCount[i])
-                {
-                    nowCount = i;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            if (nowCount != saveCount)
-            {
-                if (nowCount < saveCount)
-                {
-                    particle = particles[0].GetComponent<ParticleSystem>();
-                    //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
-                    //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
-                }
-                else
-                {
-                    particle = particles[1].GetComponent<ParticleSystem>();
-                }
-                if (changeCount[nowCount] == 0)
-                    target = defPosZ;
-                else
-                    target = defPosZ - maxDistanse / changeCount.Length * (nowCount + 1);
-                move = target - transform.position.z;
-                limitTarget = minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit;
-                saveCount = nowCount;
-                count = 0;
-                particle.Play();
-            }
+            //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+            //Vector3 v3 = player.transform.position - oldPos;
+            Vector3 v3;
+            if (player.transform.position.x == 0)
+                v3.x = 0;
             else
+                v3.x = limit.x / (player.GetComponent<PlayerMove>().limit.x / player.transform.position.x);
+            if (player.transform.position.y == 0)
+                v3.y = 0;
+            else
+                v3.y = limit.y / (player.GetComponent<PlayerMove>().limit.y / player.transform.position.y);
+            v3.z = transform.position.z;
+
+            transform.position = v3;
+            //oldPos = player.transform.position;
+            transform.LookAt(player.transform.position);
+
+            int star = gameGenerator.GetComponent<GameGenerator>().star;
+            int[] changeCount = gameGenerator.musicChangeCount;
+            int nowCount = 0;
+
+            if (count == maxCount)
             {
-                particle.Stop();
+                for (int i = 0; i < changeCount.Length; i++)
+                {
+                    if (star >= changeCount[i])
+                    {
+                        nowCount = i;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                if (nowCount != saveCount)
+                {
+                    if (nowCount < saveCount)
+                    {
+                        particle = particles[0].GetComponent<ParticleSystem>();
+                        //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
+                        //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
+                    }
+                    else
+                    {
+                        particle = particles[1].GetComponent<ParticleSystem>();
+                    }
+                    if (changeCount[nowCount] == 0)
+                        target = defPosZ;
+                    else
+                        target = defPosZ - maxDistanse / changeCount.Length * (nowCount + 1);
+                    move = target - transform.position.z;
+                    limitTarget = minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit;
+                    saveCount = nowCount;
+                    count = 0;
+                    particle.Play();
+                }
+                else
+                {
+                    particle.Stop();
+                }
+            }
+            else if (count < maxCount)
+            {
+                limit += limitTarget / maxCount;
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + move / maxCount);
+                count++;
             }
         }
-        else if (count < maxCount)
+        else
         {
-            limit += limitTarget / maxCount;
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + move / maxCount);
-            count++;
+            transform.position += new Vector3(1*0.05f, -0.1f * 0.05f, -2 * 0.05f);
         }
     }
 }

@@ -60,18 +60,19 @@ public class GameGenerator : MonoBehaviour
         }
         else
         {
-            addSpeedTimer = 0; 
+            addSpeedTimer = 0;
         }
-                    
+
         speed *= SpeedPoint(1 - addSpeedTimer / 3.0f);
 
         TimeGenerator timeGenerator = GetComponent<TimeGenerator>();
-        StageTimer += Time.deltaTime;
         if (maxstar <= star)
         {
             maxstar = star;
             Star = maxstar;
         }
+        if (!Goal.ClearFlag)
+            StageTimer += Time.deltaTime;
     }
     private void Controller()
     {
@@ -110,12 +111,12 @@ public class GameGenerator : MonoBehaviour
             speed = objectSpeed[6];
         }
     }
-    private float SpeedPoint (float addTimer)
+    private float SpeedPoint(float addTimer)
     {
         var point1 = Vector3.Lerp(new Vector2(0, 1), new Vector2(0.3f, 3f), addTimer);
         var point2 = Vector3.Lerp(new Vector2(0.3f, 3f), new Vector2(1, 1), addTimer);
         var point3 = Vector3.Lerp(point1, point2, addTimer);
- 
+
         return point3.y;
     }
 }

@@ -156,9 +156,27 @@ public class PlayerMove : MonoBehaviour
                 playerRB.velocity = Vector3.zero;
                 playerRB.angularVelocity = Vector3.zero;
             }
-            Vector3 pos = target - transform.position;
-            pos = pos.normalized * 10f;
-            playerRB.AddForce(pos);
+            Vector3 pos = Vector3.zero;
+            if (Input.GetKey(KeyCode.A))
+            {
+                pos.x = -1;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                pos.x = 1;
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                pos.y = 1;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                pos.y = -1;
+            }
+            //pos = target - transform.position;
+            //pos = pos.normalized * 10f;
+            //playerRB.AddForce(pos);
+            transform.position += pos * 0.3f;
             myAnimator.X = pos.x;
         }
         PosList.Add(transform.position);
