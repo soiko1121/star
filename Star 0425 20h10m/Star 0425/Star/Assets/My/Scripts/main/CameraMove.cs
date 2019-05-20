@@ -11,6 +11,8 @@ public class CameraMove : MonoBehaviour
     public float maxDistanse;
     public Vector2 maxLimit;
     public Vector2 minLimit;
+    public Vector3 goalMove;
+    public float goalSpeed;
 
     private Vector3 oldPos;
     private GameObject player;
@@ -112,7 +114,7 @@ public class CameraMove : MonoBehaviour
         }
         else
         {
-            transform.position += new Vector3(1*0.05f, -0.1f * 0.05f, -2 * 0.05f);
+            transform.position += goalMove * goalSpeed;
         }
     }
 }
