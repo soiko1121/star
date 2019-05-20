@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Ranking : MonoBehaviour
 {
     private float stock, setStock;
-    private const int maxRank = 3;
+    public const int maxRank = 3;
     private bool onece;
     public TotalScore score;
     // Start is called before the first frame update

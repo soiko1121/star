@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
+    private int goalCount;
     public static bool ClearFlag
     {
         get; set;
@@ -13,6 +14,19 @@ public class Goal : MonoBehaviour
     private void Start()
     {
         ClearFlag = false;
+        goalCount = 999;
+    }
+    private void Update()
+    {
+        if (goalCount < 600)
+        {
+            goalCount++;
+            Debug.Log(goalCount);
+            if (goalCount == 600)
+            {
+                SceneManager.LoadScene("ResultScene");
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,9 +37,8 @@ public class Goal : MonoBehaviour
             {
                 Handheld.Vibrate();
             }
-
+            goalCount = 0;
             ClearFlag = true;
-            SceneManager.LoadScene("ResultScene");
         }
     }
 }
