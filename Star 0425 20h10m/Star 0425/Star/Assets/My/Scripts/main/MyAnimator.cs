@@ -145,8 +145,6 @@ public class MyAnimator : MonoBehaviour
             }
             #endregion
 
-            Debug.Log(animCount);
-
         }
     }
 }
