@@ -10,7 +10,8 @@ public class PlanetGenerator : MonoBehaviour
     void Start()
     {
         //stageNumber = SelectStage.StageSelectNumber - 1;
-        Instantiate(stage[stageNumber], Vector3.zero, Quaternion.identity);
+        for (int i = 0; i < 10; i++)
+            Instantiate(stage[stageNumber], new Vector3(0, 0, i * 3000), Quaternion.identity);
         //Instantiate(stage[SelectStage.StageSelect - 1], Vector3.zero, Quaternion.identity);
     }
 }
