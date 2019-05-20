@@ -30,7 +30,7 @@ public class HowtoController : MonoBehaviour
     Vector3 startTPos;
     Vector3 endTPos;
 
-    float flickRange = 30.0f;
+    float flickRange = 90.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -101,7 +101,7 @@ public class HowtoController : MonoBehaviour
             {
                 flickDirection = (int)direction.right;
             }
-            if (flickRange > angleX)
+            if (-flickRange > angleX)
             {
                 flickDirection = (int)direction.left;
             }
@@ -112,7 +112,7 @@ public class HowtoController : MonoBehaviour
             {
                 flickDirection = (int)direction.up;
             }
-            if (flickRange > angleY)
+            if (-flickRange > angleY)
             {
                 flickDirection = (int)direction.down;
             }
