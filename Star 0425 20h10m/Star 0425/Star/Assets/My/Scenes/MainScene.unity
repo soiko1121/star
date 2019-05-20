@@ -1124,7 +1124,7 @@ MonoBehaviour:
   stage:
   - {fileID: 4890449853630611197, guid: ba05e2c6e1faddf4d924b3acc00c39c7, type: 3}
   - {fileID: 4890449853630611197, guid: a9f8143d7f332ef48881e85bc5549a75, type: 3}
-  - {fileID: 4890449853630611197, guid: 0c411eb345be78d409ff49c09abe549d, type: 3}
+  - {fileID: 4890449853630611197, guid: f20fd2ef04c39844e8057968a90b1e1a, type: 3}
   stageNumber: 2
 --- !u!4 &481416493
 Transform:
