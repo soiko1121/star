@@ -67,7 +67,7 @@ public class Flashing : MonoBehaviour
             }
             if (timer > 60)
             {
-                startUI.SetActive(false);
+                Destroy(startUI);
                 menuUI.SetActive(true);
                 timer = 0;
                 speed = 1;
