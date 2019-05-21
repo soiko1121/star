@@ -12,7 +12,7 @@ public class GameGenerator : MonoBehaviour
     private GameObject[] littlePlanets;
     void Awake()
     {
-        Application.targetFrameRate = 120;
+        Application.targetFrameRate = 30;
     }
     public int[] musicChangeCount
     {

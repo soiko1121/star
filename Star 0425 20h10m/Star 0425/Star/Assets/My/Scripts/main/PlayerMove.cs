@@ -159,19 +159,19 @@ public class PlayerMove : MonoBehaviour
             Vector3 pos = Vector3.zero;
             if (Input.GetKey(KeyCode.A))
             {
-                pos.x = -1;
+                pos.x += -1;
             }
             if (Input.GetKey(KeyCode.D))
             {
-                pos.x = 1;
+                pos.x += 1;
             }
             if (Input.GetKey(KeyCode.W))
             {
-                pos.y = 1;
+                pos.y += 1;
             }
             if (Input.GetKey(KeyCode.S))
             {
-                pos.y = -1;
+                pos.y += -1;
             }
             //pos = target - transform.position;
             //pos = pos.normalized * 10f;
@@ -189,9 +189,8 @@ public class PlayerMove : MonoBehaviour
     {
         Vector3 v3 = Input.mousePosition;
         Ray ray = Camera.main.ScreenPointToRay(v3);
-        RaycastHit hit;
         int layerMask = (1 << LayerMask.NameToLayer("Water"));
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
         {
             v3 = hit.point;
         }
