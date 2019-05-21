@@ -21,19 +21,19 @@ public class StageSelector : MonoBehaviour
     bool leftFlag = false;
     bool once = false;
 
+    HowtoController flick = new HowtoController();
+
     // Start is called before the first frame update
     void Start()
     {
+        for (var i = 0; i < buttons.Length; i++)
+        {
+            posX = ax * Mathf.Cos(Mathf.PI / 180 * (rad + (120 * i))) + centerX;
+            posY = by * Mathf.Sin(Mathf.PI / 180 * (rad + (120 * i))) + centerY;
 
-            for (var i = 0; i < buttons.Length; i++)
-            {
-                posX = ax * Mathf.Cos(Mathf.PI / 180 * (rad + (120 * i))) + centerX;
-                posY = by * Mathf.Sin(Mathf.PI / 180 * (rad + (120 * i))) + centerY;
-
-                buttons[i].GetComponent<RectTransform>().localPosition = new Vector3(posX, posY, 0);
-                buttons[i].GetComponent<RectTransform>().localScale = new Vector3((posY / by) + 2f, (posY / by) + 2f, (posY / by) + 2f);
-            }
-
+            buttons[i].GetComponent<RectTransform>().localPosition = new Vector3(posX, posY, 0);
+            buttons[i].GetComponent<RectTransform>().localScale = new Vector3((posY / by) + 2f, (posY / by) + 2f, (posY / by) + 2f);
+        }
     }
 
     // Update is called once per frame
@@ -45,8 +45,14 @@ public class StageSelector : MonoBehaviour
 
             if ((rad - 90) % 120 == 0)
             {
-               //circleMove(delta);
                 rightFlag = false;
+                flick.flickDirection = (int)HowtoController.direction.none;
+
+                SelectStage.StageSelectNumber++;
+                if (SelectStage.maxStageNumber < SelectStage.StageSelectNumber)
+                {
+                    SelectStage.StageSelectNumber = SelectStage.minStageNumber;
+                }
             }
         }
 
@@ -55,10 +61,26 @@ public class StageSelector : MonoBehaviour
             circleMove(-1*delta);
 
             if ((rad - 90) % 120 == 0)
-            {
-                //circleMove(-1*delta);
+            {              
                 leftFlag = false;
+                flick.flickDirection = (int)HowtoController.direction.none;
+
+                SelectStage.StageSelectNumber--;
+                if (SelectStage.minStageNumber > SelectStage.StageSelectNumber)
+                {
+                    SelectStage.StageSelectNumber = SelectStage.maxStageNumber;
+                }
             }
+        }
+
+        flick.Flicker();
+        if (flick.flickDirection == (int)HowtoController.direction.right)
+        {
+            rightFlag = true;
+        }
+        if (flick.flickDirection == (int)HowtoController.direction.left)
+        {
+            leftFlag = true;
         }
     }
 

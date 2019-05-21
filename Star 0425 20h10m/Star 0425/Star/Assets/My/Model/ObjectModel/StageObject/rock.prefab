@@ -183,6 +183,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: testrock2
       objectReference: {fileID: 0}
+    - target: {fileID: 4937429067894039981, guid: 37cf8a9130e197d4bb6c716804c23dd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4937429067894143373, guid: 37cf8a9130e197d4bb6c716804c23dd9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,6 +241,16 @@ PrefabInstance:
     - target: {fileID: 4937429067894143373, guid: 37cf8a9130e197d4bb6c716804c23dd9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344877991533894357, guid: 37cf8a9130e197d4bb6c716804c23dd9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3294867437924754375, guid: 37cf8a9130e197d4bb6c716804c23dd9,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8275495475859235918}
   - component: {fileID: 7575137771129482492}
   - component: {fileID: 8717786927152298498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LittlePlanet
   m_TagString: MiniStar
   m_Icon: {fileID: 0}
@@ -113,7 +113,6 @@ MonoBehaviour:
   speed: 300
   up: 0
   left: 0
-  fluctuationSpeed: {x: 1, y: 1}
 --- !u!64 &8717786927152298498
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -135,10 +134,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5081086468826173281}
     m_Modifications:
-    - target: {fileID: 100000, guid: 2be8e278e5b347e4b9b3737e9c460f96, type: 3}
-      propertyPath: m_Name
-      value: houseki0702
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2be8e278e5b347e4b9b3737e9c460f96, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -182,6 +177,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 2be8e278e5b347e4b9b3737e9c460f96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2be8e278e5b347e4b9b3737e9c460f96, type: 3}
+      propertyPath: m_Name
+      value: houseki0702
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2be8e278e5b347e4b9b3737e9c460f96, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 2be8e278e5b347e4b9b3737e9c460f96, type: 3}
       propertyPath: m_Materials.Array.data[0]
