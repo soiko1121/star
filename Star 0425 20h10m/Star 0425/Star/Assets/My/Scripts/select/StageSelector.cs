@@ -49,7 +49,6 @@ public class StageSelector : MonoBehaviour
                 flick.flickDirection = (int)HowtoController.direction.none;
 
                 SelectStage.StageSelectNumber++;
-                PlanetGenerator.stageNumber = SelectStage.StageSelectNumber - 1;
                 if (SelectStage.maxStageNumber < SelectStage.StageSelectNumber)
                 {
                     SelectStage.StageSelectNumber = SelectStage.minStageNumber;
@@ -73,6 +72,7 @@ public class StageSelector : MonoBehaviour
                 }
             }
         }
+        PlanetGenerator.stageNumber = SelectStage.StageSelectNumber - 1;
 
         flick.Flicker();
         if (flick.flickDirection == (int)HowtoController.direction.right)
