@@ -11,6 +11,8 @@ public class SelectStage : MonoBehaviour
         minStageNumber = 1,
         maxStageNumber = 3;
 
+    string kari = "";
+
     public static int StageSelectNumber
     {
         get; set;
@@ -29,6 +31,25 @@ public class SelectStage : MonoBehaviour
             buttons[i].enabled = false;
         }
         buttons[StageSelectNumber-1].enabled = true;
-        GetComponent<Text>().text = StageSelectNumber.ToString();
+        ExpText();
+        GetComponent<Text>().text = kari;
+    }
+
+    void ExpText()
+    {
+        switch (StageSelectNumber)
+        {
+            case 1:
+                kari = "これはとてもスペシャル";
+                break;
+
+            case 2:
+                kari = "急がば回せ";
+                break;
+
+            case 3:
+                kari = "テクさを魅せろ";
+                break;
+        }
     }
 }

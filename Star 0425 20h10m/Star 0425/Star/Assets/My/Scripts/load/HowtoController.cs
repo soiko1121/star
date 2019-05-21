@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HowtoController : MonoBehaviour
 {
-    enum direction
+    public enum direction
     {
         up,
         down,
@@ -13,6 +13,8 @@ public class HowtoController : MonoBehaviour
         left,
         none
     }
+
+    public int flickDirection;
 
     [SerializeField]
     GameObject UDui;
@@ -26,7 +28,6 @@ public class HowtoController : MonoBehaviour
 
     int imageState;
 
-    int flickDirection;
     Vector3 startTPos;
     Vector3 endTPos;
 
@@ -70,7 +71,7 @@ public class HowtoController : MonoBehaviour
         imageState *= -1;
     }
 
-    void Flicker()
+    public void Flicker()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -87,7 +88,7 @@ public class HowtoController : MonoBehaviour
         }
     }
 
-    void FlickDirection()
+    public void FlickDirection()
     {
         float angleX;
         float angleY;
@@ -118,6 +119,4 @@ public class HowtoController : MonoBehaviour
             }
         }
     }
-
-
 }
