@@ -61,11 +61,11 @@ public class Flashing : MonoBehaviour
             speed = 5.0f;          
             timer++;
 
-            if(timer > 60 && color.a >= 0.95)
+            if(timer > 40 && color.a >= 0.95)
             {
                 speed = 0;
             }
-            if (timer > 100)
+            if (timer > 60)
             {
                 startUI.SetActive(false);
                 menuUI.SetActive(true);
