@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetGenerator : MonoBehaviour
 {
     public GameObject[] stage;
-    //public int stageNumber;
+    public int stageNumber;
     // Start is called before the first frame update
     void Start()
     {
