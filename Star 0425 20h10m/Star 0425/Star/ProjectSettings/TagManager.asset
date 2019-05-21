@@ -4,16 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - WSide
-  - HSide
   - Group
   - MiniStar
   - DangerObject
-  - Thermography
   - LittlePlanetController
   - PointObject
-  - GirigiriZone
   - Goal
+  - UI
   layers:
   - Default
   - TransparentFX
