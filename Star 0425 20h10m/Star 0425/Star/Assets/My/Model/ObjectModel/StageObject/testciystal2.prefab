@@ -142,5 +142,5 @@ MonoBehaviour:
   partOriginal: {fileID: 8279365688622204113, guid: 7a248eb6a39032a41b5b983c938e058f,
     type: 3}
   littlePlanet: []
-  split: 20
+  split: 2000
   hitSe: {fileID: 1155054722149158592, guid: 52d77f5e14c59724bbe8d24db248466e, type: 3}
