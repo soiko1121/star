@@ -14,7 +14,6 @@ public class ShowResultDistance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Text resultScore = GetComponent<Text>();
-        resultScore.text = GameGenerator.StageTimer.ToString("f2") + " sec";
+
     }
 }
