@@ -238,6 +238,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: testrock8
       objectReference: {fileID: 0}
+    - target: {fileID: 2917847576361282676, guid: 2e08a3ee215b9814eb9aedab40dd3246,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199013624312130518, guid: 2e08a3ee215b9814eb9aedab40dd3246,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208926222592945203, guid: 2e08a3ee215b9814eb9aedab40dd3246,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4646541421455017392, guid: 2e08a3ee215b9814eb9aedab40dd3246, type: 3}
     - {fileID: 1939155597019338031, guid: 2e08a3ee215b9814eb9aedab40dd3246, type: 3}

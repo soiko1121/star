@@ -178,11 +178,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1927847462141549574}
     m_Modifications:
-    - target: {fileID: 2143325917847261251, guid: 2ffc3cfc8e1234049987e7f3cc789865,
-        type: 3}
-      propertyPath: m_Name
-      value: testrock
-      objectReference: {fileID: 0}
     - target: {fileID: 2143325917847161955, guid: 2ffc3cfc8e1234049987e7f3cc789865,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,6 +231,26 @@ PrefabInstance:
     - target: {fileID: 2143325917847161955, guid: 2ffc3cfc8e1234049987e7f3cc789865,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143325917847261251, guid: 2ffc3cfc8e1234049987e7f3cc789865,
+        type: 3}
+      propertyPath: m_Name
+      value: testrock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143325917847261251, guid: 2ffc3cfc8e1234049987e7f3cc789865,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4078318176263724655, guid: 2ffc3cfc8e1234049987e7f3cc789865,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776225597225277061, guid: 2ffc3cfc8e1234049987e7f3cc789865,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

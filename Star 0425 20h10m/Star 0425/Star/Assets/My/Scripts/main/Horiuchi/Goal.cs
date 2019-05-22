@@ -21,7 +21,6 @@ public class Goal : MonoBehaviour
         if (goalCount < 600)
         {
             goalCount++;
-            Debug.Log(goalCount);
             if (goalCount == 600)
             {
                 SceneManager.LoadScene("ResultScene");
