@@ -34,7 +34,7 @@ public class ControllerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {     
-        if (Input.GetMouseButtonDown(0) && !conFlag)
+        if (((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc)) && !conFlag)
         {         
             canvas = GetComponent<Canvas>();
             canvasRect = canvas.GetComponent<RectTransform>();
@@ -87,7 +87,7 @@ public class ControllerController : MonoBehaviour
 
             smallCon.GetComponent<RectTransform>().localPosition = firstPos + movePos;
 
-            if (Input.GetMouseButtonUp(0))
+            if ((Input.GetMouseButtonUp(0) && !DebugPC.pc) || (Input.GetMouseButtonUp(1) && DebugPC.pc))
             {
                 conFlag = false;
                 Destroy(bigCon);

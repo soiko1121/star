@@ -18,6 +18,10 @@ public class MyAnimator : MonoBehaviour
     {
         get; set;
     }
+    public float PM
+    {
+        get; set;
+    }
     public bool Hit
     {
         get; set;
@@ -40,7 +44,7 @@ public class MyAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (X < LeftMin || X > RightMin) Animation(X);
+        if (X * PM < LeftMin || X * PM > RightMin) Animation(X * PM);
         else
         {
             animCount = AnimNumber.Default;
