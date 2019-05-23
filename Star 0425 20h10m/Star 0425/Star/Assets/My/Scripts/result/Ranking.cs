@@ -32,11 +32,11 @@ public class Ranking : MonoBehaviour
             }
             PlayerPrefs.Save();
 
-            Text rankingScore = GetComponent<Text>();
-            rankingScore.text =
-                "1: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 1, 0).ToString() + "\n" +
-                "2: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 2, 0).ToString() + "\n" +
-                "3: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 3, 0).ToString() + "\n";
+            //Text rankingScore = GetComponent<Text>();
+            //rankingScore.text =
+            //    "1: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 1, 0).ToString() + "\n" +
+            //    "2: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 2, 0).ToString() + "\n" +
+            //    "3: " + PlayerPrefs.GetFloat("STAGE" + SelectStage.StageSelectNumber + "RANK" + 3, 0).ToString() + "\n";
 
             onece = true;
         }

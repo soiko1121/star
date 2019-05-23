@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb1013f7e232334bac610d906f80c62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip1: {fileID: 8300000, guid: fed8ec146508c2242971a6382d35cec0, type: 3}
-  clip2: {fileID: 8300000, guid: e35a819ebe4ec03409591edeee9c6240, type: 3}
-  clip3: {fileID: 8300000, guid: be25175bbb6e0a744b7fba428fc3548d, type: 3}
+  clipSE:
+  - {fileID: 8300000, guid: be25175bbb6e0a744b7fba428fc3548d, type: 3}
+  - {fileID: 8300000, guid: e35a819ebe4ec03409591edeee9c6240, type: 3}
 --- !u!1 &4529165606299652294
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class SEControl_Crystal : MonoBehaviour
 {
-    public AudioClip
-        clip1,
-        clip2,
-        clip3;
+    public AudioClip[] clipSE;
     private AudioSource audioController;
     private int mycount;
 
@@ -19,20 +16,10 @@ public class SEControl_Crystal : MonoBehaviour
 
     public void GetCrystalSe()
     {
-        if (mycount == 0)
-        {
-            audioController.PlayOneShot(clip1);
-            mycount = 1;
-        }
-        else if (mycount == 1)
-        {
-            audioController.PlayOneShot(clip2);
-            mycount = 2;
-        }
-        else if (mycount == 2)
-        {
-            audioController.PlayOneShot(clip3);
+        audioController.PlayOneShot(clipSE[mycount]);
+        if (mycount != clipSE.Length)
+            mycount++;
+        if (mycount == clipSE.Length)
             mycount = 0;
-        }
     }
 }

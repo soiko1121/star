@@ -38,7 +38,7 @@ public class ShowResult : MonoBehaviour
         if (timer < score && !starCountEnd)
         {
             resultScore.text = timer.ToString() + " stars";
-            timer++;
+            timer += score / (60 * 5);
         }
         else
         {

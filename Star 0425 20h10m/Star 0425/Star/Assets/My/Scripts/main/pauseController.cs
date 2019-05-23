@@ -12,7 +12,7 @@ public class pauseController : MonoBehaviour
 
     private void Start()
     {
-        volumeControl = GameObject.Find("BGMEvent").GetComponent<VolumeControl1>();
+        volumeControl = GameObject.Find("BGMEvent2").GetComponent<VolumeControl1>();
     }
 
     public void pause()

@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class SelectStage : MonoBehaviour
 {
+    public enum Stage
+    {
+        Easy = 1,
+        Normal = 2,
+        Hard = 3
+    };
     public Button[] buttons;
 
     public const int 
@@ -39,15 +45,15 @@ public class SelectStage : MonoBehaviour
     {
         switch (StageSelectNumber)
         {
-            case 1:
+            case (int)Stage.Easy:
                 kari = "これはとてもスペシャル";
                 break;
 
-            case 2:
+            case (int)Stage.Normal:
                 kari = "急がば回せ";
                 break;
 
-            case 3:
+            case (int)Stage.Hard:
                 kari = "テクさを魅せろ";
                 break;
         }
