@@ -18,6 +18,7 @@ public class SelectStage : MonoBehaviour
         maxStageNumber = 3;
 
     string kari = "";
+    GameObject sb;
 
     public static int StageSelectNumber
     {
@@ -27,6 +28,7 @@ public class SelectStage : MonoBehaviour
     void Start()
     {
         StageSelectNumber = minStageNumber;
+        sb = GameObject.Find("SelectButton");
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class SelectStage : MonoBehaviour
         buttons[StageSelectNumber-1].enabled = true;
         ExpText();
         GetComponent<Text>().text = kari;
+        if(sb.GetComponent<SelectButton>().flag)
+            sb.GetComponent<SelectButton>().count++;
     }
 
     void ExpText()
