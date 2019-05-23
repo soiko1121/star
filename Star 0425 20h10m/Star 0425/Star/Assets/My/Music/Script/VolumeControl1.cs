@@ -28,14 +28,15 @@ public class VolumeControl1 : MonoBehaviour
         {
            // Debug.Log("来てます");
             for (int i = 0; i < musicCount + 1; i++)
-                pauseMusicStep[i].volume = 1;
+                if (pauseMusicStep[i].volume < 0.3f)
+                    pauseMusicStep[i].volume = 0.3f;
             for (int i = musicCount + 1; i < musicStep.Length; i++)
                 pauseMusicStep[i].volume = 0;
         }
         else
         {
             for (int i = 0; i < musicCount + 1; i++)
-                musicStep[i].volume += crescendoVolumeNumber;
+                    musicStep[i].volume += crescendoVolumeNumber;
             for (int i = musicCount + 1; i < musicStep.Length; i++)
                 musicStep[i].volume = 0;
         }

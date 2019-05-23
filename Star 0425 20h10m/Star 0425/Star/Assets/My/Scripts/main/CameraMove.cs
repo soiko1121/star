@@ -115,6 +115,8 @@ public class CameraMove : MonoBehaviour
         else
         {
             transform.position += goalMove * goalSpeed;
+            //transform.position = new Vector3(transform.position.x, transform.position.y, 10);
+            //transform.LookAt(player.transform.position);
         }
     }
 }
