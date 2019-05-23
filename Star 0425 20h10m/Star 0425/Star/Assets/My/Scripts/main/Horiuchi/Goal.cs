@@ -24,6 +24,7 @@ public class Goal : MonoBehaviour
             goalCount++;
             if (goalCount == goleDelayCount)
             {
+                Debug.Log(SelectStage.StageSelectNumber);
                 SceneManager.LoadScene("ResultScene");
             }
         }

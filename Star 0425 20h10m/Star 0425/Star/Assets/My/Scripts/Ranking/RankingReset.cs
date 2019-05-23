@@ -6,7 +6,7 @@ public class RankingReset : MonoBehaviour
 {
     public void ResetOnClick()
     {
-        for (int loopStage = 0; loopStage < SelectStage.maxStageNumber; loopStage++)
+        for (int loopStage = 1; loopStage <= SelectStage.maxStageNumber; loopStage++)
         {
             for (int loopRank = 1; loopRank <= Ranking.maxRank; loopRank++)
             {
