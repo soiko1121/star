@@ -72,7 +72,6 @@ public class StageSelector : MonoBehaviour
                 }
             }
         }
-        PlanetGenerator.stageNumber = SelectStage.StageSelectNumber - 1;
 
         flick.Flicker();
         if (flick.flickDirection == (int)HowtoController.direction.right)
