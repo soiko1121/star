@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage:
-  - {fileID: 4890449853630611197, guid: ba05e2c6e1faddf4d924b3acc00c39c7, type: 3}
+  - {fileID: 4890449853630611197, guid: da9f60ed3d46b804ead37fd8dafcf763, type: 3}
   - {fileID: 4890449853630611197, guid: a9f8143d7f332ef48881e85bc5549a75, type: 3}
   - {fileID: 4890449853630611197, guid: f20fd2ef04c39844e8057968a90b1e1a, type: 3}
 --- !u!4 &481416493
@@ -9474,17 +9474,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9b24a0cebcd4244b257d8247ef4cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
   slowdown: 3
   set2DSpeed: 0
   debugText: {fileID: 889048260}
   timeGenerator: {fileID: 556399690}
   ySpeed2D: 1.5
-  gyroLimit: 9.8
+  defY: 0.35
+  speedV2: {x: 1, y: 0.5}
+  gyroLimit: {x: 0.5, y: 0.3}
   limit: {x: 31, y: 17}
   rotaLimit: {x: 5, y: 5}
   myAnimator: {fileID: 82887031}
-  maxAcceleration: {x: 5, y: 5}
+  maxAcceleration: {x: 100, y: 100}
   viewSet: 0
 --- !u!54 &1859025557
 Rigidbody:
