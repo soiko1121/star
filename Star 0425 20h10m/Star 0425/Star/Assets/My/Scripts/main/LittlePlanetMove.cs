@@ -17,6 +17,7 @@ public class LittlePlanetMove : MonoBehaviour
     private float distance;
     private Vector3 oldPos;
     private GameObject gameGenerator;
+    private int indexCount;
     public bool Hit
     {
         get; set;
@@ -35,6 +36,7 @@ public class LittlePlanetMove : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         littlePlanetRB = GetComponent<Rigidbody>();
         littlePlanetRB.AddForce((transform.position - target) * 300f);//目的地と反対に飛ばす
+        indexCount = 200 * 10 - 1;
 
         gameGenerator = GameObject.Find("GameGenerator");
     }
@@ -98,10 +100,11 @@ public class LittlePlanetMove : MonoBehaviour
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
         {
             Vector3 fluctuation = Vector3.zero;
-            if (controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 3)] != -1)
+            int delay = 4;
+            if (controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / delay)] != -1)
             {
-                fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationSpeed.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 3)]);
-                fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationSpeed.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / 3)]);
+                fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationDistance.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / delay)]);
+                fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationDistance.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / delay)]);
             }
 
             target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
@@ -112,6 +115,27 @@ public class LittlePlanetMove : MonoBehaviour
 
             target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].z - controller.widthSplit / 5 * corpsIndex;
             oldPos = target;
+            indexCount = 200 * 10 - 1 - corpsIndex * (controller.Delay / delay);
+        }
+        else if (indexCount < 200 * 10 - 1)
+        {
+            Vector3 fluctuation = Vector3.zero;
+            int delay = 4;
+            if (controller.RadList[indexCount] != -1)
+            {
+                fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationDistance.x) * Mathf.Cos(controller.RadList[indexCount]);
+                fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationDistance.y) * Mathf.Sin(controller.RadList[indexCount]);
+            }
+
+            target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
+                distance * Mathf.Cos(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
+
+            target.y = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].y + fluctuation.y +
+                distance * Mathf.Sin(((360f / controller.corpsSplit) * (Number % controller.corpsSplit)) * Mathf.Deg2Rad);
+
+            target.z = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].z - controller.widthSplit / 5 * corpsIndex;
+            oldPos = target;
+            indexCount++;
         }
         else if (corpsIndex < controller.DelayCount)
         {

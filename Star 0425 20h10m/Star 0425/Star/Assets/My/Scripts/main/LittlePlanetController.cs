@@ -13,7 +13,7 @@ public class LittlePlanetController : MonoBehaviour
     public int delayTime;
     public int circleSprit;
     public int touchDistanse;
-    public Vector2 fluctuationSpeed;
+    public Vector2 fluctuationDistance;
 
     private int count;
     private GameObject player;
@@ -80,15 +80,12 @@ public class LittlePlanetController : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc))
         {
             touchPos = Input.mousePosition;
-        }
-        if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
-            GetTouch();
-        else if (RadList[RadList.Count - 1] != -1)
-        {
             RadList = new List<float>();
             for (int i = 0; i < 200 * 10; i++)
                 RadList.Add(-1);
         }
+        if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
+            GetTouch();
     }
     // Update is called once per frame
     void FixedUpdate()
