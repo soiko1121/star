@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SelectButton : MonoBehaviour
 {
+    public int count = 0;
+    public bool flag = false;
+
     public void LeftOnClick()
     {
         SelectStage.StageSelectNumber--;
@@ -23,6 +26,10 @@ public class SelectButton : MonoBehaviour
     }
     public void StartOnClick()
     {
-        SceneManager.LoadScene("LoadScene");
+        flag = true;
+        if (count > 50)
+        {
+            SceneManager.LoadScene("LoadScene");
+        }
     }
 }

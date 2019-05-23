@@ -14,5 +14,6 @@ public class UIset : MonoBehaviour
     {
         firstUI.SetActive(true);
         secondUI.SetActive(false);
+        SelectStage.StageSelectNumber = SelectStage.minStageNumber;
     }
 }

@@ -54,6 +54,9 @@ public class Loader : MonoBehaviour
         {
             _UI.SetActive(false);
             _Button.SetActive(true);
+
+            if (Input.GetMouseButton(0))
+                async.allowSceneActivation = true;
         }
     }
 
@@ -77,7 +80,8 @@ public class Loader : MonoBehaviour
     {
         if (slider.value == 1f)
         {
-            async.allowSceneActivation = true;
+            if(Input.GetMouseButton(0))
+                async.allowSceneActivation = true;
         }
     }
 }

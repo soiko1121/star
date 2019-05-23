@@ -16,8 +16,11 @@ public class LittlePlanetController : MonoBehaviour
     public Vector2 fluctuationDistance;
 
     private int count;
+    private float atan;
     private GameObject player;
+    private Vector2 distance;
     private Vector3 touchPos;
+
     public int UdlrDelayCount
     {
         get; set;
@@ -115,10 +118,10 @@ public class LittlePlanetController : MonoBehaviour
     }
     private void GetTouch()
     {
-        Vector2 distance = new Vector2(Input.mousePosition.x - touchPos.x, Input.mousePosition.y - touchPos.y);
+        distance = new Vector2(Input.mousePosition.x - touchPos.x, Input.mousePosition.y - touchPos.y);
         if (distance.x * distance.x + distance.y * distance.y > touchDistanse * touchDistanse)
         {
-            float atan = Mathf.Atan2(distance.y, distance.x);
+            atan = Mathf.Atan2(distance.y, distance.x);
             if (atan < 0)
             {
                 atan = 180 * Mathf.Deg2Rad + 180 * Mathf.Deg2Rad - Mathf.Abs(atan);

@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class SelectStage : MonoBehaviour
 {
+    public enum Stage
+    {
+        Easy = 1,
+        Normal = 2,
+        Hard = 3
+    };
     public Button[] buttons;
 
     public const int 
@@ -12,6 +18,7 @@ public class SelectStage : MonoBehaviour
         maxStageNumber = 3;
 
     string kari = "";
+    GameObject sb;
 
     public static int StageSelectNumber
     {
@@ -21,6 +28,7 @@ public class SelectStage : MonoBehaviour
     void Start()
     {
         StageSelectNumber = minStageNumber;
+        sb = GameObject.Find("SelectButton");
     }
 
     // Update is called once per frame
@@ -33,21 +41,23 @@ public class SelectStage : MonoBehaviour
         buttons[StageSelectNumber-1].enabled = true;
         ExpText();
         GetComponent<Text>().text = kari;
+        if(sb.GetComponent<SelectButton>().flag)
+            sb.GetComponent<SelectButton>().count++;
     }
 
     void ExpText()
     {
         switch (StageSelectNumber)
         {
-            case 1:
+            case (int)Stage.Easy:
                 kari = "これはとてもスペシャル";
                 break;
 
-            case 2:
+            case (int)Stage.Normal:
                 kari = "急がば回せ";
                 break;
 
-            case 3:
+            case (int)Stage.Hard:
                 kari = "テクさを魅せろ";
                 break;
         }

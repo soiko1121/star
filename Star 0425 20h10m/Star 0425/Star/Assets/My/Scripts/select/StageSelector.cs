@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class StageSelector : MonoBehaviour
 {
     public Button[] buttons;
@@ -16,6 +17,7 @@ public class StageSelector : MonoBehaviour
     float posX = 0f;
     float posY = 0f;
     float rad = 90f;
+    float shakeRad = 0;
 
     bool rightFlag = false;
     bool leftFlag = false;
@@ -39,6 +41,9 @@ public class StageSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shake(shakeRad);
+        shakeRad += 1f ;
+
         if (rightFlag)
         {
             circleMove(delta);
@@ -72,7 +77,6 @@ public class StageSelector : MonoBehaviour
                 }
             }
         }
-        PlanetGenerator.stageNumber = SelectStage.StageSelectNumber - 1;
 
         flick.Flicker();
         if (flick.flickDirection == (int)HowtoController.direction.right)
@@ -98,6 +102,12 @@ public class StageSelector : MonoBehaviour
                                                                               (posY / by) + 2f, 
                                                                               (posY / by) + 2f);
         }
+    }
+
+    void shake(float rad)
+    {
+        float y = 6 * Mathf.Sin(Mathf.PI/180 * rad);
+        buttons[SelectStage.StageSelectNumber-1].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
     }
 
     public void moveRight()

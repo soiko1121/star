@@ -8,7 +8,7 @@ public class RankingReset : MonoBehaviour
     {
         for (int loopStage = 0; loopStage < SelectStage.maxStageNumber; loopStage++)
         {
-            for (int loopRank = 1; loopRank < Ranking.maxRank; loopRank++)
+            for (int loopRank = 1; loopRank <= Ranking.maxRank; loopRank++)
             {
                 PlayerPrefs.SetFloat("STAGE" + loopStage + "RANK" + loopRank, 0);
             }
