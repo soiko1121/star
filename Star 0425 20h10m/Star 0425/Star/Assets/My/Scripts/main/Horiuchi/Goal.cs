@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
+    public int goleDelayCount;
     private int goalCount;
     public static bool ClearFlag
     {
@@ -14,14 +15,14 @@ public class Goal : MonoBehaviour
     private void Start()
     {
         ClearFlag = false;
-        goalCount = 999;
+        goalCount = goleDelayCount + 1;
     }
     private void Update()
     {
-        if (goalCount < 600)
+        if (goalCount < goleDelayCount)
         {
             goalCount++;
-            if (goalCount == 600)
+            if (goalCount == goleDelayCount)
             {
                 SceneManager.LoadScene("ResultScene");
             }
