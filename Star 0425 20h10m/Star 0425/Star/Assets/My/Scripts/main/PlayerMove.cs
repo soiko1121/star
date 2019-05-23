@@ -89,7 +89,7 @@ public class PlayerMove : MonoBehaviour
             //重力感知
             gyro.x = Mathf.Clamp(Input.gyro.gravity.x * 2.0f, -gyroLimit, gyroLimit);
             gyro.y = Mathf.Clamp(((Input.gyro.gravity.z + 0.7f) * 2.0f), -gyroLimit, gyroLimit);
-            //debugText.GetComponent<DebugText>().text = gyro.x.ToString() + ":::::::" + gyro.y.ToString();
+            debugText.GetComponent<DebugText>().text = Input.gyro.gravity.x.ToString() + ":::::::" + Input.gyro.gravity.y.ToString() + ":::::::" + Input.gyro.gravity.z.ToString();
             if (gyro.x > 0)
             {
                 pm.x = 1;
