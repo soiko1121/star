@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private Vector3 gyro, gyroSet, moveVec, velocitySet;
-    private Rigidbody playerRB;
     public float set2DSpeed;
     public DebugText debugText;
     public TimeGenerator timeGenerator;
@@ -18,6 +16,9 @@ public class PlayerMove : MonoBehaviour
     public Vector2 maxAcceleration;
     public MyAnimator myAnimator;
 
+    private Vector3 gyro, gyroSet, moveVec, velocitySet;
+
+    private Rigidbody playerRB;
     private Vector2 accelerationCount;
     private Vector2 pm;
     private Vector3 target;
