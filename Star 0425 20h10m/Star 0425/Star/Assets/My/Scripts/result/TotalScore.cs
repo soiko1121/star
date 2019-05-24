@@ -5,31 +5,21 @@ using UnityEngine.UI;
 
 public class TotalScore : MonoBehaviour
 {
-    public int score;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
-    void Update()
+    public void ShowTotalScore(Text ScoreText)
     {
-        Text totalScore = GetComponent<Text>();
         if (Goal.ClearFlag == true)
         {
-            score = ScoreSet();
-            totalScore.text = score.ToString();
+            ScoreText.text = ScoreSet().ToString();
         }
         else
         {
-            totalScore.text = "NO SCORE";
+            ScoreText.text = "NO SCORE";
         }
     }
     public int ScoreSet()
-    {
-        int scoreSet;
-        scoreSet = GameGenerator.Star * 1000000 / (int)GameGenerator.StageTimer;
-        return scoreSet;
+    { 
+        return (int)(GameGenerator.Star * 1000000 / GameGenerator.StageTimer);
     }
 }

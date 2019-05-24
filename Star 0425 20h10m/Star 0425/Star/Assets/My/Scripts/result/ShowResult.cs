@@ -5,58 +5,77 @@ using UnityEngine.UI;
 
 public class ShowResult : MonoBehaviour
 {
-    public Text resultScore, resultTime;
-    private int score, timer, touchTime;
+    public Text
+        resultStar,
+        resultTime,
+        resultTotal;
+    private int
+        star,
+        timer,
+        touchTime;
     private float stageTime;
-    private bool starCountEnd;
+    private bool 
+        starCountEnd,
+        timeCountEnd,
+        skipNow;
+    private TotalScore score;
     // Start is called before the first frame update
     void Start()
     {
-        score = GameGenerator.Star;
+        score = GetComponent<TotalScore>();
+        star = GameGenerator.Star;
         stageTime = GameGenerator.StageTimer;
         timer = 0;
         touchTime = 0;
         starCountEnd = false;
+        timeCountEnd = false;
+        skipNow = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
             touchTime++;
-        else
-            touchTime = 0;
 
-        if (touchTime > 60)
-        {
-            if (!starCountEnd)
-                timer = score;
-            else
-                timer = (int)stageTime;
-        }
+        if (touchTime >= 3)
+            skipNow = true;
 
-        if (timer < score && !starCountEnd)
+        if (!starCountEnd)
+            ShowStar();
+        else if (!timeCountEnd)
+            ShowTime();
+        else
+            score.ShowTotalScore(resultTotal);
+
+    }
+    private void ShowStar()
+    {
+        if (timer < star && !skipNow)
         {
-            resultScore.text = timer.ToString() + " stars";
-            timer += score / (60 * 5);
+            resultStar.text = timer.ToString() + " stars";
+            timer += star / (60 * 3);
         }
         else
         {
-            resultScore.text = score.ToString() + " stars";
+            resultStar.text = star.ToString() + " stars";
             starCountEnd = true;
+            timer = 0;
         }
 
-        if (starCountEnd)
+    }
+    private void ShowTime()
+    {
+        if (timer < (int)stageTime && !skipNow)
         {
-            if (timer < (int)stageTime)
-            {
-                resultTime.text = timer.ToString("f2") + " sec";
-                timer++;
-            }
-            else
-            {
-                resultTime.text = stageTime.ToString("f2") + " sec";
-            }
+            resultTime.text = timer.ToString("f2") + " sec";
+            timer ++;
+        }
+        else
+        {
+            resultTime.text = stageTime.ToString("f2") + " sec";
+            timeCountEnd = true;
         }
     }
+
 }
