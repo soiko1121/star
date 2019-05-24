@@ -14,6 +14,7 @@ public class LittlePlanetController : MonoBehaviour
     public int circleSprit;
     public int touchDistanse;
     public Vector2 fluctuationDistance;
+    public DebugText debugText;
 
     private int count;
     private float atan;
@@ -88,7 +89,10 @@ public class LittlePlanetController : MonoBehaviour
                 RadList.Add(-1);
         }
         if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
+        {
+            //debugText.text = touchPos.x.ToString() + "\n" + Input.mousePosition.x.ToString() + "\n" + touchPos.y.ToString() + "\n" + Input.mousePosition.y.ToString();
             GetTouch();
+        }
     }
     // Update is called once per frame
     void FixedUpdate()

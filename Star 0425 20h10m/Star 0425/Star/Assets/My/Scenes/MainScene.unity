@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 4890449853630611197, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4890449853630611196, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
         type: 3}
@@ -393,11 +393,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 82887030}
-  LeftMax: -0.45
-  LeftNormal: -0.3
+  LeftMax: 100
+  LeftNormal: 50
   LeftMin: 0
-  RightMax: 0.45
-  RightNormal: 0.3
+  RightMax: 100
+  RightNormal: 50
   RightMin: 0
 --- !u!1001 &113930433
 PrefabInstance:
@@ -7182,7 +7182,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7439,6 +7439,7 @@ MonoBehaviour:
   circleSprit: 120
   touchDistanse: 80
   fluctuationDistance: {x: 0.5, y: 0.5}
+  debugText: {fileID: 889048260}
 --- !u!4 &1200639708
 Transform:
   m_ObjectHideFlags: 0
@@ -7592,7 +7593,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1352817870
 GameObject:
@@ -7955,7 +7956,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
 --- !u!135 &1451910480
 SphereCollider:
@@ -8743,10 +8744,10 @@ MonoBehaviour:
   timeGenerator: {fileID: 556399690}
   ySpeed2D: 1.5
   defY: 0.35
-  speedV2: {x: 1, y: 0.5}
-  gyroLimit: {x: 0.5, y: 0.3}
+  speedV2: {x: 0.7, y: 0.35}
+  gyroLimit: {x: 0.5, y: 0.5}
   limit: {x: 31, y: 17}
-  rotaLimit: {x: 5, y: 5}
+  rotaLimit: {x: 0.3, y: 5}
   myAnimator: {fileID: 82887031}
   maxAcceleration: {x: 100, y: 100}
   viewSet: 0
@@ -9038,7 +9039,7 @@ Transform:
   m_GameObject: {fileID: 2011052300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 0.1}
+  m_LocalScale: {x: 100, y: 100, z: 0.10000001}
   m_Children: []
   m_Father: {fileID: 2135976090}
   m_RootOrder: 1
