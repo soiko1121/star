@@ -160,30 +160,6 @@ public class LittlePlanetMove : MonoBehaviour
         //littlePlanetRB.AddForce(move * controller.corpsSpeed);
         transform.position += move * controller.corpsSpeed;
     }
-    private void ColorChange()
-    {
-        if (Number != -1)
-        {
-            switch (Number % 5)
-            {
-                case 0:
-                    gameObject.GetComponent<Renderer>().material.color = Color.red;
-                    break;
-                case 1:
-                    gameObject.GetComponent<Renderer>().material.color = Color.yellow;
-                    break;
-                case 2:
-                    gameObject.GetComponent<Renderer>().material.color = Color.blue;
-                    break;
-                case 3:
-                    gameObject.GetComponent<Renderer>().material.color = Color.green;
-                    break;
-                case 4:
-                    gameObject.GetComponent<Renderer>().material.color = Color.magenta;
-                    break;
-            }
-        }
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Group")
