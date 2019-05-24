@@ -6,21 +6,19 @@ public class PlayerMove : MonoBehaviour
 {
     private Vector3 gyro, gyroSet, moveVec, velocitySet;
     private Rigidbody playerRB;
-    public float slowdown, set2DSpeed;
+    public float set2DSpeed;
     public DebugText debugText;
     public TimeGenerator timeGenerator;
-    public float ySpeed2D;
-    public float defY;
+    public float defRotaY;
+    public float defPosY;
     public Vector2 speedV2;
     public Vector2 gyroLimit;
     public Vector2 limit;
     public Vector2 rotaLimit;
+    public Vector2 maxAcceleration;
     public MyAnimator myAnimator;
 
-    //public Vector2 accelerationSpeed;
-    public Vector2 maxAcceleration;
     private Vector2 accelerationCount;
-    //private Vector2 acceleration;
     private Vector2 pm;
     private Vector3 target;
     private Vector3 oldpos;
@@ -65,14 +63,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (timeGenerator.GetComponent<TimeGenerator>().cameraMoveNow)
         {
-            if (viewSet == View.side)
-            {
-                transform.position = new Vector3(transform.position.x - set2DSpeed, transform.position.y, transform.position.z);
-            }
-            else
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - set2DSpeed);
-            }
+            transform.position = new Vector3(transform.position.x - set2DSpeed, transform.position.y, transform.position.z);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -86,7 +77,7 @@ public class PlayerMove : MonoBehaviour
         if (!DebugPC.pc)
         {
             Vector3 v3 = GetGyro();
-            transform.rotation = new Quaternion(accelerationCount.y * (rotaLimit.x / maxAcceleration.y) * -pm.y + 0.5f, 0, 0, transform.rotation.w);
+            transform.rotation = new Quaternion(accelerationCount.y * (rotaLimit.x / maxAcceleration.y) * (-pm.y) + defRotaY, 0, 0, transform.rotation.w);
             myAnimator.X = accelerationCount.x;
             myAnimator.PM = pm.x;
             transform.position = v3;
@@ -133,8 +124,8 @@ public class PlayerMove : MonoBehaviour
 
         if (gyro.x > gyroLimit.x)
             gyro.x = gyroLimit.x;
-        if (gyro.y > gyroLimit.y + defY)
-            gyro.y = gyroLimit.y + defY;
+        if (gyro.y > gyroLimit.y + defPosY)
+            gyro.y = gyroLimit.y + defPosY;
         if (inputGyro.y < 0)
             gyro.y = 0;
 
@@ -142,7 +133,7 @@ public class PlayerMove : MonoBehaviour
             pm.x = 1;
         else
             pm.x = -1;
-        if (gyro.y > defY)
+        if (gyro.y > defPosY)
             pm.y = 1;
         else
             pm.y = -1;
@@ -150,10 +141,10 @@ public class PlayerMove : MonoBehaviour
         pm *= PM;
 
         accelerationCount.x = (int)(Mathf.Abs(gyro.x) / (gyroLimit.x / maxAcceleration.x));
-        if (gyro.y > defY)
-            accelerationCount.y = (int)(Mathf.Abs(gyro.y - defY) / (gyroLimit.y / maxAcceleration.y));
+        if (gyro.y > defPosY)
+            accelerationCount.y = (int)(Mathf.Abs(gyro.y - defPosY) / (gyroLimit.y / maxAcceleration.y));
         else
-            accelerationCount.y = (int)maxAcceleration.y - (int)(Mathf.Abs(gyro.y) / (defY / maxAcceleration.y));
+            accelerationCount.y = (int)maxAcceleration.y - (int)(Mathf.Abs(gyro.y) / (defPosY / maxAcceleration.y));
 
         if (Mathf.Abs(transform.position.x + accelerationCount.x * (speedV2.x / maxAcceleration.x) * pm.x) < limit.x)
             v3.x = transform.position.x + accelerationCount.x * (speedV2.x / maxAcceleration.x) * pm.x;
