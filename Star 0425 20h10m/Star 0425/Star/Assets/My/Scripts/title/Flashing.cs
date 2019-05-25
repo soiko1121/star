@@ -12,7 +12,7 @@ public class Flashing : MonoBehaviour
     private Image image;
     private float time;
     private float timer;
-
+    private AudioSource audioSource;
     private bool loadFlag;
 
     [SerializeField]
@@ -27,6 +27,7 @@ public class Flashing : MonoBehaviour
         speed = 1.0f;
         loadFlag = false;
         image = this.gameObject.GetComponent<Image>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class Flashing : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 loadFlag = true;
+               GetTitleSe();
             }
         }
         else
@@ -82,5 +84,9 @@ public class Flashing : MonoBehaviour
         color = Mathf.Sin(time) * 0.5f + 0.5f;
 
         return color;
+    }
+    private void GetTitleSe()
+    {
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4506007756413624785}
   - component: {fileID: 4506007756413624786}
+  - component: {fileID: 5029856856847134862}
   - component: {fileID: 4506007756413624787}
   m_Layer: 0
   m_Name: ButtonSE
@@ -129,6 +130,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5029856856847134862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4506007756413624796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de645279e2c71334b917e5811913a85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4506007756413624787
 MonoBehaviour:
   m_ObjectHideFlags: 0
