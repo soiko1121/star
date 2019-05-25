@@ -11,12 +11,14 @@ public class PlayerHit : MonoBehaviour
     public int percentage;
     public int protectTime;
     private GameObject[] littlePlanets;
+    private GameObject hitSe;
     private bool dangerHit;
     private int count;
 
     private ParticleSystem particle;
     [SerializeField]
     private GameObject effectObject;
+    public AudioSource audioSource;
     public static bool Hit
     {
         get; set;
@@ -29,6 +31,7 @@ public class PlayerHit : MonoBehaviour
         dangerHit = false;
         Hit = false;
         particle = effectObject.GetComponent<ParticleSystem>();
+        hitSe = GameObject.Find("SE");
     }
     private void Update()
     {
@@ -69,7 +72,8 @@ public class PlayerHit : MonoBehaviour
                 count = 0;
                 dangerHit = true;
                 Hit = true;
-                model.GetComponent<MyAnimator>().Hit = true;
+                //model.GetComponent<MyAnimator>().Hit = true;
+                hitSe.transform.GetChild(1).GetComponent<SEControl_Crystal>().GetPlanetHitSe();
             }
         }
     }
@@ -83,6 +87,7 @@ public class PlayerHit : MonoBehaviour
                 {
                     gameGenerator.addSpeedTimer = 3;
                     particle.Play();
+                    audioSource.PlayOneShot(audioSource.clip);
                 }
             }
             else

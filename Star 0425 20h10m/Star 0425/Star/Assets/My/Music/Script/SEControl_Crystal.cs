@@ -22,4 +22,12 @@ public class SEControl_Crystal : MonoBehaviour
         if (mycount == clipSE.Length)
             mycount = 0;
     }
+    public void GetPlanetHitSe()
+    {
+        audioController.PlayOneShot(clipSE[mycount]);
+        if (mycount != clipSE.Length)
+            mycount++;
+        if (mycount == clipSE.Length)
+            mycount = 0;
+    }
 }
