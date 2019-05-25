@@ -8818,7 +8818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameGenerator: {fileID: 2388096640501033390}
-  model: {fileID: 0}
+  model: {fileID: 1431470430}
   constant: 10
   percentage: 50
   protectTime: 60
