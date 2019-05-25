@@ -1262,7 +1262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage:
-  - {fileID: 4890449853630611197, guid: 63c03604e96f6154ebc6d58fdec8a29c, type: 3}
+  - {fileID: 4890449853630611197, guid: da9f60ed3d46b804ead37fd8dafcf763, type: 3}
   - {fileID: 4890449853630611197, guid: a9f8143d7f332ef48881e85bc5549a75, type: 3}
   - {fileID: 4890449853630611197, guid: 07ac362d7dcf86d4ebbdaa87b605fb07, type: 3}
 --- !u!4 &481416493
@@ -1497,6 +1497,7 @@ MonoBehaviour:
   minLimit: {x: 25, y: 11}
   goalMove: {x: 1, y: -0.1, z: -2}
   goalSpeed: 0.05
+  goalMaxCount: 80
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0

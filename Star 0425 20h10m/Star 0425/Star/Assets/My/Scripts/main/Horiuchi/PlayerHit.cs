@@ -51,11 +51,12 @@ public class PlayerHit : MonoBehaviour
                 {
                     Handheld.Vibrate();
                 }
-                if (gameGenerator.star <= 0)
+                littlePlanets = GameObject.FindGameObjectsWithTag("MiniStar");
+                if (littlePlanets.Length <= 0)
                 {
                     SceneManager.LoadScene("ResultScene");
+                    return;
                 }
-                littlePlanets = GameObject.FindGameObjectsWithTag("MiniStar");
                 int length = constant + littlePlanets.Length / percentage;
                 if (length > littlePlanets.Length)
                 {

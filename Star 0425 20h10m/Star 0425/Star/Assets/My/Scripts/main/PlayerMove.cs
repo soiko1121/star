@@ -101,6 +101,7 @@ public class PlayerMove : MonoBehaviour
                 pos.y += 1;
             if (Input.GetKey(KeyCode.S))
                 pos.y += -1;
+            pos.x *= PM.x;
             //pos = target - transform.position;
             //pos = pos.normalized * 10f;
             //playerRB.AddForce(pos);

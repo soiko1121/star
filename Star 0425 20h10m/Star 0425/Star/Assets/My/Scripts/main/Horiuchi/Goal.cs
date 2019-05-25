@@ -11,7 +11,6 @@ public class Goal : MonoBehaviour
     {
         get; set;
     }
-
     private void Start()
     {
         ClearFlag = false;
@@ -24,12 +23,10 @@ public class Goal : MonoBehaviour
             goalCount++;
             if (goalCount == goleDelayCount)
             {
-                Debug.Log(SelectStage.StageSelectNumber);
                 SceneManager.LoadScene("ResultScene");
             }
         }
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -40,6 +37,7 @@ public class Goal : MonoBehaviour
             }
             goalCount = 0;
             ClearFlag = true;
+            PlayerMove.PM = new Vector2(PlayerMove.PM.x * -1, PlayerMove.PM.y);
         }
     }
 }

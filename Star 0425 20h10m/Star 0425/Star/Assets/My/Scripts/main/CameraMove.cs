@@ -13,8 +13,8 @@ public class CameraMove : MonoBehaviour
     public Vector2 minLimit;
     public Vector3 goalMove;
     public float goalSpeed;
+    public int goalMaxCount;
 
-    private Vector3 oldPos;
     private GameObject player;
     private float target;
     private Vector3 targetV3;
@@ -25,16 +25,16 @@ public class CameraMove : MonoBehaviour
     private Vector2 pm;
     private Vector2 limit;
     private Vector2 limitTarget;
+    private int goalRotaCount;
 
     void Start()
     {
         saveCount = 0;
         count = 0;
-        //transform.position = new Vector3(transform.position.x, transform.position.y, defPosZ);
-        oldPos = Vector3.zero;
         player = GameObject.FindWithTag("Player");
         particle = particles[0].GetComponent<ParticleSystem>();
         limit = maxLimit;
+        goalRotaCount = goalMaxCount;
     }
     void Update()
     {
@@ -44,8 +44,6 @@ public class CameraMove : MonoBehaviour
         }
         if (!Goal.ClearFlag)
         {
-            //transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-            //Vector3 v3 = player.transform.position - oldPos;
             Vector3 v3;
             if (player.transform.position.x == 0)
                 v3.x = 0;
@@ -58,7 +56,6 @@ public class CameraMove : MonoBehaviour
             v3.z = transform.position.z;
 
             transform.position = v3;
-            //oldPos = player.transform.position;
             transform.LookAt(player.transform.position);
 
             int star = gameGenerator.GetComponent<GameGenerator>().star;
@@ -83,8 +80,6 @@ public class CameraMove : MonoBehaviour
                     if (nowCount < saveCount)
                     {
                         particle = particles[0].GetComponent<ParticleSystem>();
-                        //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
-                        //limitTarget = -(minLimit + (maxLimit - minLimit) / changeCount.Length * (changeCount.Length - nowCount) - limit);
                     }
                     else
                     {
@@ -114,9 +109,49 @@ public class CameraMove : MonoBehaviour
         }
         else
         {
-            transform.position += goalMove * goalSpeed;
-            //transform.position = new Vector3(transform.position.x, transform.position.y, 10);
-            //transform.LookAt(player.transform.position);
+            Vector3 v3;
+            if (player.transform.position.x == 0)
+                v3.x = 0;
+            else
+                v3.x = limit.x / (player.GetComponent<PlayerMove>().limit.x / player.transform.position.x);
+            if (player.transform.position.y == 0)
+                v3.y = 0;
+            else
+                v3.y = limit.y / (player.GetComponent<PlayerMove>().limit.y / player.transform.position.y);
+            v3.z = transform.position.z;
+
+            transform.position = v3;
+            transform.LookAt(player.transform.position);
+
+            int star = gameGenerator.GetComponent<GameGenerator>().star;
+            int[] changeCount = gameGenerator.musicChangeCount;
+            int nowCount = 0;
+
+            if (goalRotaCount == goalMaxCount)
+            {
+                for (int i = 0; i < changeCount.Length; i++)
+                {
+                    if (star >= changeCount[i])
+                    {
+                        nowCount = i;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                if (changeCount[nowCount] == 0)
+                    target = defPosZ;
+                else
+                    target = defPosZ - maxDistanse / changeCount.Length * (nowCount + 1);
+                move = target * -1 - transform.position.z;
+                goalRotaCount = 0;
+            }
+            else if (goalRotaCount < goalMaxCount)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + move / goalMaxCount);
+                goalRotaCount++;
+            }
         }
     }
 }

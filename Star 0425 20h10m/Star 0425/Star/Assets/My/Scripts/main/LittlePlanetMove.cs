@@ -97,7 +97,7 @@ public class LittlePlanetMove : MonoBehaviour
             distance = Random.Range(controller.GetComponent<LittlePlanetController>().heightSplit, 1f + 0.01f * (Number / controller.corpsSplit));
             moveCount = 0;
         }
-        if ((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc))
+        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)) && !Goal.ClearFlag)
         {
             Vector3 fluctuation = Vector3.zero;
             int delay = 4;
