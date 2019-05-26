@@ -25,11 +25,12 @@ public class ResultRank : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        float point = Vector2.Lerp(new Vector2(0, 0), new Vector2(425, 0), addTimer).x;
-        sizeV2 = new Vector2(point, point);
-        addTimer += Time.deltaTime;
-
+        if (rankShowNow)
+        {
+            float point = Vector2.Lerp(new Vector2(0, 0), new Vector2(425, 0), addTimer).x;
+            sizeV2 = new Vector2(point, point);
+            addTimer += Time.deltaTime;
+        }
         size.sizeDelta = sizeV2;
     }
     public void ShowRank(int score)
@@ -42,6 +43,16 @@ public class ResultRank : MonoBehaviour
                     setRank = 0;
                 else if (score < 2000)
                     setRank = 1;
+                else if (score < 10000)
+                    setRank = 2;
+                else if (score < 20000)
+                    setRank = 3;
+                else if (score < 50000)
+                    setRank = 4;
+                else if (score < 80000)
+                    setRank = 5;
+                else
+                    setRank = 6;
                 break;
             case (int)SelectStage.Stage.Easy + 1:
                 break;
@@ -52,6 +63,8 @@ public class ResultRank : MonoBehaviour
             case (int)SelectStage.Stage.Hard:
                 break;
             case (int)SelectStage.Stage.Hard + 1:
+                break;
+            default:
                 break;
         }
         rankViwe.GetComponent<Image>().sprite = rank[setRank];
