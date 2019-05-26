@@ -10,6 +10,8 @@ public class MyAnimator : MonoBehaviour
     float leftMin, leftMax;
     float righMin, righMax;
 
+    int countTime;
+
     public float X
     {
         get; set;
@@ -47,96 +49,107 @@ public class MyAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (X * PM < 0 || X * PM > 0)
-        {
-            Animation(X * PM);
-        }
-        else
-        {
-            anim.SetBool("IsRightFloat1", false);
-            anim.SetBool("IsRightFloat2", false);
-            anim.SetBool("IsRightFloat3", false);
-            anim.SetBool("IsLeftFloat1", false);
-            anim.SetBool("IsLeftFloat2", false);
-            anim.SetBool("IsLeftFloat3", false);
-
-            anim.SetBool("IsMotionFloat", true);
-
-            animCount = AnimNumber.Default;
-
-        }
-
-        
-    }
-
-    private void Animation(float x)
-    {
+        #region ダメージ時
         if (PlayerHit.Hit)
         {
-            #region ダメージ時
-            if (animCount != AnimNumber.Damage) anim.SetBool("IsDamage", true);
+            countTime++;        //モーションが再生し終わるタイミングのための計測
+
+            if (animCount != AnimNumber.Damage)
+            {
+                anim.SetBool("IsMotionFloat", false);
+                anim.SetBool("IsDamage", true);
+                animCount = AnimNumber.Damage;
+            }
             else
             {
-                animCount = AnimNumber.Damage;
-                anim.SetBool("IsDamage", false);
+                //30待つ
+                if (countTime >= 30)
+                {
+                    countTime = 0;
+                    PlayerHit.Hit = false;
+                }
             }
-            #endregion
         }
+        #endregion
         else
         {
             anim.SetBool("IsDamage", false);
-            anim.SetBool("IsMotionFloat", false);
 
-            #region 何もしていない時
-            if (x == 0)
+            if (X * PM < 0 || X * PM > 0)
             {
-                if (animCount != AnimNumber.MotionFloat) anim.SetBool("IsMotionFloat", true);
-                else anim.SetBool("IsMotionFloat", false);
-                animCount = AnimNumber.MotionFloat;
+                Animation(X * PM);
             }
-            else anim.SetBool("IsMotionFloat", false);
-            #endregion
-
-
-            #region 左向き開始
-            if (x  < 0)
+            else
             {
+                //何もしていないとき
                 anim.SetBool("IsRightFloat1", false);
                 anim.SetBool("IsRightFloat2", false);
                 anim.SetBool("IsRightFloat3", false);
-               
-                //斜め処理
-                if (x  < 0 && x > leftMin) anim.SetBool("IsLeftFloat1", true);
-                else anim.SetBool("IsLeftFloat1", false);
-
-                if (x <= leftMin && x > leftMax) anim.SetBool("IsLeftFloat2", true);
-                else anim.SetBool("IsLeftFloat2", false);
-
-                if (x <= leftMax) anim.SetBool("IsLeftFloat3", true);
-                else anim.SetBool("IsLeftFloat3", false);
-            }
-            #endregion
-           
-
-            #region 右向き開始
-            if (x  > 0)
-            {
                 anim.SetBool("IsLeftFloat1", false);
                 anim.SetBool("IsLeftFloat2", false);
                 anim.SetBool("IsLeftFloat3", false);
 
-                //斜め処理
-                if (x  > 0 && x < righMin) anim.SetBool("IsRightFloat1", true);
-                else anim.SetBool("IsRightFloat1", false);
+                anim.SetBool("IsMotionFloat", true);
 
-                if (x  >= righMin && x < righMax) anim.SetBool("IsRightFloat2", true);
-                else anim.SetBool("IsRightFloat2", false);
-
-                if (x >= righMax) anim.SetBool("IsRightFloat3", true);
-                else anim.SetBool("IsRightFloat3", false);
+                animCount = AnimNumber.Default;
             }
-            #endregion
-
         }
+
+    }
+
+    private void Animation(float x)
+    {
+        anim.SetBool("IsMotionFloat", false);
+
+        #region 何もしていない時
+        if (x == 0)
+        {
+            if (animCount != AnimNumber.MotionFloat) anim.SetBool("IsMotionFloat", true);
+            else anim.SetBool("IsMotionFloat", false);
+            animCount = AnimNumber.MotionFloat;
+        }
+        else anim.SetBool("IsMotionFloat", false);
+        #endregion
+
+
+        #region 左向き開始
+        if (x < 0)
+        {
+            anim.SetBool("IsRightFloat1", false);
+            anim.SetBool("IsRightFloat2", false);
+            anim.SetBool("IsRightFloat3", false);
+
+            //斜め処理
+            if (x < 0 && x > leftMin) anim.SetBool("IsLeftFloat1", true);
+            else anim.SetBool("IsLeftFloat1", false);
+
+            if (x <= leftMin && x > leftMax) anim.SetBool("IsLeftFloat2", true);
+            else anim.SetBool("IsLeftFloat2", false);
+
+            if (x <= leftMax) anim.SetBool("IsLeftFloat3", true);
+            else anim.SetBool("IsLeftFloat3", false);
+        }
+        #endregion
+
+
+        #region 右向き開始
+        if (x > 0)
+        {
+            anim.SetBool("IsLeftFloat1", false);
+            anim.SetBool("IsLeftFloat2", false);
+            anim.SetBool("IsLeftFloat3", false);
+
+            //斜め処理
+            if (x > 0 && x < righMin) anim.SetBool("IsRightFloat1", true);
+            else anim.SetBool("IsRightFloat1", false);
+
+            if (x >= righMin && x < righMax) anim.SetBool("IsRightFloat2", true);
+            else anim.SetBool("IsRightFloat2", false);
+
+            if (x >= righMax) anim.SetBool("IsRightFloat3", true);
+            else anim.SetBool("IsRightFloat3", false);
+        }
+        #endregion
+
     }
 }

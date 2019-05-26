@@ -7,10 +7,11 @@ public class SelectButton : MonoBehaviour
 {
     public int count = 0;
     public bool flag = false;
+    public GameObject canvas;
 
     public void LeftOnClick()
     {
-        SelectStage.StageSelectNumber--;
+        SelectStage.StageSelectNumber-=2;
         if (SelectStage.minStageNumber > SelectStage.StageSelectNumber)
         {
             SelectStage.StageSelectNumber = SelectStage.maxStageNumber;
@@ -18,7 +19,7 @@ public class SelectButton : MonoBehaviour
     }
     public void RightOnClick()
     {
-        SelectStage.StageSelectNumber++;
+        SelectStage.StageSelectNumber+= 2;
         if (SelectStage.maxStageNumber < SelectStage.StageSelectNumber)
         {
             SelectStage.StageSelectNumber = SelectStage.minStageNumber;
@@ -26,10 +27,6 @@ public class SelectButton : MonoBehaviour
     }
     public void StartOnClick()
     {
-        flag = true;
-        if (count > 50)
-        {
-            SceneManager.LoadScene("LoadScene");
-        }
+        canvas.SetActive(true);
     }
 }

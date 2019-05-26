@@ -8,14 +8,14 @@ public class SelectStage : MonoBehaviour
     public enum Stage
     {
         Easy = 1,
-        Normal = 2,
-        Hard = 3
+        Normal = 3,
+        Hard = 5
     };
     public Button[] buttons;
 
     public const int 
         minStageNumber = 1,
-        maxStageNumber = 3;
+        maxStageNumber = 5;
 
     string kari = "";
     GameObject sb;
@@ -28,7 +28,7 @@ public class SelectStage : MonoBehaviour
     void Start()
     {
         StageSelectNumber = minStageNumber;
-        sb = GameObject.Find("SelectButton");
+        sb = GameObject.Find("StageSelectController");
     }
 
     // Update is called once per frame
@@ -38,12 +38,12 @@ public class SelectStage : MonoBehaviour
         {
             buttons[i].enabled = false;
         }
-        buttons[StageSelectNumber-1].enabled = true;
+        buttons[StageSelectNumber / 2].enabled = true;
         PlanetGenerator.stageNumber = StageSelectNumber - 1;
         ExpText();
         GetComponent<Text>().text = kari;
-        if(sb.GetComponent<SelectButton>().flag)
-            sb.GetComponent<SelectButton>().count++;
+        if(sb.GetComponent<StageSelectController>().loadFlag)
+            sb.GetComponent<StageSelectController>().delaycount++;
     }
 
     void ExpText()

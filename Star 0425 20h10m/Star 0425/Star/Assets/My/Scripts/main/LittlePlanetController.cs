@@ -81,7 +81,7 @@ public class LittlePlanetController : MonoBehaviour
                 count = 0;
             }
         }
-        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)) && !Goal.ClearFlag)
+        if (((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc)) && !Goal.ClearFlag)
         {
             touchPos = Input.mousePosition;
             RadList = new List<float>();
