@@ -142,8 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipSE:
-  - {fileID: 8300000, guid: be25175bbb6e0a744b7fba428fc3548d, type: 3}
-  - {fileID: 8300000, guid: e35a819ebe4ec03409591edeee9c6240, type: 3}
+  - {fileID: 8300000, guid: 4c772c4c5d82fda418a64548b67547b6, type: 3}
 --- !u!1 &4529165606299652294
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,5 +317,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipSE:
-  - {fileID: 8300000, guid: fbc88e60a2dd3d148bc591cf032b7247, type: 3}
-  - {fileID: 8300000, guid: cfb63ade78d64fd4ea08c4176fc590f6, type: 3}
+  - {fileID: 8300000, guid: 2a386d0d122414f49b22da7683ca7d8e, type: 3}
