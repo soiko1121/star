@@ -14,6 +14,7 @@ public class StageSelectController : MonoBehaviour
     public int delaycount;
     public bool loadFlag;
     private bool setStage1;
+    private GameObject titleBGM;
     [SerializeField]
     private string[] nameSpace;
      // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class StageSelectController : MonoBehaviour
         setStage1 = true;
         delaycount = 0;
         loadFlag = false;
+        titleBGM = GameObject.Find("BGM");
     }
 
     // Update is called once per frame
@@ -62,6 +64,7 @@ public class StageSelectController : MonoBehaviour
         }
         if (delaycount > 50)
         {
+            titleBGM.GetComponent<ButtonDontDestroy>().DestroyThisObject();
             SceneManager.LoadScene("LoadScene");
         }
     }

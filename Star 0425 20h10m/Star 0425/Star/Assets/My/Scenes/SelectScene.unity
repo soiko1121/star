@@ -7354,12 +7354,12 @@ MonoBehaviour:
   delaycount: 0
   loadFlag: 0
   nameSpace:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
 --- !u!4 &1559380364
 Transform:
   m_ObjectHideFlags: 0

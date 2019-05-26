@@ -5,17 +5,13 @@ using UnityEngine;
 public class RankingSelect : MonoBehaviour
 {
     public GameObject[] mask = new GameObject[3];
-    public void Start()
-    {
-        MaskOnOff(SelectStage.StageSelectNumber);
-    }
+    private int setMask;
 
     public void Easy()
     {
         if (SelectStage.StageSelectNumber != (int)SelectStage.Stage.Easy)
         {
             SelectStage.StageSelectNumber = (int)SelectStage.Stage.Easy;
-            MaskOnOff((int)SelectStage.Stage.Easy);
         }
     }
     public void Normal()
@@ -23,7 +19,6 @@ public class RankingSelect : MonoBehaviour
         if (SelectStage.StageSelectNumber != (int)SelectStage.Stage.Normal)
         {
             SelectStage.StageSelectNumber = (int)SelectStage.Stage.Normal;
-            MaskOnOff((int)SelectStage.Stage.Normal);
         }
     }
     public void Hard()
@@ -31,17 +26,34 @@ public class RankingSelect : MonoBehaviour
         if (SelectStage.StageSelectNumber != (int)SelectStage.Stage.Hard)
         {
             SelectStage.StageSelectNumber = (int)SelectStage.Stage.Hard;
-            MaskOnOff((int)SelectStage.Stage.Hard);
         }
     }
-    private void MaskOnOff(int maskNum)
+    void Update()
     {
-        for (int loop = 0; loop < mask.Length; loop++)
+        if (SelectStage.StageSelectNumber % 2 == 0)
+            setMask = SelectStage.StageSelectNumber - 1;
+        else
+            setMask = SelectStage.StageSelectNumber;
+
+        switch (setMask)
         {
-            if (loop == maskNum - 1)
-                mask[loop].SetActive(false);
-            else
-                mask[loop].SetActive(true);
+            case (int)SelectStage.Stage.Easy:
+                mask[0].SetActive(false);
+                mask[1].SetActive(true);
+                mask[2].SetActive(true);
+                break;
+            case (int)SelectStage.Stage.Normal:
+                mask[0].SetActive(true);
+                mask[1].SetActive(false);
+                mask[2].SetActive(true);
+                break;
+            case (int)SelectStage.Stage.Hard:
+                mask[0].SetActive(true);
+                mask[1].SetActive(true);
+                mask[2].SetActive(false);
+                break;
+            default:
+                break;
         }
     }
 }

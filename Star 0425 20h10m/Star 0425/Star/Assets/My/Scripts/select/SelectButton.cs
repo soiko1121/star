@@ -11,7 +11,7 @@ public class SelectButton : MonoBehaviour
 
     public void LeftOnClick()
     {
-        SelectStage.StageSelectNumber-=2;
+        SelectStage.StageSelectNumber--;
         if (SelectStage.minStageNumber > SelectStage.StageSelectNumber)
         {
             SelectStage.StageSelectNumber = SelectStage.maxStageNumber;
@@ -19,7 +19,7 @@ public class SelectButton : MonoBehaviour
     }
     public void RightOnClick()
     {
-        SelectStage.StageSelectNumber+= 2;
+        SelectStage.StageSelectNumber++;
         if (SelectStage.maxStageNumber < SelectStage.StageSelectNumber)
         {
             SelectStage.StageSelectNumber = SelectStage.minStageNumber;
