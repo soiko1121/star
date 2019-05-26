@@ -14,6 +14,7 @@ public class CameraMove : MonoBehaviour
     public Vector3 goalMove;
     public float goalSpeed;
     public int goalMaxCount;
+    public Vector2 goalLimit;
 
     private GameObject player;
     private float target;
@@ -121,7 +122,6 @@ public class CameraMove : MonoBehaviour
             v3.z = transform.position.z;
 
             transform.position = v3;
-            transform.LookAt(player.transform.position);
 
             int star = gameGenerator.GetComponent<GameGenerator>().star;
             int[] changeCount = gameGenerator.musicChangeCount;
@@ -149,9 +149,19 @@ public class CameraMove : MonoBehaviour
             }
             else if (goalRotaCount < goalMaxCount)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + move / goalMaxCount);
+                Vector3 moveV3;
+                moveV3 = new Vector3(
+                Mathf.Sin(Mathf.PI * 2f / (goalMaxCount * 2f) * goalRotaCount) * goalLimit.x,
+                Mathf.Sin(Mathf.PI * 2f / (goalMaxCount * 2f) * goalRotaCount) * goalLimit.y,
+                move / goalMaxCount);
+                transform.position += moveV3;//上で代入してるから+=で大丈夫
                 goalRotaCount++;
             }
+            if (goalRotaCount == goalMaxCount)//二回目消し
+            {
+                goalRotaCount++;
+            }
+            transform.LookAt(player.transform.position);
         }
     }
 }

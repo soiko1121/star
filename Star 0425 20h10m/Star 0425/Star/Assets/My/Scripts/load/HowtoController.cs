@@ -31,12 +31,13 @@ public class HowtoController : MonoBehaviour
     Vector3 startTPos;
     Vector3 endTPos;
 
-    float flickRange = 90.0f;
+    float flickRange;
 
     // Start is called before the first frame update
     void Start()
     {
         imageState = 1;
+        flickRange = 90f;
 
         LButton.onClick.AddListener(changeImage);
         RButton.onClick.AddListener(changeImage);

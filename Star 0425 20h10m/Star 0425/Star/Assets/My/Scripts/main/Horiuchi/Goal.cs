@@ -23,6 +23,7 @@ public class Goal : MonoBehaviour
             goalCount++;
             if (goalCount == goleDelayCount)
             {
+                PlayerMove.PM = new Vector2(PlayerMove.PM.x * -1, PlayerMove.PM.y);
                 SceneManager.LoadScene("ResultScene");
             }
         }

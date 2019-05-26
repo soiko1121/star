@@ -23,11 +23,12 @@ public class StageSelector : MonoBehaviour
     bool leftFlag = false;
     bool once = false;
 
-    HowtoController flick = new HowtoController();
+    HowtoController flick;
 
     // Start is called before the first frame update
     void Start()
     {
+        flick = new HowtoController();
         for (var i = 0; i < buttons.Length; i++)
         {
             posX = ax * Mathf.Cos(Mathf.PI / 180 * (rad + (120 * i))) + centerX;
