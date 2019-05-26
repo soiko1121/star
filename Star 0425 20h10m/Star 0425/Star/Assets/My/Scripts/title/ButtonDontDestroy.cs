@@ -8,4 +8,8 @@ public class ButtonDontDestroy : MonoBehaviour
     {
         DontDestroyOnLoad(this);
     }
+    public void DestroyThisObject()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -19,10 +19,12 @@ public class ShowResult : MonoBehaviour
         timeCountEnd,
         skipNow;
     private TotalScore score;
+    private ResultRank resultRank;
     // Start is called before the first frame update
     void Start()
     {
         score = GetComponent<TotalScore>();
+        resultRank = GetComponent<ResultRank>();
         star = GameGenerator.Star;
         stageTime = GameGenerator.StageTimer;
         timer = 0;
@@ -46,8 +48,10 @@ public class ShowResult : MonoBehaviour
         else if (!timeCountEnd)
             ShowTime();
         else
+        {
             score.ShowTotalScore(resultTotal);
-
+            resultRank.ShowRank(score.ScoreSet());
+        }
     }
     private void ShowStar()
     {

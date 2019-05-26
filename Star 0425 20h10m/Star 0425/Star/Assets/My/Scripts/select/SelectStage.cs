@@ -15,7 +15,7 @@ public class SelectStage : MonoBehaviour
 
     public const int 
         minStageNumber = 1,
-        maxStageNumber = 5;
+        maxStageNumber = 6;
 
     string kari = "";
     GameObject sb;
