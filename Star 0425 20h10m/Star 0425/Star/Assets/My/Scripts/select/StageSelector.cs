@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StageSelector : MonoBehaviour
 {
     public Button[] buttons;
-
+    public GameObject canvas;
     public float centerX;
     public float centerY;
     public float delta;
@@ -41,6 +41,11 @@ public class StageSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (canvas.activeSelf)
+        {
+            flick.Flicker();
+            return;
+        }
         shake(shakeRad);
         shakeRad += 1f ;
 
@@ -53,7 +58,7 @@ public class StageSelector : MonoBehaviour
                 rightFlag = false;
                 flick.flickDirection = (int)HowtoController.direction.none;
 
-                SelectStage.StageSelectNumber++;
+                SelectStage.StageSelectNumber += 2;
                 if (SelectStage.maxStageNumber < SelectStage.StageSelectNumber)
                 {
                     SelectStage.StageSelectNumber = SelectStage.minStageNumber;
@@ -70,7 +75,7 @@ public class StageSelector : MonoBehaviour
                 leftFlag = false;
                 flick.flickDirection = (int)HowtoController.direction.none;
 
-                SelectStage.StageSelectNumber--;
+                SelectStage.StageSelectNumber -= 2;
                 if (SelectStage.minStageNumber > SelectStage.StageSelectNumber)
                 {
                     SelectStage.StageSelectNumber = SelectStage.maxStageNumber;
@@ -107,7 +112,7 @@ public class StageSelector : MonoBehaviour
     void shake(float rad)
     {
         float y = 6 * Mathf.Sin(Mathf.PI/180 * rad);
-        buttons[SelectStage.StageSelectNumber-1].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
+        buttons[SelectStage.StageSelectNumber / 2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
     }
 
     public void moveRight()
