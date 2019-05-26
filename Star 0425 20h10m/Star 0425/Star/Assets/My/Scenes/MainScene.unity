@@ -199,6 +199,16 @@ PrefabInstance:
       propertyPath: clip3
       value: 
       objectReference: {fileID: 8300000, guid: be25175bbb6e0a744b7fba428fc3548d, type: 3}
+    - target: {fileID: 7761172920540702873, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
+        type: 3}
+      propertyPath: clipSE.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 69df921ba4a36b5449e4a390c376adf8, type: 3}
+    - target: {fileID: 7761172920540702873, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
+        type: 3}
+      propertyPath: audioController
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba05e2c6e1faddf4d924b3acc00c39c7, type: 3}
 --- !u!1 &71580842
