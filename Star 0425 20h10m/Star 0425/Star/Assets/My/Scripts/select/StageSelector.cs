@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class StageSelector : MonoBehaviour
 {
     public Button[] buttons;
-    public GameObject canvas;
+    public GameObject 
+        canvas,
+        retrunButton;
     public float centerX;
     public float centerY;
     public float delta;
@@ -44,9 +46,12 @@ public class StageSelector : MonoBehaviour
     {
         if (canvas.activeSelf)
         {
+            retrunButton.SetActive(false);
             flick.Flicker();
             return;
         }
+        else
+            retrunButton.SetActive(true);
         shake(shakeRad);
         shakeRad += 1f ;
 
