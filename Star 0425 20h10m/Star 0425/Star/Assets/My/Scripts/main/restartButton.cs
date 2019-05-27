@@ -5,10 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class restartButton : MonoBehaviour
 {
+    public GameObject dialog;
+
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    public void retryDia()
+    {
+        dialog.SetActive(true);
+    }
+    public void diaClose()
+    {
+        dialog.SetActive(false);
     }
 
     public void loadS()
