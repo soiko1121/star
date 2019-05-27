@@ -166,9 +166,9 @@ Transform:
   - {fileID: 4890449854628713112}
   - {fileID: 4890449853039458514}
   - {fileID: 8607904033203574718}
-  - {fileID: 4074503584920371184}
-  - {fileID: 4579652526514173742}
   - {fileID: 6157969165683604286}
+  - {fileID: 4579652526514173742}
+  - {fileID: 4074503584920371184}
   - {fileID: 3469589964328332554}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1598,6 +1598,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
+        type: 3}
+      propertyPath: m_Name
+      value: rock8 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1667,11 +1672,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
-        type: 3}
-      propertyPath: m_Name
-      value: rock8 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8, type: 3}
@@ -2423,6 +2423,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
+        type: 3}
+      propertyPath: m_Name
+      value: rock8
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2492,11 +2497,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
-        type: 3}
-      propertyPath: m_Name
-      value: rock8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8, type: 3}
@@ -2873,6 +2873,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 5d90c7e51df734446bcfdf7ca76802cd,
+        type: 3}
+      propertyPath: m_Name
+      value: rock2
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 5d90c7e51df734446bcfdf7ca76802cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2942,11 +2947,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 5d90c7e51df734446bcfdf7ca76802cd,
-        type: 3}
-      propertyPath: m_Name
-      value: rock2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d90c7e51df734446bcfdf7ca76802cd, type: 3}
@@ -3276,7 +3276,7 @@ PrefabInstance:
     - target: {fileID: 2507160785108964682, guid: e40c97575f71a0b429055664797949f2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2507160785108964682, guid: e40c97575f71a0b429055664797949f2,
         type: 3}
@@ -5884,6 +5884,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
+        type: 3}
+      propertyPath: m_Name
+      value: rock8
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5953,11 +5958,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
-        type: 3}
-      propertyPath: m_Name
-      value: rock8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8, type: 3}
@@ -6922,7 +6922,7 @@ PrefabInstance:
     - target: {fileID: 7542155419494526720, guid: a2e9c4483ef19ce409ebcd879e31c074,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7542155419494526720, guid: a2e9c4483ef19ce409ebcd879e31c074,
         type: 3}
@@ -8329,6 +8329,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
+        type: 3}
+      propertyPath: m_Name
+      value: rock8
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8398,11 +8403,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
-        type: 3}
-      propertyPath: m_Name
-      value: rock8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8, type: 3}
@@ -8794,6 +8794,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4890449853039458514}
     m_Modifications:
+    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
+        type: 3}
+      propertyPath: m_Name
+      value: rock8
+      objectReference: {fileID: 0}
     - target: {fileID: 1927847462141549574, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8863,11 +8868,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046086528863348714, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8,
-        type: 3}
-      propertyPath: m_Name
-      value: rock8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6b1feab1ac8ee4daedd2230e1d5eb8, type: 3}
