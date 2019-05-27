@@ -97,7 +97,7 @@ public class LittlePlanetMove : MonoBehaviour
             distance = Random.Range(controller.GetComponent<LittlePlanetController>().heightSplit, 1f + 0.01f * (Number / controller.corpsSplit));
             moveCount = 0;
         }
-        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)) && !Goal.ClearFlag)
+        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)))
         {
             Vector3 fluctuation = Vector3.zero;
             int delay = 4;
@@ -105,6 +105,9 @@ public class LittlePlanetMove : MonoBehaviour
             {
                 fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationDistance.x) * Mathf.Cos(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / delay)]);
                 fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationDistance.y) * Mathf.Sin(controller.RadList[200 * 10 - 1 - corpsIndex * (controller.Delay / delay)]);
+                if (Goal.ClearFlag)
+                    fluctuation.x *= -1;
+
             }
 
             target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +
@@ -125,6 +128,8 @@ public class LittlePlanetMove : MonoBehaviour
             {
                 fluctuation.x = (Number / controller.corpsSplit * controller.fluctuationDistance.x) * Mathf.Cos(controller.RadList[indexCount]);
                 fluctuation.y = (Number / controller.corpsSplit * controller.fluctuationDistance.y) * Mathf.Sin(controller.RadList[indexCount]);
+                if (Goal.ClearFlag)
+                    fluctuation.x *= -1;
             }
 
             target.x = player.GetComponent<PlayerMove>().PosList[index - corpsIndex * (controller.Delay / 3)].x + fluctuation.x +

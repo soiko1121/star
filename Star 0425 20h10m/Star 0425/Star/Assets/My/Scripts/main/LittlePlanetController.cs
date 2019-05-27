@@ -66,7 +66,7 @@ public class LittlePlanetController : MonoBehaviour
     }
     private void Update()
     {
-        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)) && !Goal.ClearFlag)
+        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)))
         {
             DelayCount = 0;
         }
@@ -81,14 +81,14 @@ public class LittlePlanetController : MonoBehaviour
                 count = 0;
             }
         }
-        if (((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc)) && !Goal.ClearFlag)
+        if (((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc)))
         {
             touchPos = Input.mousePosition;
             RadList = new List<float>();
             for (int i = 0; i < 200 * 10; i++)
                 RadList.Add(-1);
         }
-        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)) && !Goal.ClearFlag)
+        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)))
         {
             //debugText.text = touchPos.x.ToString() + "\n" + Input.mousePosition.x.ToString() + "\n" + touchPos.y.ToString() + "\n" + Input.mousePosition.y.ToString();
             GetTouch();
