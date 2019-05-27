@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerController : MonoBehaviour
+public class ControllerController_mae : MonoBehaviour
 {
     public float moveRange;
     public GameObject bigConPre;
@@ -10,8 +10,7 @@ public class ControllerController : MonoBehaviour
     public Vector3 scale;
 
     private Vector2 firstPos;
-    private Vector2 movePos;
-    private Vector3 screensize;
+    private Vector2 localPos;
     private Vector3 touchPos;
   　private GameObject lpc;
     private GameObject bigCon;
@@ -19,6 +18,7 @@ public class ControllerController : MonoBehaviour
     private Canvas canvas;
     private RectTransform canvasRect;
     private float moveRad;
+    private Vector2 movePos;
     private float a;
     private bool conFlag;
 
@@ -29,21 +29,22 @@ public class ControllerController : MonoBehaviour
         conFlag = false;
         a = 1;
         moveRange *= scale.x;
-        screensize = new Vector3(Screen.width, Screen.height, 0);
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {     
-        if (Input.GetMouseButtonDown(0) && !conFlag)
+        if (((Input.GetMouseButtonDown(0) && !DebugPC.pc) || (Input.GetMouseButtonDown(1) && DebugPC.pc)) && !conFlag)
         {         
             canvas = GetComponent<Canvas>();
             canvasRect = canvas.GetComponent<RectTransform>();
 
-            Vector2 localPos = Input.mousePosition - screensize / 2;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle
+                (canvasRect, Input.mousePosition,
+                 canvas.worldCamera, out localPos);
 
             bigCon = Instantiate(bigConPre);
-            bigCon.transform.SetParent(transform);
+            bigCon.transform.SetParent(this.transform);
             bigCon.GetComponent<RectTransform>().localPosition = localPos;
             bigCon.GetComponent<RectTransform>().localScale = scale;
             bigCon.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 1);
@@ -54,19 +55,27 @@ public class ControllerController : MonoBehaviour
             smallCon.GetComponent<RectTransform>().localScale = scale;
             smallCon.GetComponent<RectTransform>().localRotation = new Quaternion(0, 0, 0, 1);
 
+            movePos = localPos;
             firstPos = localPos;
             conFlag = true;
         }
-
         if (conFlag)
         {
-            Vector2 mousePos = Input.mousePosition - screensize / 2;
+            Vector2 mousePos = Input.mousePosition;
 
-            Vector2 currentPos = mousePos - firstPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle
+                (canvasRect, mousePos,
+                 canvas.worldCamera, out localPos);
 
-            moveRad = Mathf.Atan2(currentPos.y, currentPos.x);
+            moveRad = Mathf.Atan2(localPos.y - firstPos.y, localPos.x - firstPos.x);
+            touchPos = mousePos - firstPos;
 
-            a = currentPos.magnitude / moveRange;
+            Vector2 dist;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle
+                (canvasRect, touchPos,
+                 canvas.worldCamera, out dist);
+
+            a = dist.magnitude / moveRange;
 
             if(a > 1f)
             {
@@ -78,7 +87,7 @@ public class ControllerController : MonoBehaviour
 
             smallCon.GetComponent<RectTransform>().localPosition = firstPos + movePos;
 
-            if (Input.GetMouseButtonUp(0))
+            if ((Input.GetMouseButtonUp(0) && !DebugPC.pc) || (Input.GetMouseButtonUp(1) && DebugPC.pc))
             {
                 conFlag = false;
                 Destroy(bigCon);
