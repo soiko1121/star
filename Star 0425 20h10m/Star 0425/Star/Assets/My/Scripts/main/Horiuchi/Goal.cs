@@ -24,6 +24,7 @@ public class Goal : MonoBehaviour
             if (goalCount == goleDelayCount)
             {
                 PlayerMove.PM = new Vector2(PlayerMove.PM.x * -1, PlayerMove.PM.y);
+                ClearFlag = false;
                 SceneManager.LoadScene("ResultScene");
             }
         }

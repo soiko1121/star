@@ -8,6 +8,8 @@ public class Loader : MonoBehaviour
     bool onecFlag;
 
     AsyncOperation async;
+    private AudioSource loadSound;
+    private bool loadSoundSwitch = true;
 
     [SerializeField] Slider slider;
     [SerializeField] GameObject _UI;
@@ -17,6 +19,7 @@ public class Loader : MonoBehaviour
 
     public void Start()
     {
+        loadSound = gameObject.GetComponent<AudioSource>();
         onecFlag = false;
         slider.enabled = false;
         _UI.SetActive(true);
@@ -52,6 +55,11 @@ public class Loader : MonoBehaviour
 
         if (slider.value == 1f)
         {
+            if(loadSoundSwitch)
+            {
+                loadSound.PlayOneShot(loadSound.clip);
+                loadSoundSwitch = false;
+            }
             _UI.SetActive(false);
             _Button.SetActive(true);
 
