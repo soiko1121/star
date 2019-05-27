@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 422115745232488407}
   - component: {fileID: 422115745232488404}
-  - component: {fileID: 875859148531390836}
   - component: {fileID: 422115745232488405}
+  - component: {fileID: 7057706688769770939}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -47,19 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audio: {fileID: 8300000, guid: d1a2152020a629f46aecaaea1e988ffc, type: 3}
   audio_loop: {fileID: 8300000, guid: a9b9a4e34ac01ab4a806a3ae5a9a533f, type: 3}
---- !u!114 &875859148531390836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422115745232488402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de2e26c836e5c7f44ad83f8b27d60611, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroySwitch: 1
 --- !u!82 &422115745232488405
 AudioSource:
   m_ObjectHideFlags: 0
@@ -157,3 +144,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7057706688769770939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422115745232488402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de645279e2c71334b917e5811913a85a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

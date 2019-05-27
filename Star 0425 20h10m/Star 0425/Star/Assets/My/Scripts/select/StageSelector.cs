@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class StageSelector : MonoBehaviour
 {
     public Button[] buttons;
-    public GameObject 
+    public GameObject
         canvas,
         retrunButton;
     public float centerX;
@@ -52,8 +52,9 @@ public class StageSelector : MonoBehaviour
         }
         else
             retrunButton.SetActive(true);
+
         shake(shakeRad);
-        shakeRad += 1f ;
+        shakeRad += 1f;
 
         if (rightFlag)
         {
@@ -74,10 +75,10 @@ public class StageSelector : MonoBehaviour
 
         if (leftFlag)
         {
-            circleMove(-1*delta);
+            circleMove(-1 * delta);
 
             if ((rad - 90) % 120 == 0)
-            {              
+            {
                 leftFlag = false;
                 flick.flickDirection = (int)HowtoController.direction.none;
 
@@ -109,25 +110,27 @@ public class StageSelector : MonoBehaviour
             posY = by * Mathf.Sin(Mathf.PI / 180 * (rad + (120 * i))) + centerY;
 
             buttons[i].GetComponent<RectTransform>().localPosition = new Vector3(posX, posY, 0);
-            buttons[i].GetComponent<RectTransform>().localScale = new Vector3((posY / by) + 2f, 
-                                                                              (posY / by) + 2f, 
+            buttons[i].GetComponent<RectTransform>().localScale = new Vector3((posY / by) + 2f,
+                                                                              (posY / by) + 2f,
                                                                               (posY / by) + 2f);
         }
     }
 
     void shake(float rad)
     {
-        float y = 6 * Mathf.Sin(Mathf.PI/180 * rad);
-        buttons[SelectStage.StageSelectNumber/2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
+        float y = 6 * Mathf.Sin(Mathf.PI / 180 * rad);
+        buttons[SelectStage.StageSelectNumber / 2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
     }
 
     public void moveRight()
     {
-        rightFlag = true;
+        if (!leftFlag)
+            rightFlag = true;
     }
 
     public void moveLeft()
     {
-        leftFlag = true;
+        if (!rightFlag)
+            leftFlag = true;
     }
 }

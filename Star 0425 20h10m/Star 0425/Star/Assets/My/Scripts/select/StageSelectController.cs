@@ -13,7 +13,9 @@ public class StageSelectController : MonoBehaviour
     public Text[] stageName;
     public int delaycount;
     public bool loadFlag;
-    private bool setStage1;
+    private bool 
+        setStage1,
+        onece = false;
     private GameObject titleBGM;
     [SerializeField]
     private string[] nameSpace;
@@ -73,7 +75,13 @@ public class StageSelectController : MonoBehaviour
         if (!setStage1)
             setStage1 = true;
         else
-            loadFlag = true;
+        {
+            if (!onece)
+            {
+                loadFlag = true;
+                onece = true;
+            }
+        }
     }
     public void Stage2OnClick()
     {
@@ -81,8 +89,12 @@ public class StageSelectController : MonoBehaviour
             setStage1 = false;
         else
         {
-            SelectStage.StageSelectNumber++;
-            loadFlag = true;
+            if (!onece)
+            {
+                loadFlag = true;
+                onece = true;
+                SelectStage.StageSelectNumber++;
+            }
         }
     }
 }
