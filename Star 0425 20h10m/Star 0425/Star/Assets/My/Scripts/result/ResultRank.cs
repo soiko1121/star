@@ -6,6 +6,21 @@ using UnityEngine.UI;
 public class ResultRank : MonoBehaviour
 {
     public Sprite[] rank = new Sprite[7];
+    //Inspectorに複数データを表示するためのクラス
+    [System.SerializableAttribute]
+    public class ValueList
+    {
+        public List<int> List = new List<int>();
+
+        public ValueList(List<int> list)
+        {
+            List = list;
+        }
+    }
+    //Inspectorに表示される
+    [SerializeField]
+    private List<ValueList> valueListList = new List<ValueList>();
+
     public GameObject rankViwe;
     private RectTransform size;
     private Vector2 sizeV2;
@@ -39,30 +54,100 @@ public class ResultRank : MonoBehaviour
         switch(SelectStage.StageSelectNumber)
         {
             case (int)SelectStage.Stage.Easy:
-                if (score < 1000)
+                if (score < valueListList[(int)SelectStage.Stage.Easy - 1].List[0])
                     setRank = 0;
-                else if (score < 2000)
+                else if (score < valueListList[(int)SelectStage.Stage.Easy - 1].List[1])
                     setRank = 1;
-                else if (score < 10000)
+                else if (score < valueListList[(int)SelectStage.Stage.Easy - 1].List[2])
                     setRank = 2;
-                else if (score < 20000)
+                else if (score < valueListList[(int)SelectStage.Stage.Easy - 1].List[3])
                     setRank = 3;
-                else if (score < 50000)
+                else if (score < valueListList[(int)SelectStage.Stage.Easy - 1].List[4])
                     setRank = 4;
-                else if (score < 80000)
+                else if (score < valueListList[(int)SelectStage.Stage.Easy - 1].List[5])
                     setRank = 5;
                 else
                     setRank = 6;
                 break;
             case (int)SelectStage.Stage.Easy + 1:
+                if (score < valueListList[(int)SelectStage.Stage.Easy].List[0])
+                    setRank = 0;
+                else if (score < valueListList[(int)SelectStage.Stage.Easy].List[1])
+                    setRank = 1;
+                else if (score < valueListList[(int)SelectStage.Stage.Easy].List[2])
+                    setRank = 2;
+                else if (score < valueListList[(int)SelectStage.Stage.Easy].List[3])
+                    setRank = 3;
+                else if (score < valueListList[(int)SelectStage.Stage.Easy].List[4])
+                    setRank = 4;
+                else if (score < valueListList[(int)SelectStage.Stage.Easy].List[5])
+                    setRank = 5;
+                else
+                    setRank = 6;
                 break;
             case (int)SelectStage.Stage.Normal:
+                if (score < valueListList[(int)SelectStage.Stage.Normal - 1].List[0])
+                    setRank = 0;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal - 1].List[1])
+                    setRank = 1;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal - 1].List[2])
+                    setRank = 2;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal - 1].List[3])
+                    setRank = 3;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal - 1].List[4])
+                    setRank = 4;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal - 1].List[5])
+                    setRank = 5;
+                else
+                    setRank = 6;
                 break;
             case (int)SelectStage.Stage.Normal + 1:
+                if (score < valueListList[(int)SelectStage.Stage.Normal].List[0])
+                    setRank = 0;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal].List[1])
+                    setRank = 1;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal].List[2])
+                    setRank = 2;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal].List[3])
+                    setRank = 3;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal].List[4])
+                    setRank = 4;
+                else if (score < valueListList[(int)SelectStage.Stage.Normal].List[5])
+                    setRank = 5;
+                else
+                    setRank = 6;
                 break;
             case (int)SelectStage.Stage.Hard:
+                if (score < valueListList[(int)SelectStage.Stage.Hard - 1].List[0])
+                    setRank = 0;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard - 1].List[1])
+                    setRank = 1;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard - 1].List[2])
+                    setRank = 2;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard - 1].List[3])
+                    setRank = 3;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard - 1].List[4])
+                    setRank = 4;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard - 1].List[5])
+                    setRank = 5;
+                else
+                    setRank = 6;
                 break;
             case (int)SelectStage.Stage.Hard + 1:
+                if (score < valueListList[(int)SelectStage.Stage.Hard].List[0])
+                    setRank = 0;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard].List[1])
+                    setRank = 1;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard].List[2])
+                    setRank = 2;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard].List[3])
+                    setRank = 3;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard].List[4])
+                    setRank = 4;
+                else if (score < valueListList[(int)SelectStage.Stage.Hard].List[5])
+                    setRank = 5;
+                else
+                    setRank = 6;
                 break;
             default:
                 break;
