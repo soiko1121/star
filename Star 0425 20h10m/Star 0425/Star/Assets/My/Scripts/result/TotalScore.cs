@@ -7,9 +7,13 @@ public class TotalScore : MonoBehaviour
 {
     // Start is called before the first frame update
     // Update is called once per frame
+    public static bool IsClear
+    {
+        get; set;
+    }
     public void ShowTotalScore(Text ScoreText)
     {
-        if (Goal.ClearFlag == true)
+        if (IsClear == true)
         {
             ScoreText.text = ScoreSet().ToString();
         }
