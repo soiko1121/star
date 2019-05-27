@@ -79,7 +79,7 @@ public class StageSelector : MonoBehaviour
                 SelectStage.StageSelectNumber -= 2;
                 if (SelectStage.minStageNumber > SelectStage.StageSelectNumber)
                 {
-                    SelectStage.StageSelectNumber = SelectStage.maxStageNumber;
+                    SelectStage.StageSelectNumber = SelectStage.maxStageNumber - 1;
                 }
             }
         }
@@ -113,7 +113,7 @@ public class StageSelector : MonoBehaviour
     void shake(float rad)
     {
         float y = 6 * Mathf.Sin(Mathf.PI/180 * rad);
-        buttons[SelectStage.StageSelectNumber / 2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
+        buttons[SelectStage.StageSelectNumber/2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
     }
 
     public void moveRight()
