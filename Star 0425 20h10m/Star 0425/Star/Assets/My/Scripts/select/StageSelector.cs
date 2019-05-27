@@ -78,7 +78,7 @@ public class StageSelector : MonoBehaviour
                 SelectStage.StageSelectNumber -= 2;
                 if (SelectStage.minStageNumber > SelectStage.StageSelectNumber)
                 {
-                    SelectStage.StageSelectNumber = SelectStage.maxStageNumber;
+                    SelectStage.StageSelectNumber = SelectStage.maxStageNumber - 1;
                 }
             }
         }
