@@ -38,7 +38,7 @@ public class SelectStage : MonoBehaviour
         {
             buttons[i].enabled = false;
         }
-        buttons[StageSelectNumber / 2].enabled = true;
+        buttons[(StageSelectNumber - 1) / 2].enabled = true;
         PlanetGenerator.stageNumber = StageSelectNumber - 1;
         ExpText();
         GetComponent<Text>().text = kari;
