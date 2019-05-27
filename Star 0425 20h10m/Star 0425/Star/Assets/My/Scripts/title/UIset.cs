@@ -8,6 +8,8 @@ public class UIset : MonoBehaviour
     GameObject firstUI;
     [SerializeField]
     GameObject secondUI;
+    [SerializeField]
+    GameObject htUI;
 
     public static bool onceActive = false;
 
@@ -25,5 +27,6 @@ public class UIset : MonoBehaviour
             firstUI.SetActive(false);
             secondUI.SetActive(true);
         }
+        htUI.SetActive(false);
     }
 }

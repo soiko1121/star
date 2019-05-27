@@ -67,7 +67,7 @@ public class HowtoController : MonoBehaviour
         }
     }
 
-    void changeImage()
+    public void changeImage()
     {
         imageState *= -1;
     }

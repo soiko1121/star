@@ -13,7 +13,6 @@ public class HowToCon : MonoBehaviour
 
     public void StartHowTo()
     {
-        Debug.Log(1);
         howTo.SetActive(true);
         other.SetActive(false);
         HTobj = Instantiate(HTpre[0], howTo.transform);
