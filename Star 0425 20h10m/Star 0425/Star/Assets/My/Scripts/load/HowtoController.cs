@@ -26,7 +26,7 @@ public class HowtoController : MonoBehaviour
     [SerializeField]
     Button RButton;
 
-    int imageState;
+    int imageState = 1;
 
     Vector3 startTPos;
     Vector3 endTPos;
@@ -36,7 +36,6 @@ public class HowtoController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        imageState = 1;
         flickRange = 90f;
 
         LButton.onClick.AddListener(changeImage);

@@ -15,7 +15,7 @@ public class SelectStage : MonoBehaviour
 
     public const int 
         minStageNumber = 1,
-        maxStageNumber = 3;
+        maxStageNumber = 6;
 
     string kari = "";
     GameObject sb;
@@ -38,7 +38,7 @@ public class SelectStage : MonoBehaviour
         {
             buttons[i].enabled = false;
         }
-        buttons[StageSelectNumber - 1].enabled = true;
+        buttons[StageSelectNumber / 2].enabled = true;
         PlanetGenerator.stageNumber = StageSelectNumber - 1;
         ExpText();
         GetComponent<Text>().text = kari;
