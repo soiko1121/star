@@ -31,13 +31,11 @@ public class HowtoController : MonoBehaviour
     Vector3 startTPos;
     Vector3 endTPos;
 
-    float flickRange;
+    float flickRange = 300f;
 
     // Start is called before the first frame update
     void Start()
     {
-        flickRange = 90f;
-
         LButton.onClick.AddListener(changeImage);
         RButton.onClick.AddListener(changeImage);
     }
@@ -75,7 +73,7 @@ public class HowtoController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            startTPos = new Vector3(Input.mousePosition.x, 
+            startTPos = new Vector3(Input.mousePosition.x,
                                     Input.mousePosition.y,
                                     Input.mousePosition.z);
         }
@@ -96,7 +94,7 @@ public class HowtoController : MonoBehaviour
         angleX = endTPos.x - startTPos.x;
         angleY = endTPos.y - startTPos.y;
 
-        if(Mathf.Abs(angleX) >= Mathf.Abs(angleY))
+        if(Mathf.Abs(angleX) > Mathf.Abs(angleY))
         {
             if(flickRange < angleX)
             {

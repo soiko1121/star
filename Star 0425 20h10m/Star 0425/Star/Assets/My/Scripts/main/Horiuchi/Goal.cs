@@ -13,7 +13,8 @@ public class Goal : MonoBehaviour
     }
     private void Start()
     {
-        ClearFlag = false;
+        ClearFlag = false;  //スコアのフラグ
+        TotalScore.IsClear = false;
         goalCount = goleDelayCount + 1;
     }
     private void Update()
@@ -24,6 +25,7 @@ public class Goal : MonoBehaviour
             if (goalCount == goleDelayCount)
             {
                 PlayerMove.PM = new Vector2(PlayerMove.PM.x * -1, PlayerMove.PM.y);
+                ClearFlag = false;
                 SceneManager.LoadScene("ResultScene");
             }
         }
@@ -39,6 +41,9 @@ public class Goal : MonoBehaviour
             goalCount = 0;
             ClearFlag = true;
             PlayerMove.PM = new Vector2(PlayerMove.PM.x * -1, PlayerMove.PM.y);
+
+            //スコアのフラフ
+            TotalScore.IsClear = true;
         }
     }
 }
