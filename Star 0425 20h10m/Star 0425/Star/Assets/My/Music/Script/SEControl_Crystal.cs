@@ -25,7 +25,7 @@ public class SEControl_Crystal : MonoBehaviour
         public void GetCrystalSe()
     {
         audioController.volume = musicCount * upVolume + basicVolume;
-        Debug.Log(audioController.volume);
+        //Debug.Log(audioController.volume);
         audioController.PlayOneShot(clipSE[mycount]);
         if (mycount != clipSE.Length)
             mycount++;
