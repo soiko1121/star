@@ -12,13 +12,13 @@ public class PlanetHit : MonoBehaviour
     private GameObject player;
     private bool hit;
     private GameObject part;
-    [SerializeField]
     private GameObject hitSe;
     void Start()
     {
         //split = (int)planet.transform.localScale.x * 5;
         littlePlanet = new GameObject[split];
         player = GameObject.FindWithTag("Player");
+        hitSe = GameObject.Find("SE");
         hit = false;
     }
     void OnTriggerEnter(Collider other)
