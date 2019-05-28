@@ -24,6 +24,7 @@ public class StageSelector : MonoBehaviour
     bool rightFlag = false;
     bool leftFlag = false;
     bool once = false;
+    bool ismoveFlag = false;
 
     HowtoController flick;
 
@@ -47,22 +48,30 @@ public class StageSelector : MonoBehaviour
         if (canvas.activeSelf)
         {
             retrunButton.SetActive(false);
-            flick.Flicker();
-            return;
+            //flick.Flicker();
+            //return;
         }
         else
             retrunButton.SetActive(true);
 
-        shake(shakeRad);
-        shakeRad += 1f;
+        if (!ismoveFlag)
+        {
+            Shake(shakeRad);
+            shakeRad += 1f;
+            shakeRad %= 360;
+        }
 
         if (rightFlag)
         {
-            circleMove(delta);
+            ismoveFlag = true;
+            CircleMove(delta);
 
             if ((rad - 90) % 120 == 0)
             {
                 rightFlag = false;
+                ismoveFlag = false;
+                shakeRad = 0;
+                
                 flick.flickDirection = (int)HowtoController.direction.none;
 
                 SelectStage.StageSelectNumber += 2;
@@ -75,11 +84,13 @@ public class StageSelector : MonoBehaviour
 
         if (leftFlag)
         {
-            circleMove(-1 * delta);
+            ismoveFlag = true;
+            CircleMove(-1 * delta);
 
             if ((rad - 90) % 120 == 0)
             {
                 leftFlag = false;
+                ismoveFlag = false;
                 flick.flickDirection = (int)HowtoController.direction.none;
 
                 SelectStage.StageSelectNumber -= 2;
@@ -90,18 +101,21 @@ public class StageSelector : MonoBehaviour
             }
         }
 
-        flick.Flicker();
-        if (flick.flickDirection == (int)HowtoController.direction.right)
+        if (!ismoveFlag)
         {
-            rightFlag = true;
-        }
-        if (flick.flickDirection == (int)HowtoController.direction.left)
-        {
-            leftFlag = true;
+            flick.Flicker();
+            if (flick.flickDirection == (int)HowtoController.direction.right)
+            {
+                rightFlag = true;
+            }
+            if (flick.flickDirection == (int)HowtoController.direction.left)
+            {
+                leftFlag = true;
+            }
         }
     }
 
-    void circleMove(float delta)
+    void CircleMove(float delta)
     {
         rad -= delta;
         for (var i = 0; i < buttons.Length; i++)
@@ -116,21 +130,27 @@ public class StageSelector : MonoBehaviour
         }
     }
 
-    void shake(float rad)
+    void Shake(float rad)
     {
         float y = 6 * Mathf.Sin(Mathf.PI / 180 * rad);
         buttons[SelectStage.StageSelectNumber / 2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
     }
 
-    public void moveRight()
+    public void MoveRight()
     {
-        if (!leftFlag)
-            rightFlag = true;
+        if (!ismoveFlag)
+        {
+            if (!leftFlag)
+                rightFlag = true;
+        }
     }
 
-    public void moveLeft()
+    public void MoveLeft()
     {
-        if (!rightFlag)
-            leftFlag = true;
+        if (!ismoveFlag)
+        {
+            if (!rightFlag)
+                leftFlag = true;
+        }
     }
 }
