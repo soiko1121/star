@@ -40,7 +40,7 @@ public class ShowResult : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
             touchTime++;
 
-        if (touchTime >= 3)
+        if (touchTime >= 2)
             skipNow = true;
 
         if (!starCountEnd)

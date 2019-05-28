@@ -18,6 +18,7 @@ public class RankingMove : MonoBehaviour
     {
         stockNumber = SelectStage.StageSelectNumber;
         allObject = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+        SceneManager.LoadScene("RankingScene", LoadSceneMode.Additive);
         foreach (GameObject gameObject in allObject)
         {
             if (gameObject.tag == "UI" || gameObject.tag == "SubUI")
@@ -25,7 +26,7 @@ public class RankingMove : MonoBehaviour
                 gameObject.SetActive(false);
             }
         }
-        SceneManager.LoadScene("RankingScene", LoadSceneMode.Additive);
+
     }
 
     private void OnSceneUnloaded(Scene current)

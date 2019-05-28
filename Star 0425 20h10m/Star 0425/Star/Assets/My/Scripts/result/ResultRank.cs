@@ -152,6 +152,8 @@ public class ResultRank : MonoBehaviour
             default:
                 break;
         }
+        if (!TotalScore.IsClear)
+            setRank = 0;
         rankViwe.GetComponent<Image>().sprite = rank[setRank];
     }
 }
