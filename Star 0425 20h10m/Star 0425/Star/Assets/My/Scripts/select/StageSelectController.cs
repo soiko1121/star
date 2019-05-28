@@ -36,20 +36,14 @@ public class StageSelectController : MonoBehaviour
             case (int)SelectStage.Stage.Easy:
                 stageNum[0].GetComponent<Image>().sprite = stageNumImage[0];
                 stageNum[1].GetComponent<Image>().sprite = stageNumImage[1];
-                stageName[0].text = nameSpace[0];
-                stageName[1].text = nameSpace[1];
                 break;
             case (int)SelectStage.Stage.Normal:
                 stageNum[0].GetComponent<Image>().sprite = stageNumImage[2];
                 stageNum[1].GetComponent<Image>().sprite = stageNumImage[3];
-                stageName[0].text = nameSpace[2];
-                stageName[1].text = nameSpace[3];
                 break;
             case (int)SelectStage.Stage.Hard:
                 stageNum[0].GetComponent<Image>().sprite = stageNumImage[4];
                 stageNum[1].GetComponent<Image>().sprite = stageNumImage[5];
-                stageName[0].text = nameSpace[4];
-                stageName[1].text = nameSpace[5];
                 break;
             default:
                 break;
