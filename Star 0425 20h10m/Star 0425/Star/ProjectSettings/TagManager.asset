@@ -11,6 +11,7 @@ TagManager:
   - PointObject
   - Goal
   - UI
+  - SubUI
   layers:
   - Default
   - TransparentFX

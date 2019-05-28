@@ -18,7 +18,7 @@ public class RankingMove : MonoBehaviour
         allObject = Resources.FindObjectsOfTypeAll(typeof(GameObject));
         foreach (GameObject gameObject in allObject)
         {
-            if (gameObject.tag == "UI")
+            if (gameObject.tag == "UI" || gameObject.tag == "SubUI")
             {
                 gameObject.SetActive(false);
             }
@@ -33,7 +33,8 @@ public class RankingMove : MonoBehaviour
             allObject = Resources.FindObjectsOfTypeAll(typeof(GameObject));
             foreach (GameObject gameObject in allObject)
             {
-                gameObject.SetActive(true);
+                if (gameObject.tag == "UI")
+                    gameObject.SetActive(true);
             }
         }
     }
