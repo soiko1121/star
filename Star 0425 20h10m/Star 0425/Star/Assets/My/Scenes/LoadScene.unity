@@ -5949,17 +5949,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 987664761}
-        m_MethodName: changeImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1206624527}
         m_MethodName: Onclick
         m_Mode: 1
@@ -6435,7 +6424,7 @@ GameObject:
   - component: {fileID: 1684475605}
   - component: {fileID: 1684475604}
   m_Layer: 5
-  m_Name: BackForward
+  m_Name: moveTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6480,7 +6469,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 209874320268fc84ea0d43e550b54b01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e4730debc4630914f89f52eab913d513, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6509,7 +6498,7 @@ GameObject:
   - component: {fileID: 1708429625}
   - component: {fileID: 1708429624}
   m_Layer: 5
-  m_Name: LeftRight
+  m_Name: starTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6535,7 +6524,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5f68a6feb6757e548a46c6c68cbfdb77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 56a218350fb88294ebad7fb2462b5d98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6568,8 +6557,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -23.2}
-  m_SizeDelta: {x: 1054.3, y: 642.4}
+  m_AnchoredPosition: {x: 14, y: -39}
+  m_SizeDelta: {x: 1002.4, y: 610.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1884427956
 GameObject:
@@ -6686,17 +6675,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 987664761}
-        m_MethodName: changeImage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1925353976}
         m_MethodName: Onclick
         m_Mode: 1

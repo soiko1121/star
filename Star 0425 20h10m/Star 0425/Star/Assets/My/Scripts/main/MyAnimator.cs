@@ -63,7 +63,7 @@ public class MyAnimator : MonoBehaviour
             else
             {
                 //30待つ
-                if (countTime >= 30)
+                if (countTime >= 25)
                 {
                     countTime = 0;
                     PlayerHit.Hit = false;
