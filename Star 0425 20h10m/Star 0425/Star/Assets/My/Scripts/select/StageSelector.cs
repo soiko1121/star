@@ -133,7 +133,7 @@ public class StageSelector : MonoBehaviour
     void Shake(float rad)
     {
         float y = 6 * Mathf.Sin(Mathf.PI / 180 * rad);
-        buttons[SelectStage.StageSelectNumber / 2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
+        buttons[(SelectStage.StageSelectNumber - 1)/ 2].GetComponent<RectTransform>().localPosition = new Vector3(0, y, 0);
     }
 
     public void MoveRight()
