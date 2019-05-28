@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class RankingMove : MonoBehaviour
 {
     private Object[] allObject;
+    private int stockNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class RankingMove : MonoBehaviour
 
     public void RankingButtonOnClick()
     {
+        stockNumber = SelectStage.StageSelectNumber;
         allObject = Resources.FindObjectsOfTypeAll(typeof(GameObject));
         foreach (GameObject gameObject in allObject)
         {
@@ -30,6 +32,7 @@ public class RankingMove : MonoBehaviour
     {
         if (current.name == "RankingScene")
         {
+            SelectStage.StageSelectNumber = stockNumber;
             allObject = Resources.FindObjectsOfTypeAll(typeof(GameObject));
             foreach (GameObject gameObject in allObject)
             {

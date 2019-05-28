@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class ShowClear : MonoBehaviour
 {
+    public GameObject[] result;
     Image clear;
     // Start is called before the first frame update
     void Start()
     {
-        clear = GetComponent<Image>();
-
-        if (Goal.ClearFlag == true)
+        if (TotalScore.IsClear == true)
         {
-            clear.enabled = true;
+            result[0].SetActive(true);
+            result[1].SetActive(false);
         }
         else
         {
-            clear.enabled = false;
+            result[1].SetActive(true);
+            result[0].SetActive(false);
         }
     }
-
 }
