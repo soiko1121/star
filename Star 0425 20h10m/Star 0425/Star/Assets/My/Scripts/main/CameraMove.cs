@@ -15,6 +15,12 @@ public class CameraMove : MonoBehaviour
     public float goalSpeed;
     public int goalMaxCount;
     public Vector2 goalLimit;
+    public AudioSource speedUp;
+    public AudioSource speedDown;
+    public float upSoundBasic = 0.3f;
+    public float downSoundBasic = 0.5f;
+    public float upSoundVolumeUp = 0.05f;
+    public float downSoundVolumeDown = 0.1f;
 
     private GameObject player;
     private float target;
@@ -27,12 +33,15 @@ public class CameraMove : MonoBehaviour
     private Vector2 limit;
     private Vector2 limitTarget;
     private int goalRotaCount;
+    private int musicCount;
+    private GameObject countCheck;
 
     void Start()
     {
         saveCount = 0;
         count = 0;
         player = GameObject.FindWithTag("Player");
+        countCheck = GameObject.Find("GameGenerator");
         particle = particles[0].GetComponent<ParticleSystem>();
         limit = maxLimit;
         goalRotaCount = goalMaxCount;
@@ -62,6 +71,7 @@ public class CameraMove : MonoBehaviour
             int star = gameGenerator.GetComponent<GameGenerator>().star;
             int[] changeCount = gameGenerator.musicChangeCount;
             int nowCount = 0;
+            musicCount = countCheck.GetComponent<GameGenerator>().musicCnt;
 
             if (count == maxCount)
             {
@@ -80,11 +90,15 @@ public class CameraMove : MonoBehaviour
                 {
                     if (nowCount < saveCount)
                     {
-                        particle = particles[0].GetComponent<ParticleSystem>();
+                        particle = particles[0].GetComponent<ParticleSystem>();// 減速
+                        speedDown.volume = downSoundBasic + downSoundVolumeDown * musicCount;
+                        speedDown.PlayOneShot(speedDown.clip);
                     }
                     else
                     {
-                        particle = particles[1].GetComponent<ParticleSystem>();
+                        particle = particles[1].GetComponent<ParticleSystem>();// 加速
+                        speedUp.volume = upSoundBasic + upSoundVolumeUp * musicCount;
+                        speedUp.PlayOneShot(speedUp.clip);
                     }
                     if (changeCount[nowCount] == 0)
                         target = defPosZ;

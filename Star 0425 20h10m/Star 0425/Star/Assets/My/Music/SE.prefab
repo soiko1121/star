@@ -320,6 +320,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipSE:
-  - {fileID: 8300000, guid: 6e4f71dade4325f45b599e6fd6b9bd51, type: 3}
-  basicVolume: 0.5
-  upVolume: 0.1
+  - {fileID: 8300000, guid: 6050fa51fe5756c4a8a423f3f3516a51, type: 3}
+  basicVolume: 0.08
+  upVolume: 0.05

@@ -26,7 +26,6 @@ public class VolumeControl1 : MonoBehaviour
 
         if (pauseSwich)
         {
-           // Debug.Log("来てます");
             for (int i = 0; i < musicCount + 1; i++)
                 if (pauseMusicStep[i].volume < 0.3f)
                     pauseMusicStep[i].volume = 0.3f;
