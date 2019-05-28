@@ -6,7 +6,7 @@ public class ButtonDontDestroy : MonoBehaviour
 {
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
     }
     public void DestroyThisObject()
     {
