@@ -10,6 +10,7 @@ public class SEControl_Crystal : MonoBehaviour
     private GameObject gameGenerator;
     private int musicCount;
     public float basicVolume = 0.5f;
+    public float upVolume = 0.1f;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class SEControl_Crystal : MonoBehaviour
     }
         public void GetCrystalSe()
     {
-        audioController.volume = musicCount * 0.1f + basicVolume;
+        audioController.volume = musicCount * upVolume + basicVolume;
         Debug.Log(audioController.volume);
         audioController.PlayOneShot(clipSE[mycount]);
         if (mycount != clipSE.Length)
@@ -33,7 +34,7 @@ public class SEControl_Crystal : MonoBehaviour
     }
     public void GetPlanetHitSe()
     {
-        audioController.volume = musicCount * 0.1f + basicVolume;
+        audioController.volume = musicCount * upVolume + basicVolume;
         audioController.PlayOneShot(clipSE[mycount]);
         if (mycount != clipSE.Length)
             mycount++;

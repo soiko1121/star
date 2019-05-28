@@ -17,7 +17,6 @@ public class VolumeController : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(volumeSwitch);
         if(volumeSwitch)
         {
             for (int i = 0; i < volumeControl1.musicStep.Length; i++)
