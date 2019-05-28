@@ -40,7 +40,7 @@ public class HowToCon : MonoBehaviour
     {
         Destroy(HTobj);
         selsectNum--;
-        if (selsectNum <= 0)
+        if (selsectNum < 0)
         {
             selsectNum = HTpre.Length - 1;
         }
