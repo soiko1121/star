@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311912, g: 0.3807398, b: 0.3587271, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,6 +199,16 @@ PrefabInstance:
       propertyPath: clip3
       value: 
       objectReference: {fileID: 8300000, guid: be25175bbb6e0a744b7fba428fc3548d, type: 3}
+    - target: {fileID: 5195902829938054327, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
+        type: 3}
+      propertyPath: basicVolume
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195902829938054327, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
+        type: 3}
+      propertyPath: upVolume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7761172920540702873, guid: ba05e2c6e1faddf4d924b3acc00c39c7,
         type: 3}
       propertyPath: clipSE.Array.data[0]
@@ -9810,7 +9820,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 7fe95fda434ff734aa1f8ea7ab7c7114, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

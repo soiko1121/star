@@ -142,9 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipSE:
-  - {fileID: 8300000, guid: cac51a3ddb294d44983661a1a12cc187, type: 3}
-  - {fileID: 8300000, guid: be25175bbb6e0a744b7fba428fc3548d, type: 3}
-  basicVolume: 0.5
+  - {fileID: 8300000, guid: 96a44019afbe5e94aaacdbffccf789a9, type: 3}
+  - {fileID: 8300000, guid: 4042961bd71595d42b62a61b70626c30, type: 3}
+  basicVolume: 0.4
+  upVolume: 0.1
 --- !u!1 &4529165606299652294
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,3 +322,4 @@ MonoBehaviour:
   clipSE:
   - {fileID: 8300000, guid: 6e4f71dade4325f45b599e6fd6b9bd51, type: 3}
   basicVolume: 0.5
+  upVolume: 0.1
