@@ -10,7 +10,6 @@ public class StageSelectController : MonoBehaviour
         mask,
         stageNum;
     public Sprite[] stageNumImage;
-    public Text[] stageName;
     public int delaycount;
     public bool loadFlag;
     private bool 
