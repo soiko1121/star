@@ -15,13 +15,14 @@ public class LittlePlanetController : MonoBehaviour
     public int touchDistanse;
     public Vector2 fluctuationDistance;
     public DebugText debugText;
+    public InVolumeControl inVolumeControl;
 
     private int count;
     private float atan;
     private GameObject player;
     private Vector2 distance;
     private Vector3 touchPos;
-
+    
     public int UdlrDelayCount
     {
         get; set;
@@ -88,10 +89,16 @@ public class LittlePlanetController : MonoBehaviour
             for (int i = 0; i < 200 * 10; i++)
                 RadList.Add(-1);
         }
-        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)))
+        littlePlanets = GameObject.FindGameObjectsWithTag("MiniStar");
+        if (((Input.GetMouseButton(0) && !DebugPC.pc) || (Input.GetMouseButton(1) && DebugPC.pc)) && littlePlanets.Length != 0)
         {
             //debugText.text = touchPos.x.ToString() + "\n" + Input.mousePosition.x.ToString() + "\n" + touchPos.y.ToString() + "\n" + Input.mousePosition.y.ToString();
             GetTouch();
+            inVolumeControl.touchSwitch = true;
+        }
+        else if (((Input.GetMouseButtonUp(0) && !DebugPC.pc) || (Input.GetMouseButtonUp(1) && DebugPC.pc)))
+        {
+            inVolumeControl.touchSwitch = false;
         }
     }
     // Update is called once per frame
