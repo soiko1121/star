@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour
 {
     public int goleDelayCount;
+
     private int goalCount;
+    private GameObject pauseUI;
+    private GameObject textUI;
+
     public static bool ClearFlag
     {
         get; set;
@@ -16,6 +20,8 @@ public class Goal : MonoBehaviour
         ClearFlag = false;  //スコアのフラグ
         TotalScore.IsClear = false;
         goalCount = goleDelayCount + 1;
+        pauseUI = GameObject.Find("ButtonCanvas");
+        textUI = GameObject.Find("TextCanvas");
     }
     private void Update()
     {
@@ -40,6 +46,9 @@ public class Goal : MonoBehaviour
             }
             goalCount = 0;
             ClearFlag = true;
+            pauseUI.SetActive(false);
+            textUI.SetActive(false);
+
             PlayerMove.PM = new Vector2(PlayerMove.PM.x * -1, PlayerMove.PM.y);
 
             //スコアのフラフ
